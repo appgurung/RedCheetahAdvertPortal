@@ -1,0 +1,2273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="swift_utilityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="i_customer" />
+      <PropertyRef Name="i_account" />
+    </Key>
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="i_account" Type="int" Nullable="false" />
+    <Property Name="id" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="i_product" Type="int" />
+    <Property Name="balance" Type="float" />
+    <Property Name="issue_date" Type="datetime" />
+    <Property Name="billing_model" Type="int" />
+    <Property Name="activation_date" Type="datetime" />
+    <Property Name="expiration_date" Type="datetime" />
+    <Property Name="blocked" Type="varchar" MaxLength="2" />
+    <Property Name="last_usage" Type="datetime" />
+    <Property Name="first_usage" Type="datetime" />
+    <Property Name="credit_limit" Type="float" />
+    <Property Name="email" Type="varchar" MaxLength="200" />
+    <Property Name="i_subscriber" Type="int" />
+    <Property Name="bill_status" Type="varchar" MaxLength="2" />
+    <Property Name="i_master_account" Type="int" />
+    <Property Name="subscriber_email" Type="varchar" MaxLength="200" />
+    <Property Name="batch_name" Type="varchar" MaxLength="500" />
+    <Property Name="baddr1" Type="varchar" MaxLength="500" />
+    <Property Name="baddr2" Type="varchar" MaxLength="500" />
+    <Property Name="baddr3" Type="varchar" MaxLength="500" />
+    <Property Name="baddr4" Type="varchar" MaxLength="500" />
+    <Property Name="baddr5" Type="varchar" MaxLength="500" />
+    <Property Name="bcc" Type="varchar" MaxLength="200" />
+    <Property Name="city" Type="varchar" MaxLength="100" />
+    <Property Name="cont1" Type="varchar" MaxLength="100" />
+    <Property Name="cont2" Type="varchar" MaxLength="100" />
+    <Property Name="country" Type="varchar" MaxLength="100" />
+    <Property Name="faxnum" Type="varchar" MaxLength="100" />
+    <Property Name="last_recharge" Type="datetime" />
+    <Property Name="life_time" Type="int" />
+    <Property Name="mac" Type="varchar" MaxLength="100" />
+    <Property Name="midinit" Type="varchar" MaxLength="50" />
+    <Property Name="note" Type="varchar(max)" />
+    <Property Name="opening_balance" Type="float" />
+    <Property Name="password_timestamp" Type="datetime" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="zero_balance_date" Type="datetime" />
+    <Property Name="zip" Type="varchar" MaxLength="50" />
+    <Property Name="DateLastUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Auto_Allocate_Subscribers">
+    <Key>
+      <PropertyRef Name="i_customer" />
+      <PropertyRef Name="i_account" />
+    </Key>
+    <Property Name="SettingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="i_account" Type="int" Nullable="false" />
+    <Property Name="AutoMove" Type="int" Nullable="false" />
+    <Property Name="Priority" Type="int" Nullable="false" />
+    <Property Name="DateLastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Deleted" Type="int" Nullable="false" />
+    <Property Name="DeletedBy" Type="varchar" MaxLength="50" />
+    <Property Name="DateDeleted" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AutoAllocation_Transactions">
+    <Key>
+      <PropertyRef Name="AllocateID" />
+    </Key>
+    <Property Name="AllocateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AutoSettingID" Type="int" Nullable="false" />
+    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="Amount" Type="float" Nullable="false" />
+    <Property Name="OnlineID" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="i_customer" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.balancestofix_17092013' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="balancestofix_17092013">
+          <Property Name="id" Type="nvarchar" MaxLength="255" />
+          <Property Name="amt" Type="float" />
+          <Property Name="done1" Type="int" />
+          <Property Name="refund1" Type="float" />
+          <Property Name="payref1" Type="varchar" MaxLength="50" />
+          <Property Name="date1" Type="datetime" />
+        </EntityType>-->
+  <EntityType Name="Batch">
+    <Key>
+      <PropertyRef Name="Batch_ID" />
+    </Key>
+    <Property Name="Batch_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchName" Type="varchar" MaxLength="45" />
+    <Property Name="NoOfVouchers" Type="int" Nullable="false" />
+    <Property Name="EntryDate" Type="datetime" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="45" />
+    <Property Name="Comments" Type="varchar" MaxLength="2000" />
+    <Property Name="eVoucher" Type="int" />
+  </EntityType>
+  <EntityType Name="BiometricsBonus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="PaymentSource" Type="nvarchar(max)" />
+    <Property Name="NoOfDays" Type="int" />
+    <Property Name="BonusType" Type="nvarchar(max)" />
+    <Property Name="TransactionID" Type="nvarchar(max)" />
+    <Property Name="i_product" Type="int" />
+    <Property Name="ProductName" Type="nvarchar(max)" />
+    <Property Name="Granted" Type="int" />
+    <Property Name="macAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="cXDR" Type="nvarchar" MaxLength="50" />
+    <Property Name="aXDR" Type="nvarchar" MaxLength="50" />
+    <Property Name="aPaymentUID" Type="nvarchar" MaxLength="50" />
+    <Property Name="cPaymentUID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.BiometricsBonusService' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BiometricsBonusService">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentTable" Type="nvarchar(max)" />
+    <Property Name="StartRow" Type="int" />
+    <Property Name="EndRow" Type="int" />
+    <Property Name="LastRun" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Bonuses">
+    <Key>
+      <PropertyRef Name="BonusID" />
+    </Key>
+    <Property Name="BonusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="PPlatform" Type="varchar" MaxLength="50" />
+    <Property Name="PRefID" Type="varchar" MaxLength="50" />
+    <Property Name="AmountPaid" Type="float" />
+    <Property Name="BonusAmount" Type="float" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="BonusCategory" Type="varchar" MaxLength="50" />
+    <Property Name="AllocatePattern" Type="int" />
+    <Property Name="Allocated" Type="int" />
+    <Property Name="DateFirstAllocated" Type="datetime" />
+    <Property Name="TotalAllocatedAmount" Type="float" />
+    <Property Name="AllocationCount" Type="int" />
+    <Property Name="DateLastAllocated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="BulkSMS_EmailLogs">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BatchNo" Type="varchar" MaxLength="50" />
+    <Property Name="SqlString" Type="varchar(max)" />
+    <Property Name="BaseStations" Type="varchar(max)" />
+    <Property Name="Sectors" Type="varchar(max)" />
+    <Property Name="BaseStationStatus" Type="varchar(max)" />
+    <Property Name="BaseStationAliveStatus" Type="varchar(max)" />
+    <Property Name="EmailSubject" Type="varchar" MaxLength="500" />
+    <Property Name="EmailMessage" Type="varchar(max)" />
+    <Property Name="EmailFrom" Type="varchar" MaxLength="500" />
+    <Property Name="FileName" Type="varchar" MaxLength="1000" />
+    <Property Name="SMSContent" Type="varchar" MaxLength="500" />
+    <Property Name="SMSFrom" Type="varchar" MaxLength="50" />
+    <Property Name="EmailStatus" Type="int" />
+    <Property Name="SMSStatus" Type="int" />
+    <Property Name="Date_Created" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="EmailDateSent" Type="datetime" />
+    <Property Name="SMSDateSent" Type="datetime" />
+  </EntityType>
+  <EntityType Name="BulkVoucherDenominations">
+    <Key>
+      <PropertyRef Name="i_customer" />
+      <PropertyRef Name="Value" />
+      <PropertyRef Name="Percentage" />
+      <PropertyRef Name="MinimumCount" />
+    </Key>
+    <Property Name="DenominationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="Value" Type="float" Nullable="false" />
+    <Property Name="Percentage" Type="float" Nullable="false" />
+    <Property Name="MinimumCount" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="BulkVoucherFulfilments">
+    <Key>
+      <PropertyRef Name="BulkVoucherID" />
+    </Key>
+    <Property Name="BulkVoucherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="Value" Type="float" />
+    <Property Name="MinimumCount" Type="int" />
+    <Property Name="Count" Type="int" />
+    <Property Name="Percentage" Type="float" />
+    <Property Name="Discount" Type="float" />
+    <Property Name="Payable" Type="float" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="Generated" Type="int" />
+    <Property Name="BatchID" Type="int" />
+    <Property Name="GenerationFlag" Type="varchar" MaxLength="500" />
+    <Property Name="DateGenerated" Type="datetime" />
+    <Property Name="Sent" Type="int" />
+    <Property Name="DateSent" Type="datetime" />
+    <Property Name="PurchaseOnlineID" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BulkVoucherPurchasers">
+    <Key>
+      <PropertyRef Name="DealerID" />
+    </Key>
+    <Property Name="DealerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="coveragemap">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+    <Property Name="SiteID" Type="nvarchar" MaxLength="255" />
+    <Property Name="Longitude" Type="float" />
+    <Property Name="Latitude" Type="float" />
+    <Property Name="Radius_Good" Type="float" />
+    <Property Name="Radius_Fair" Type="float" />
+    <Property Name="Radius_Poor" Type="float" />
+  </EntityType>
+  <EntityType Name="CreditAccountExtensions">
+    <Key>
+      <PropertyRef Name="AccountExtensionID" />
+    </Key>
+    <Property Name="AccountExtensionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="amount" Type="float" />
+    <Property Name="source" Type="varchar" MaxLength="500" />
+    <Property Name="txnref" Type="varchar" MaxLength="500" />
+    <Property Name="paymentdate" Type="datetime" />
+    <Property Name="StatusMsg" Type="varchar(max)" />
+    <Property Name="dateimplemented" Type="datetime" />
+    <Property Name="days" Type="int" />
+    <Property Name="charge" Type="int" />
+    <Property Name="process" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="AccountIDs" Type="varchar(max)" />
+    <Property Name="R_paymentUID" Type="varchar(max)" />
+    <Property Name="R_AccountIDs" Type="varchar(max)" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CRMFailedPayments">
+    <Key>
+      <PropertyRef Name="FailureID" />
+    </Key>
+    <Property Name="FailureID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="subscriber_id" Type="varchar" MaxLength="50" />
+    <Property Name="product_name" Type="varchar" MaxLength="50" />
+    <Property Name="amount" Type="float" />
+    <Property Name="transid" Type="varchar" MaxLength="50" />
+    <Property Name="transtype" Type="varchar" MaxLength="50" />
+    <Property Name="desc" Type="varchar" MaxLength="50" />
+    <Property Name="gway" Type="varchar" MaxLength="50" />
+    <Property Name="discount" Type="float" />
+    <Property Name="FailureError" Type="varchar(max)" />
+    <Property Name="Retried" Type="int" />
+    <Property Name="RetryCount" Type="int" />
+    <Property Name="LastRetriedDate" Type="datetime" />
+    <Property Name="Success" Type="int" />
+    <Property Name="SuccessDate" Type="datetime" />
+    <Property Name="ReceiptNo" Type="varchar" MaxLength="50" />
+    <Property Name="TransTable" Type="varchar" MaxLength="50" />
+    <Property Name="LogDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CRMLoansRepayments">
+    <Key>
+      <PropertyRef Name="LoanRepaymentID" />
+    </Key>
+    <Property Name="LoanRepaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_Loan" Type="int" Nullable="false" />
+    <Property Name="PaymentSource" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaymentRef" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AmountPaid" Type="float" Nullable="false" />
+    <Property Name="DatePaid" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrmParameters">
+    <Key>
+      <PropertyRef Name="Server" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ParameterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Server" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Value" Type="varchar(max)" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.CrmPasswordChangeLog' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CrmPasswordChangeLog">
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="oldPassword" Type="varchar" MaxLength="50" />
+          <Property Name="newPassword" Type="varchar" MaxLength="50" />
+          <Property Name="changedOn" Type="datetime" />
+          <Property Name="ipAddress" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+  <EntityType Name="CRMPayments">
+    <Key>
+      <PropertyRef Name="i_Loan" />
+    </Key>
+    <Property Name="i_Loan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="45" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="TransType" Type="varchar" MaxLength="45" />
+    <Property Name="Username" Type="varchar" MaxLength="45" />
+    <Property Name="Deducted" Type="int" />
+    <Property Name="DateDeducted" Type="datetime" />
+    <Property Name="DeductionTransID" Type="varchar" MaxLength="45" />
+    <Property Name="NoofDays" Type="int" />
+    <Property Name="cXDR" Type="varchar" MaxLength="45" />
+    <Property Name="aXDR" Type="varchar" MaxLength="45" />
+    <Property Name="AmountPaid" Type="float" />
+    <Property Name="macAddress" Type="varchar" MaxLength="50" />
+    <Property Name="i_product" Type="int" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" />
+    <Property Name="aPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="cPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_apaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_cpaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+    <Property Name="DiscountAmount" Type="float" />
+    <Property Name="BonusAmount" Type="float" />
+    <Property Name="BonusCategory" Type="varchar" MaxLength="50" />
+    <Property Name="AllocationEffectiveDate" Type="datetime" />
+    <Property Name="AllocationExpirationDate" Type="datetime" />
+    <Property Name="Months" Type="int" />
+    <Property Name="AdditionalPayment" Type="float" />
+  </EntityType>
+  <EntityType Name="Customer_BlockUnblock">
+    <Key>
+      <PropertyRef Name="BlockID" />
+    </Key>
+    <Property Name="BlockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="Amount" Type="real" />
+    <Property Name="RemDays" Type="int" />
+    <Property Name="DateBlocked" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="DateUnblocked" Type="datetime" />
+    <Property Name="BlockSource" Type="varchar" MaxLength="45" />
+    <Property Name="BlockUsername" Type="varchar" MaxLength="45" />
+    <Property Name="UnblockSource" Type="varchar" MaxLength="45" />
+    <Property Name="UnblockUsername" Type="varchar" MaxLength="45" />
+    <Property Name="aXDR" Type="varchar" MaxLength="45" />
+    <Property Name="cantOnline" Type="int" />
+    <Property Name="paymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_paymentUID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customer_Reminders">
+    <Key>
+      <PropertyRef Name="i_customer" />
+      <PropertyRef Name="i_account" />
+    </Key>
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="i_account" Type="int" Nullable="false" />
+    <Property Name="Daily1" Type="datetime" />
+    <Property Name="Daily2" Type="datetime" />
+    <Property Name="Daily3" Type="datetime" />
+    <Property Name="Volume1" Type="datetime" />
+    <Property Name="Volume2" Type="datetime" />
+    <Property Name="Volume3" Type="datetime" />
+    <Property Name="Monthly" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CustomerEmailChanges">
+    <Key>
+      <PropertyRef Name="Change_ID" />
+    </Key>
+    <Property Name="Change_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="Old_Email" Type="varchar" MaxLength="500" />
+    <Property Name="New_Email" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Email_UID" Type="varchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="Source" Type="varchar" MaxLength="50" />
+    <Property Name="Validated" Type="int" />
+    <Property Name="DateValidated" Type="datetime" />
+    <Property Name="FirstLogin" Type="int" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="i_customer" />
+    </Key>
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="salutation" Type="varchar" MaxLength="50" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" />
+    <Property Name="midinit" Type="varchar" MaxLength="50" />
+    <Property Name="companyname" Type="varchar" MaxLength="50" />
+    <Property Name="baddr1" Type="varchar" MaxLength="500" />
+    <Property Name="baddr2" Type="varchar" MaxLength="500" />
+    <Property Name="baddr3" Type="varchar" MaxLength="500" />
+    <Property Name="baddr4" Type="varchar" MaxLength="500" />
+    <Property Name="baddr5" Type="varchar" MaxLength="500" />
+    <Property Name="email" Type="varchar" MaxLength="200" />
+    <Property Name="phone1" Type="varchar" MaxLength="50" />
+    <Property Name="phone2" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="200" />
+    <Property Name="login" Type="varchar" MaxLength="50" />
+    <Property Name="creation_date" Type="datetime" />
+    <Property Name="bill_status" Type="varchar" MaxLength="2" />
+    <Property Name="city" Type="varchar" MaxLength="100" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="zip" Type="varchar" MaxLength="50" />
+    <Property Name="bcc" Type="varchar" MaxLength="200" />
+    <Property Name="cont1" Type="varchar" MaxLength="100" />
+    <Property Name="cont2" Type="varchar" MaxLength="100" />
+    <Property Name="country" Type="varchar" MaxLength="100" />
+    <Property Name="note" Type="varchar(max)" />
+    <Property Name="balance" Type="float" />
+    <Property Name="DateLastUpdated" Type="datetime" />
+    <Property Name="blocked" Type="varchar" MaxLength="5" />
+    <Property Name="KYCStatus" Type="int" />
+    <Property Name="hasStaffAcct" Type="int" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
+    <Property Name="dob" Type="datetime" />
+    <Property Name="homephone" Type="varchar" MaxLength="50" />
+    <Property Name="occupation" Type="varchar" MaxLength="50" />
+    <Property Name="officeaddress" Type="varchar" MaxLength="5000" />
+    <Property Name="jobtitle" Type="varchar" MaxLength="50" />
+    <Property Name="department" Type="varchar" MaxLength="50" />
+    <Property Name="manager" Type="varchar" MaxLength="50" />
+    <Property Name="managerphone" Type="varchar" MaxLength="50" />
+    <Property Name="assistant" Type="varchar" MaxLength="50" />
+    <Property Name="assistantphone" Type="varchar" MaxLength="50" />
+    <Property Name="maritalstatus" Type="varchar" MaxLength="50" />
+    <Property Name="anniversary" Type="datetime" />
+    <Property Name="spousename" Type="varchar" MaxLength="50" />
+    <Property Name="nok" Type="varchar" MaxLength="50" />
+    <Property Name="nokphone" Type="varchar" MaxLength="50" />
+    <Property Name="nokaddress" Type="varchar" MaxLength="1000" />
+    <Property Name="contactmethods" Type="varchar" MaxLength="50" />
+    <Property Name="identificationnumber" Type="varchar" MaxLength="50" />
+    <Property Name="monthlyincome" Type="varchar" MaxLength="50" />
+    <Property Name="favouriteinternetactivity" Type="varchar" MaxLength="1000" />
+    <Property Name="CustomerType" Type="varchar" MaxLength="50" />
+    <Property Name="ModemType" Type="varchar" MaxLength="50" />
+    <Property Name="CreditLimit" Type="float" />
+  </EntityType>
+  <EntityType Name="Customers_LastPayments">
+    <Key>
+      <PropertyRef Name="i_customer" />
+      <PropertyRef Name="i_account" />
+    </Key>
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="i_account" Type="int" Nullable="false" />
+    <Property Name="c_balance" Type="float" />
+    <Property Name="c_payment" Type="float" />
+    <Property Name="payment_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="customers_lock">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="50" />
+    <Property Name="lock_status" Type="int" Nullable="false" />
+    <Property Name="eff_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomersEmailMessageLogs">
+    <Key>
+      <PropertyRef Name="EmailID" />
+    </Key>
+    <Property Name="EmailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="Subject" Type="varchar" MaxLength="500" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="Message" Type="varchar(max)" />
+    <Property Name="Send_Date" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Sent_Date" Type="datetime" />
+    <Property Name="eReceiptNo" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorMessage" Type="varchar" MaxLength="2000" />
+    <Property Name="FileName" Type="varchar" MaxLength="1000" />
+    <Property Name="BatchNo" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="MailFrom" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CustomersEmailMessageLogs_BackUp">
+    <Key>
+      <PropertyRef Name="EmailID" />
+    </Key>
+    <Property Name="EmailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="Subject" Type="varchar" MaxLength="500" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="Message" Type="varchar(max)" />
+    <Property Name="Send_Date" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Sent_Date" Type="datetime" />
+    <Property Name="eReceiptNo" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorMessage" Type="varchar" MaxLength="2000" />
+    <Property Name="FileName" Type="varchar" MaxLength="1000" />
+    <Property Name="BatchNo" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="MailFrom" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.DebitAccountsEmailAlertsChecks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DebitAccountsEmailAlertsChecks">
+    <Key>
+      <PropertyRef Name="RandomAlertID" />
+    </Key>
+    <Property Name="RandomAlertID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RunTime" Type="datetime" />
+    <Property Name="StartTime" Type="datetime" />
+    <Property Name="EndTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DebitAccountsNotifications">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="macaddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="NotificationDate" Type="datetime" Nullable="false" />
+    <Property Name="ExpirationDate" Type="datetime" />
+    <Property Name="EmailMessage" Type="varchar(max)" />
+    <Property Name="SMSMessage" Type="varchar" MaxLength="500" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="200" />
+    <Property Name="Phone" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.DOPCCustomersforUZOEmail_17092013' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="DOPCCustomersforUZOEmail_17092013">
+          <Property Name="Subscriber_ID" Type="nvarchar" MaxLength="255" />
+          <Property Name="done1" Type="int" />
+          <Property Name="date1" Type="datetime" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.EnterpriseCustomers' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="EnterpriseCustomers">
+          <Property Name="new_SubscriberID" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="ExpirationDate_InvalidExtensions">
+    <Key>
+      <PropertyRef Name="OccurenceID" />
+    </Key>
+    <Property Name="OccurenceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="macAddress" Type="varchar" MaxLength="50" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="i_product" Type="int" />
+    <Property Name="ProductName" Type="varchar" MaxLength="500" />
+    <Property Name="activation_date" Type="datetime" />
+    <Property Name="expiration_date" Type="datetime" />
+    <Property Name="cust_balance" Type="float" />
+    <Property Name="account_balance" Type="float" />
+    <Property Name="DateChecked" Type="datetime" />
+    <Property Name="Adjusted" Type="int" />
+    <Property Name="new_activation_date" Type="datetime" />
+    <Property Name="new_expiration_date" Type="datetime" />
+    <Property Name="AdjustedBy" Type="int" />
+    <Property Name="AdjustedByName" Type="varchar" MaxLength="500" />
+    <Property Name="DateAdjusted" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FailedPayments_Feb1to52013">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransID" Type="varchar" MaxLength="50" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="Amount" Type="float" />
+    <Property Name="PaymentType" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="PaymentMode" Type="varchar" MaxLength="50" />
+    <Property Name="BillingUpdated" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="FailedPortaOneTransactionNotes">
+    <Key>
+      <PropertyRef Name="FailedID" />
+    </Key>
+    <Property Name="FailedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescriptionLogID" Type="int" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="balance" Type="float" />
+    <Property Name="source" Type="varchar" MaxLength="200" />
+    <Property Name="transid" Type="varchar" MaxLength="50" />
+    <Property Name="action" Type="varchar" MaxLength="50" />
+    <Property Name="credit" Type="int" />
+    <Property Name="extension" Type="int" />
+    <Property Name="usebalance" Type="int" />
+    <Property Name="charge" Type="int" />
+    <Property Name="billingcycle" Type="int" />
+    <Property Name="blockacct" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.HotlinedFundedAccountsSessionExtensions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="HotlinedFundedAccountsSessionExtensions">
+    <Key>
+      <PropertyRef Name="i_customer" />
+      <PropertyRef Name="macaddress" />
+    </Key>
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="macaddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="ExtensionDate" Type="datetime" />
+    <Property Name="i_active_callleg" Type="int" />
+    <Property Name="Sessions" Type="int" />
+  </EntityType>
+  <EntityType Name="HotSpotPayments">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="Amount" Type="real" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="45" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="aXDR" Type="varchar" MaxLength="45" />
+    <Property Name="cXDR" Type="varchar" MaxLength="45" />
+    <Property Name="Transtype" Type="varchar" MaxLength="45" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="VoucherPin" Type="varchar" MaxLength="45" />
+    <Property Name="i_product" Type="int" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" />
+    <Property Name="macAddress" Type="varchar" MaxLength="50" />
+    <Property Name="aPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="cPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_apaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_cpaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+    <Property Name="DiscountAmount" Type="float" />
+    <Property Name="AllocationEffectiveDate" Type="datetime" />
+    <Property Name="AllocationExpirationDate" Type="datetime" />
+    <Property Name="Months" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.IMEIInventory' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="IMEIInventory">
+          <Property Name="PACKING_LIST_NO" Type="nvarchar" MaxLength="255" />
+          <Property Name="WIFI_KEY" Type="nvarchar" MaxLength="255" />
+          <Property Name="SSID" Type="nvarchar" MaxLength="255" />
+          <Property Name="MID_CASE_BARCODE" Type="nvarchar" MaxLength="255" />
+          <Property Name="PRODUCT_BARCODE" Type="nvarchar" MaxLength="255" />
+          <Property Name="BOARD_BARCODE" Type="nvarchar" MaxLength="255" />
+          <Property Name="SPU_BARCODE" Type="nvarchar" MaxLength="255" />
+          <Property Name="ROHS" Type="nvarchar" MaxLength="255" />
+          <Property Name="SOFTWARE_VERSION" Type="nvarchar" MaxLength="255" />
+          <Property Name="COLOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="SIM_LOCK" Type="nvarchar" MaxLength="255" />
+          <Property Name="IMEI" Type="nvarchar" MaxLength="255" />
+          <Property Name="WIFI" Type="nvarchar" MaxLength="255" />
+          <Property Name="WIFI_MAC2" Type="nvarchar" MaxLength="255" />
+          <Property Name="LAN_MAC" Type="nvarchar" MaxLength="255" />
+          <Property Name="SSID2" Type="nvarchar" MaxLength="255" />
+          <Property Name="WEB_PASSWORD" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="InternetTest_Feedback">
+    <Key>
+      <PropertyRef Name="FeedbackID" />
+    </Key>
+    <Property Name="FeedbackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="FullName" Type="varchar" MaxLength="500" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="Que1Radio" Type="int" />
+    <Property Name="Que1Text" Type="varchar" MaxLength="500" />
+    <Property Name="Que2Radio" Type="int" />
+    <Property Name="Que2Text" Type="varchar" MaxLength="500" />
+    <Property Name="Que3Radio" Type="int" />
+    <Property Name="Que3Text" Type="varchar" MaxLength="500" />
+    <Property Name="Que4Radio" Type="varchar" MaxLength="50" />
+    <Property Name="Que5Radio" Type="varchar" MaxLength="50" />
+    <Property Name="Que6Ping1" Type="varchar" MaxLength="50" />
+    <Property Name="Que6Ping2" Type="varchar" MaxLength="50" />
+    <Property Name="Que6Ping3" Type="varchar" MaxLength="50" />
+    <Property Name="Que6Download1" Type="varchar" MaxLength="50" />
+    <Property Name="Que6Download2" Type="varchar" MaxLength="50" />
+    <Property Name="Que6Download3" Type="varchar" MaxLength="50" />
+    <Property Name="Que6Upload1" Type="varchar" MaxLength="50" />
+    <Property Name="Que6Upload2" Type="varchar" MaxLength="50" />
+    <Property Name="Que6Upload3" Type="varchar" MaxLength="50" />
+    <Property Name="Que7Radio" Type="varchar" MaxLength="50" />
+    <Property Name="Que8Text" Type="varchar" MaxLength="2000" />
+    <Property Name="EntryIPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="EntryDate" Type="datetime" />
+    <Property Name="Submitted" Type="int" />
+    <Property Name="SubmissionIPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="SubmissionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InterSwitch_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Customer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Upload_Status" Type="varchar" MaxLength="45" />
+    <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Interswitch_Paydirect">
+    <Key>
+      <PropertyRef Name="PaydirectID" />
+    </Key>
+    <Property Name="PaydirectID" Type="int" Nullable="false" />
+    <Property Name="subscriberid" Type="varchar" MaxLength="45" />
+    <Property Name="customername" Type="varchar" MaxLength="200" />
+    <Property Name="servicetype" Type="varchar" MaxLength="45" />
+    <Property Name="amount" Type="real" />
+    <Property Name="paymentdate" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="45" />
+    <Property Name="cardnumber" Type="varchar" MaxLength="45" />
+    <Property Name="cardbank" Type="varchar" MaxLength="45" />
+    <Property Name="TransLocation" Type="varchar" MaxLength="250" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="250" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="IrokoTVCode_Exceptions">
+    <Key>
+      <PropertyRef Name="IrokoCodeID" />
+    </Key>
+    <Property Name="IrokoCodeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="PaymentReference" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="ServicePlanID" Type="int" />
+    <Property Name="AmountPaid" Type="float" />
+  </EntityType>
+  <EntityType Name="IrokoTVCodes">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="IrokoCodeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Valid" Type="int" Nullable="false" />
+    <Property Name="UploadedBy" Type="int" />
+    <Property Name="DateUploaded" Type="datetime" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="PaymentReference" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="ServicePlanID" Type="int" />
+    <Property Name="AmountPaid" Type="float" />
+    <Property Name="DateAssigned" Type="datetime" />
+  </EntityType>
+  <EntityType Name="IVRPayments">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="amount" Type="float" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="i_product" Type="int" />
+    <Property Name="macAddress" Type="varchar" MaxLength="50" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" />
+    <Property Name="Status" Type="int" />
+    <Property Name="aXDR" Type="varchar" MaxLength="50" />
+    <Property Name="cXDR" Type="varchar" MaxLength="50" />
+    <Property Name="aPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="cPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_apaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_cpaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+    <Property Name="AllocationEffectiveDate" Type="datetime" />
+    <Property Name="AllocationExpirationDate" Type="datetime" />
+    <Property Name="Months" Type="int" />
+  </EntityType>
+  <EntityType Name="KYCBlockUnbock">
+    <Key>
+      <PropertyRef Name="KYCBlockID" />
+    </Key>
+    <Property Name="KYCBlockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="DateBlocked" Type="datetime" />
+    <Property Name="BlockID" Type="int" />
+    <Property Name="Unblocked" Type="int" />
+    <Property Name="DateUnblocked" Type="datetime" />
+  </EntityType>
+  <EntityType Name="KYCDeferments">
+    <Key>
+      <PropertyRef Name="KYCDeferID" />
+    </Key>
+    <Property Name="KYCDeferID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="DatePushed" Type="datetime" Nullable="false" />
+    <Property Name="DaysDeferred" Type="int" Nullable="false" />
+    <Property Name="Repushed" Type="int" />
+    <Property Name="DateRepushed" Type="datetime" />
+    <Property Name="Source" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.KYCRejectReasons' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="KYCRejectReasons">
+    <Key>
+      <PropertyRef Name="Reason" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Reason" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KYCUploads">
+    <Key>
+      <PropertyRef Name="i_customer" />
+    </Key>
+    <Property Name="KYCID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="HomePhone" Type="varchar" MaxLength="100" />
+    <Property Name="Gender" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DoB" Type="datetime" />
+    <Property Name="Address" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="200" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="Country" Type="varchar" MaxLength="100" />
+    <Property Name="MiddleInitial" Type="varchar" MaxLength="100" />
+    <Property Name="WorkPhone" Type="varchar" MaxLength="100" />
+    <Property Name="MobilePhone" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Prof_Occupation" Type="varchar" MaxLength="250" />
+    <Property Name="Prof_Company" Type="varchar" MaxLength="250" />
+    <Property Name="Prof_CompanyAddress" Type="varchar" MaxLength="5000" />
+    <Property Name="Prof_JobTitle" Type="varchar" MaxLength="150" />
+    <Property Name="Prof_Department" Type="varchar" MaxLength="100" />
+    <Property Name="Prof_Manager" Type="varchar" MaxLength="100" />
+    <Property Name="Prof_ManagerPhone" Type="varchar" MaxLength="100" />
+    <Property Name="Prof_Assistant" Type="varchar" MaxLength="100" />
+    <Property Name="Prof_AssistantPhone" Type="varchar" MaxLength="100" />
+    <Property Name="MaritalStatus" Type="varchar" MaxLength="100" />
+    <Property Name="Anniversary" Type="datetime" />
+    <Property Name="SpouseName" Type="varchar" MaxLength="100" />
+    <Property Name="NextofKin" Type="varchar" MaxLength="100" />
+    <Property Name="NOK_Phone" Type="varchar" MaxLength="100" />
+    <Property Name="NOK_Address" Type="varchar" MaxLength="1000" />
+    <Property Name="Primary_Contact" Type="varchar" MaxLength="500" />
+    <Property Name="Contact_Methods" Type="varchar" MaxLength="100" />
+    <Property Name="Identification_Number" Type="varchar" MaxLength="100" />
+    <Property Name="Monthly_Income" Type="varchar" MaxLength="100" />
+    <Property Name="Favourite_Internet_Activity" Type="varchar" MaxLength="1000" />
+    <Property Name="Upload_Document_Server" Type="varchar" MaxLength="50" />
+    <Property Name="Upload_Document_Link1" Type="varchar" MaxLength="500" />
+    <Property Name="Upload_Document_Link2" Type="varchar" MaxLength="500" />
+    <Property Name="Uploaded" Type="int" />
+    <Property Name="Date_Uploaded" Type="datetime" />
+    <Property Name="Approval_Comment" Type="varchar(max)" />
+    <Property Name="Validated_Document_Link1" Type="varchar" MaxLength="500" />
+    <Property Name="Validated_Document_Link2" Type="varchar" MaxLength="500" />
+    <Property Name="Date_Validated" Type="datetime" />
+    <Property Name="Validated" Type="int" />
+    <Property Name="ValidatedBy" Type="int" />
+    <Property Name="Rejected" Type="int" />
+    <Property Name="RejectReason" Type="varchar" MaxLength="200" />
+    <Property Name="Date_Rejected" Type="datetime" />
+    <Property Name="RejectedBy" Type="int" />
+    <Property Name="CRMSuccess" Type="int" />
+    <Property Name="CRMSuccess_Date" Type="datetime" />
+    <Property Name="BillingSuccess" Type="int" />
+    <Property Name="BillingSuccess_Date" Type="datetime" />
+    <Property Name="Document1Success" Type="int" />
+    <Property Name="Document1Success_Date" Type="datetime" />
+    <Property Name="Document2Success" Type="int" />
+    <Property Name="Document2Success_Date" Type="datetime" />
+    <Property Name="Deleted" Type="int" />
+    <Property Name="Date_Deleted" Type="datetime" />
+    <Property Name="Source" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Blocked" Type="int" />
+    <Property Name="DateBlocked" Type="datetime" />
+    <Property Name="Unblocked" Type="int" />
+    <Property Name="DateUnbloked" Type="datetime" />
+    <Property Name="Credited" Type="int" />
+    <Property Name="DateCredited" Type="datetime" />
+    <Property Name="Paid" Type="int" />
+    <Property Name="Platform" Type="varchar" MaxLength="50" />
+    <Property Name="PlatformRef" Type="varchar" MaxLength="50" />
+    <Property Name="AmountPaid" Type="float" />
+    <Property Name="DatePaid" Type="datetime" />
+    <Property Name="PromoAmount" Type="float" />
+    <Property Name="paymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_paymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+    <Property Name="FirstDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.LogonServersLogs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="LogonServersLogs">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastServerUsed" Type="int" />
+    <Property Name="LogDate" Type="datetime" />
+    <Property Name="Fetched" Type="int" />
+  </EntityType>
+  <EntityType Name="LTEFUTFeedback">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="Question1a" Type="varchar" MaxLength="50" />
+    <Property Name="Question1b" Type="varchar" MaxLength="500" />
+    <Property Name="Question2" Type="varchar" MaxLength="50" />
+    <Property Name="Question3" Type="varchar" MaxLength="50" />
+    <Property Name="Question4" Type="varchar" MaxLength="50" />
+    <Property Name="Question5a" Type="varchar" MaxLength="50" />
+    <Property Name="Question5b" Type="varchar" MaxLength="50" />
+    <Property Name="Question5c" Type="varchar" MaxLength="500" />
+    <Property Name="Question6" Type="varchar" MaxLength="500" />
+    <Property Name="Question7" Type="int" />
+    <Property Name="Question8Ping1" Type="float" />
+    <Property Name="Question8Ping2" Type="float" />
+    <Property Name="Question8Ping3" Type="float" />
+    <Property Name="Question8Download1" Type="float" />
+    <Property Name="Question8Download2" Type="float" />
+    <Property Name="Question8Download3" Type="float" />
+    <Property Name="Question8Upload1" Type="float" />
+    <Property Name="Question8Upload2" Type="float" />
+    <Property Name="Question8Upload3" Type="float" />
+    <Property Name="Question9" Type="varchar" MaxLength="50" />
+    <Property Name="Question10" Type="varchar" MaxLength="50" />
+    <Property Name="Question11" Type="varchar" MaxLength="50" />
+    <Property Name="Question12" Type="varchar" MaxLength="500" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="IPCreated" Type="varchar" MaxLength="50" />
+    <Property Name="DateLastUpdated" Type="datetime" />
+    <Property Name="Sent" Type="int" />
+    <Property Name="IPSent" Type="varchar" MaxLength="50" />
+    <Property Name="DateSent" Type="datetime" />
+  </EntityType>
+  <EntityType Name="mobilepayment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Gateway" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Amount" Type="real" Nullable="false" />
+    <Property Name="PaymentDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="PartnerPaymentDate" Type="datetime" />
+    <Property Name="PartnerReference" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="merchantCode" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="bankCode" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="bankName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ipaddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="100" />
+    <Property Name="macAddress" Type="varchar" MaxLength="50" />
+    <Property Name="i_product" Type="int" />
+    <Property Name="aXDR" Type="varchar" MaxLength="50" />
+    <Property Name="cXDR" Type="varchar" MaxLength="50" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" />
+    <Property Name="apaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_apaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+    <Property Name="DiscountAmount" Type="float" />
+    <Property Name="AllocationEffectiveDate" Type="datetime" />
+    <Property Name="AllocationExpirationDate" Type="datetime" />
+    <Property Name="AllocatedAmount" Type="float" />
+    <Property Name="Months" Type="int" />
+    <Property Name="IncentiveAmount" Type="float" />
+  </EntityType>
+  <EntityType Name="ModemCosts">
+    <Key>
+      <PropertyRef Name="ModemType" />
+    </Key>
+    <Property Name="ModemType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cost" Type="float" />
+    <Property Name="DisCost" Type="float" />
+    <Property Name="DisPayAmount" Type="float" />
+    <Property Name="DisplayOnline" Type="int" />
+    <Property Name="CPESeries" Type="varchar" MaxLength="500" />
+    <Property Name="isLTE" Type="int" />
+  </EntityType>
+  <EntityType Name="OnlineCustomerEntries">
+    <Key>
+      <PropertyRef Name="i_customer" />
+    </Key>
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="500" />
+    <Property Name="street" Type="varchar" MaxLength="500" />
+    <Property Name="city" Type="varchar" MaxLength="50" />
+    <Property Name="state" Type="varchar" MaxLength="50" />
+    <Property Name="country" Type="varchar" MaxLength="50" />
+    <Property Name="phone" Type="varchar" MaxLength="100" />
+    <Property Name="entrydate" Type="datetime" />
+    <Property Name="approved" Type="int" />
+    <Property Name="ApprovedBy" Type="int" />
+    <Property Name="DateApproved" Type="datetime" />
+  </EntityType>
+  <EntityType Name="onlinepayment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Gateway" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="real" Nullable="false" />
+    <Property Name="Product" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Account" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="ResponseCode" Type="varchar" MaxLength="45" />
+    <Property Name="ResponseDesc" Type="varchar" MaxLength="500" />
+    <Property Name="EntryDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="New_Online_User" Type="varchar" MaxLength="345" />
+    <Property Name="Card_Number" Type="varchar" MaxLength="900" />
+    <Property Name="Returned_Reference" Type="varchar" MaxLength="900" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="45" />
+    <Property Name="BillingUpdated" Type="int" />
+    <Property Name="BillingTransID" Type="varchar" MaxLength="45" />
+    <Property Name="Charge_TransID" Type="varchar" MaxLength="45" />
+    <Property Name="Allocation_TransID" Type="varchar" MaxLength="45" />
+    <Property Name="Step_Status" Type="varchar" MaxLength="500" />
+    <Property Name="ConfirmCalled" Type="int" />
+    <Property Name="RequeryCount" Type="int" />
+    <Property Name="RequerySource" Type="varchar" MaxLength="500" />
+    <Property Name="OrderID" Type="varchar" MaxLength="45" />
+    <Property Name="SessionID" Type="varchar" MaxLength="45" />
+    <Property Name="PayURL" Type="varchar" MaxLength="400" />
+    <Property Name="PromoCode" Type="varchar" MaxLength="45" />
+    <Property Name="PromoPercent" Type="real" />
+    <Property Name="ModemType" Type="varchar" MaxLength="45" />
+    <Property Name="Reg_Encoded_Password" Type="varchar" MaxLength="2000" />
+    <Property Name="Gateway_Returned_Amount" Type="float" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="TradeIn" Type="int" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" />
+    <Property Name="aPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="cPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_apaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_cpaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+    <Property Name="DiscountAmount" Type="float" />
+    <Property Name="AllocationEffectiveDate" Type="datetime" />
+    <Property Name="AllocationExpirationDate" Type="datetime" />
+    <Property Name="Months" Type="int" />
+    <Property Name="IncentiveAmount" Type="float" />
+  </EntityType>
+  <EntityType Name="onlinepayment_backup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Gateway" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="real" Nullable="false" />
+    <Property Name="Product" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Account" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="ResponseCode" Type="varchar" MaxLength="45" />
+    <Property Name="ResponseDesc" Type="varchar" MaxLength="500" />
+    <Property Name="EntryDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="New_Online_User" Type="varchar" MaxLength="345" />
+    <Property Name="Card_Number" Type="varchar" MaxLength="500" />
+    <Property Name="Returned_Reference" Type="varchar" MaxLength="500" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="45" />
+    <Property Name="BillingUpdated" Type="int" />
+    <Property Name="BillingTransID" Type="varchar" MaxLength="45" />
+    <Property Name="Charge_TransID" Type="varchar" MaxLength="45" />
+    <Property Name="Allocation_TransID" Type="varchar" MaxLength="45" />
+    <Property Name="Step_Status" Type="varchar" MaxLength="500" />
+    <Property Name="ConfirmCalled" Type="int" />
+    <Property Name="RequeryCount" Type="int" />
+    <Property Name="RequerySource" Type="varchar" MaxLength="500" />
+    <Property Name="OrderID" Type="varchar" MaxLength="45" />
+    <Property Name="SessionID" Type="varchar" MaxLength="45" />
+    <Property Name="PayURL" Type="varchar" MaxLength="400" />
+    <Property Name="PromoCode" Type="varchar" MaxLength="45" />
+    <Property Name="PromoPercent" Type="real" />
+    <Property Name="ModemType" Type="varchar" MaxLength="45" />
+    <Property Name="Reg_Encoded_Password" Type="varchar" MaxLength="2000" />
+    <Property Name="Gateway_Returned_Amount" Type="float" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="TradeIn" Type="int" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" />
+    <Property Name="aPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="cPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_apaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_cpaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+    <Property Name="DiscountAmount" Type="float" />
+    <Property Name="AllocationEffectiveDate" Type="datetime" />
+    <Property Name="AllocationExpirationDate" Type="datetime" />
+    <Property Name="Months" Type="int" />
+    <Property Name="IncentiveAmount" Type="float" />
+  </EntityType>
+  <EntityType Name="OnlineSessions">
+    <Key>
+      <PropertyRef Name="SessionID" />
+    </Key>
+    <Property Name="SessionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_Customer" Type="int" />
+    <Property Name="Session_Start" Type="datetime2" Precision="7" />
+    <Property Name="Closed" Type="int" />
+    <Property Name="Session_Ref" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.Partner_Connections' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Partner_Connections">
+          <Property Name="PromoCode" Type="varchar" MaxLength="50" />
+          <Property Name="Landing_Date" Type="datetime" />
+          <Property Name="Landing_URL" Type="varchar" MaxLength="200" />
+        </EntityType>-->
+  <EntityType Name="PartnerLogins">
+    <Key>
+      <PropertyRef Name="PartnerID" />
+    </Key>
+    <Property Name="PartnerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Partner_Name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="User_Name" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="pops">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteID" Type="nvarchar" MaxLength="255" />
+    <Property Name="Longitude" Type="float" />
+    <Property Name="Latitude" Type="float" />
+    <Property Name="Radius" Type="float" />
+  </EntityType>
+  <EntityType Name="pops-old">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiteID" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Operator" Type="varchar" MaxLength="90" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Latitude" Type="numeric" Precision="10" Scale="7" Nullable="false" />
+    <Property Name="Longitude" Type="numeric" Precision="10" Scale="7" Nullable="false" />
+    <Property Name="Radius" Type="int" />
+  </EntityType>
+  <EntityType Name="PortaOneQueries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Query" Type="varchar" MaxLength="8000" />
+    <Property Name="Response" Type="varchar" MaxLength="8000" />
+    <Property Name="Method" Type="varchar" MaxLength="45" />
+    <Property Name="DateSent" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PortaOneSessions">
+    <Key>
+      <PropertyRef Name="SessionID" />
+    </Key>
+    <Property Name="SessionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Server" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Application" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Session" Type="varchar" MaxLength="50" />
+    <Property Name="ApiIp" Type="varchar" MaxLength="50" />
+    <Property Name="Login" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="int" Nullable="false" />
+    <Property Name="Offline" Type="int" />
+    <Property Name="Deactive_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PortaOneTransactionNotes">
+    <Key>
+      <PropertyRef Name="DesciptionID" />
+    </Key>
+    <Property Name="DesciptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescriptionRef" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentCategory" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentType" Type="varchar" MaxLength="50" />
+    <Property Name="Source" Type="varchar" MaxLength="50" />
+    <Property Name="Partner" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+    <Property Name="ParentID" Type="varchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="macaddress" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProductIdealFors">
+    <Key>
+      <PropertyRef Name="idealID" />
+    </Key>
+    <Property Name="idealID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" />
+    <Property Name="Text" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.Products' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="i_product" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="info_url" />
+      <PropertyRef Name="Maintenance_Fee" />
+      <PropertyRef Name="DateLastUpdated" />
+    </Key>
+    <Property Name="i_product" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="info_url" Type="text" Nullable="false" />
+    <Property Name="Maintenance_Fee" Type="float" Nullable="false" />
+    <Property Name="DateLastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="Cost" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.Products_View_Mapping' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Products_View_Mapping">
+    <Key>
+      <PropertyRef Name="Category1" />
+      <PropertyRef Name="Category2" />
+      <PropertyRef Name="isMapped" />
+    </Key>
+    <Property Name="Category1" Type="int" Nullable="false" />
+    <Property Name="Category2" Type="int" Nullable="false" />
+    <Property Name="isMapped" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductTimings">
+    <Key>
+      <PropertyRef Name="TimingID" />
+    </Key>
+    <Property Name="TimingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="int" />
+    <Property Name="Text" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="PromoDetails">
+    <Key>
+      <PropertyRef Name="PromoDetaiID" />
+    </Key>
+    <Property Name="PromoDetaiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PartnerID" Type="int" Nullable="false" />
+    <Property Name="PromoApp" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PartnerModemDiscount" Type="float" Nullable="false" />
+    <Property Name="PartnerSubscriptionDiscount" Type="float" />
+    <Property Name="CustomerDiscount" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PromoPartners">
+    <Key>
+      <PropertyRef Name="PartnerID" />
+    </Key>
+    <Property Name="PartnerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Partner_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PromoCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PromoPlansExclusionList">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="serviceplan" Type="int" />
+    <Property Name="source" Type="nvarchar(max)" />
+    <Property Name="agent" Type="nvarchar(max)" />
+    <Property Name="created" Type="datetime" />
+    <Property Name="mac_address" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ReceiptDetails">
+    <Key>
+      <PropertyRef Name="ReceiptID" />
+    </Key>
+    <Property Name="ReceiptID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReceiptNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="ReceiptContent" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="45" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="LogoName" Type="nvarchar" MaxLength="45" />
+    <Property Name="TableName" Type="varchar" MaxLength="50" />
+    <Property Name="TableFieldName" Type="varchar" MaxLength="50" />
+    <Property Name="TableFieldValue" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ReceiptNumbers">
+    <Key>
+      <PropertyRef Name="Receipt_No" />
+    </Key>
+    <Property Name="Receipt_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Receipt_Name" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Referrals">
+    <Key>
+      <PropertyRef Name="ReferralID" />
+    </Key>
+    <Property Name="ReferralID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="45" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="45" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="ReferralCode" Type="nvarchar" MaxLength="45" />
+    <Property Name="Status" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="ReferreeID" Type="int" />
+    <Property Name="Source" Type="nvarchar" MaxLength="45" />
+    <Property Name="Username" Type="nvarchar" MaxLength="45" />
+    <Property Name="CRMSuccess" Type="int" />
+    <Property Name="DateUsed" Type="datetime" />
+    <Property Name="Trans_ID" Type="nvarchar" MaxLength="45" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="45" />
+    <Property Name="ContactMyFriend" Type="int" />
+    <Property Name="ReferrerShare" Type="real" />
+    <Property Name="ReferredShare" Type="real" />
+    <Property Name="ShareUpdatedBy" Type="nvarchar" MaxLength="45" />
+    <Property Name="DateShareUpdated" Type="datetime" />
+    <Property Name="ReferrerAmount" Type="real" />
+    <Property Name="ReferredAmount" Type="real" />
+    <Property Name="Credited" Type="int" />
+    <Property Name="DateCredited" Type="datetime" />
+    <Property Name="SourceSharedUpdated" Type="nvarchar" MaxLength="45" />
+    <Property Name="Paid" Type="int" />
+    <Property Name="Platform" Type="varchar" MaxLength="50" />
+    <Property Name="PlatformRef" Type="varchar" MaxLength="50" />
+    <Property Name="DatePaid" Type="datetime" />
+    <Property Name="PaidBy" Type="nvarchar" MaxLength="45" />
+    <Property Name="PaymentID" Type="nvarchar" MaxLength="45" />
+    <Property Name="PaymentSource" Type="nvarchar" MaxLength="45" />
+    <Property Name="PromoCode" Type="nvarchar" MaxLength="45" />
+    <Property Name="PromoPercent" Type="real" />
+    <Property Name="Referrer_ProductID" Type="int" />
+    <Property Name="Referree_ProductID" Type="int" />
+    <Property Name="Referrer_ProductName" Type="nvarchar" MaxLength="300" />
+    <Property Name="Referree_ProductName" Type="nvarchar" MaxLength="300" />
+    <Property Name="Referrer_XDR" Type="nvarchar" MaxLength="45" />
+    <Property Name="Referree_XDR" Type="nvarchar" MaxLength="45" />
+    <Property Name="Referrer_CRMRecNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Referred_CRMRecNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Billing_Called" Type="int" />
+    <Property Name="Activated" Type="int" />
+    <Property Name="DateActivated" Type="datetime" />
+    <Property Name="paymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="CreditedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ServicePlanChanges">
+    <Key>
+      <PropertyRef Name="Change_ID" />
+    </Key>
+    <Property Name="Change_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_ID" Type="int" Nullable="false" />
+    <Property Name="Account_ID" Type="int" Nullable="false" />
+    <Property Name="InitialPlan_ID" Type="int" />
+    <Property Name="NewPlan_ID" Type="int" Nullable="false" />
+    <Property Name="Charged_Unused_Balance" Type="real" Nullable="false" />
+    <Property Name="Account_Balance" Type="real" Nullable="false" />
+    <Property Name="Topup_Amount" Type="real" Nullable="false" />
+    <Property Name="Change_Date" Type="datetime" Nullable="false" />
+    <Property Name="Source" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="500" />
+    <Property Name="OnlineID" Type="varchar" MaxLength="45" />
+    <Property Name="SDChanged" Type="int" />
+    <Property Name="apaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="cpaymentUID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ServiceSchedules">
+    <Key>
+      <PropertyRef Name="ScheduleID" />
+    </Key>
+    <Property Name="ScheduleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceName" Type="varchar" MaxLength="45" />
+    <Property Name="MethodName" Type="varchar" MaxLength="45" />
+    <Property Name="Interval" Type="int" />
+    <Property Name="Type" Type="varchar" MaxLength="45" />
+    <Property Name="NextRunTime" Type="datetime" />
+    <Property Name="StartTimespan" Type="datetime" />
+    <Property Name="StartInterval" Type="int" />
+    <Property Name="StartType" Type="varchar" MaxLength="45" />
+    <Property Name="RunPeriod" Type="varchar" MaxLength="45" />
+    <Property Name="LastRunTime" Type="datetime" />
+    <Property Name="exactTiming" Type="int" />
+    <Property Name="StartTimeexactTiming" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SignUp_Exceptionals">
+    <Key>
+      <PropertyRef Name="i_product" />
+      <PropertyRef Name="TradeIn" />
+    </Key>
+    <Property Name="SignUpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_product" Type="int" Nullable="false" />
+    <Property Name="SingleUserValidity" Type="int" />
+    <Property Name="MultiUserValidity" Type="int" />
+    <Property Name="SingleUserModem" Type="float" />
+    <Property Name="MultiUserModem" Type="float" />
+    <Property Name="TradeIn" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="DateSetUp" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.SIMS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SIMS">
+          <Property Name="ICCID" Type="nvarchar" MaxLength="255" />
+          <Property Name="IMSI" Type="nvarchar" MaxLength="255" />
+          <Property Name="MSISDN" Type="float" />
+          <Property Name="ADM" Type="float" />
+          <Property Name="PIN1" Type="float" />
+          <Property Name="PIN2" Type="float" />
+          <Property Name="PUK1" Type="float" />
+          <Property Name="PUK2" Type="float" />
+          <Property Name="EKI" Type="nvarchar" MaxLength="255" />
+          <Property Name="EOPC" Type="nvarchar" MaxLength="255" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.SIMSInventory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SIMSInventory">
+    <Key>
+      <PropertyRef Name="MSISDN" />
+    </Key>
+    <Property Name="ICCID" Type="nvarchar" MaxLength="255" />
+    <Property Name="IMSI" Type="nvarchar" MaxLength="255" />
+    <Property Name="MSISDN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ADM" Type="nvarchar" MaxLength="255" />
+    <Property Name="PIN1" Type="nvarchar" MaxLength="255" />
+    <Property Name="PIN2" Type="nvarchar" MaxLength="255" />
+    <Property Name="PUK1" Type="nvarchar" MaxLength="255" />
+    <Property Name="PUK2" Type="nvarchar" MaxLength="255" />
+    <Property Name="EKI" Type="nvarchar" MaxLength="255" />
+    <Property Name="EOPC" Type="nvarchar" MaxLength="255" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="DateAssigned" Type="datetime" />
+    <Property Name="Source" Type="varchar" MaxLength="50" />
+    <Property Name="SourceID" Type="varchar" MaxLength="50" />
+    <Property Name="ModemMac" Type="varchar" MaxLength="50" />
+    <Property Name="rMSISDN" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.SIMSInventory_Logs' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SIMSInventory_Logs">
+          <Property Name="ICCID" Type="nvarchar" MaxLength="255" />
+          <Property Name="i_customer" Type="int" />
+          <Property Name="DateAssigned" Type="datetime" />
+          <Property Name="Source" Type="varchar" MaxLength="50" />
+          <Property Name="SourceID" Type="varchar" MaxLength="50" />
+          <Property Name="ModemMac" Type="varchar" MaxLength="50" />
+          <Property Name="rMSISDN" Type="varchar" MaxLength="50" />
+          <Property Name="DateLogged" Type="datetime" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="LogSource" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="SMSSender">
+    <Key>
+      <PropertyRef Name="SMS_ID" />
+    </Key>
+    <Property Name="SMSID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SMS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Send_Date" Type="datetime" Nullable="false" />
+    <Property Name="Destination_Number" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="Returned_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Returned_Message" Type="varchar" MaxLength="450" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Sent_Date" Type="datetime" />
+    <Property Name="Called_URL" Type="varchar(max)" />
+    <Property Name="Counter" Type="int" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="DeliveryStatus" Type="varchar" MaxLength="50" />
+    <Property Name="DeliveryDate" Type="datetime" />
+    <Property Name="MessagePages" Type="int" />
+    <Property Name="BatchNo" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SMSSender_Backup">
+    <Key>
+      <PropertyRef Name="SMS_ID" />
+    </Key>
+    <Property Name="SMSID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SMS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Send_Date" Type="datetime" Nullable="false" />
+    <Property Name="Destination_Number" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="Returned_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Returned_Message" Type="varchar" MaxLength="450" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Sent_Date" Type="datetime" />
+    <Property Name="Called_URL" Type="varchar(max)" />
+    <Property Name="Counter" Type="int" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="DeliveryStatus" Type="varchar" MaxLength="50" />
+    <Property Name="DeliveryDate" Type="datetime" />
+    <Property Name="MessagePages" Type="int" />
+    <Property Name="BatchNo" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SMSSender_Checker">
+    <Key>
+      <PropertyRef Name="Last_Status" />
+      <PropertyRef Name="Update_Date" />
+    </Key>
+    <Property Name="Last_Status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Update_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Special_Discount_Products">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_product" Type="int" />
+    <Property Name="Threshold" Type="int" />
+    <Property Name="Pattern" Type="varchar" MaxLength="45" />
+    <Property Name="RepeatPattern" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Created" Type="varchar" MaxLength="45" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.SQLQuery_Result_15Jan2014204508$' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SQLQuery_Result_15Jan2014204508$">
+          <Property Name="I_CUSTOMER" Type="float" />
+        </EntityType>-->
+  <EntityType Name="swift_staff_accounts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="i_account" Type="varchar" MaxLength="45" />
+    <Property Name="firstname" Type="varchar" MaxLength="45" />
+    <Property Name="lastname" Type="varchar" MaxLength="45" />
+    <Property Name="dept" Type="varchar" MaxLength="100" />
+    <Property Name="Amount" Type="real" Nullable="false" />
+    <Property Name="i_customer" Type="varchar" MaxLength="10" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="acct_type" Type="varchar" MaxLength="10" />
+    <Property Name="active" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="last_credited" Type="datetime" />
+  </EntityType>
+  <EntityType Name="swift_staff_internet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="i_account" Type="varchar" MaxLength="10" />
+    <Property Name="firstname" Type="varchar" MaxLength="45" />
+    <Property Name="lastname" Type="varchar" MaxLength="45" />
+    <Property Name="dept" Type="varchar" MaxLength="100" />
+    <Property Name="Amount" Type="float" Nullable="false" />
+    <Property Name="i_customer" Type="varchar" MaxLength="10" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="next_due_date" Type="datetime" />
+    <Property Name="active" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="SwiftDay_Subscribers">
+    <Key>
+      <PropertyRef Name="SubscriberID" />
+    </Key>
+    <Property Name="SubscriberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="i_product" Type="int" />
+    <Property Name="balance" Type="real" />
+    <Property Name="remDays" Type="int" />
+    <Property Name="change_date" Type="datetime" />
+    <Property Name="ipaddress" Type="varchar" MaxLength="45" />
+    <Property Name="status" Type="int" />
+    <Property Name="OnlineID" Type="varchar" MaxLength="45" />
+    <Property Name="SDChanged" Type="int" />
+    <Property Name="paymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_paymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SwiftISWErrorLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentID" Type="int" />
+    <Property Name="ErrorCode" Type="int" />
+    <Property Name="Description" Type="varchar" MaxLength="5000" />
+    <Property Name="RequestDate" Type="datetime2" Precision="7" />
+    <Property Name="PaymentType" Type="varchar" MaxLength="100" />
+    <Property Name="SuccessAmount" Type="real" />
+    <Property Name="SuccessDiscount" Type="real" />
+    <Property Name="CRMSuccess" Type="int" />
+    <Property Name="CRMErrorDesc" Type="varchar(max)" />
+    <Property Name="SwiftPaymentDate" Type="datetime2" Precision="7" />
+  </EntityType>
+  <EntityType Name="SwiftISWFailedPayments">
+    <Key>
+      <PropertyRef Name="FailedID" />
+    </Key>
+    <Property Name="FailedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="XMLContent" Type="varchar" MaxLength="5000" />
+    <Property Name="RequestDate" Type="varchar" MaxLength="45" />
+    <Property Name="Status" Type="int" />
+    <Property Name="PaymentID" Type="int" />
+    <Property Name="DateCredited" Type="datetime" />
+    <Property Name="ErrorMessage" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="SwiftISWPayment">
+    <Key>
+      <PropertyRef Name="PaymentLogId" />
+      <PropertyRef Name="Partner" />
+    </Key>
+    <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentLogId" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CustReference" Type="int" />
+    <Property Name="AlternateCustReference" Type="varchar" MaxLength="45" />
+    <Property Name="Amount" Type="real" />
+    <Property Name="PaymentMethod" Type="varchar" MaxLength="45" />
+    <Property Name="PaymentReference" Type="varchar" MaxLength="250" />
+    <Property Name="TerminalId" Type="varchar" MaxLength="100" />
+    <Property Name="ChannelName" Type="varchar" MaxLength="100" />
+    <Property Name="Location" Type="varchar" MaxLength="500" />
+    <Property Name="ISWPaymentDate" Type="datetime2" Precision="7" />
+    <Property Name="PaymentDate" Type="varchar" MaxLength="50" />
+    <Property Name="SettlementDate" Type="datetime2" Precision="7" />
+    <Property Name="InstitutionId" Type="varchar" MaxLength="50" />
+    <Property Name="InstitutionName" Type="varchar" MaxLength="100" />
+    <Property Name="BranchName" Type="varchar" MaxLength="200" />
+    <Property Name="BankName" Type="varchar" MaxLength="200" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="200" />
+    <Property Name="OtherCustomerInfo" Type="varchar" MaxLength="500" />
+    <Property Name="ReceiptNo" Type="varchar" MaxLength="100" />
+    <Property Name="CollectionsAccount" Type="varchar" MaxLength="45" />
+    <Property Name="BankCode" Type="varchar" MaxLength="45" />
+    <Property Name="CustomerAddress" Type="varchar" MaxLength="500" />
+    <Property Name="CustomerPhoneNumber" Type="varchar" MaxLength="100" />
+    <Property Name="DepositorName" Type="varchar" MaxLength="200" />
+    <Property Name="DepositSlipNumber" Type="varchar" MaxLength="100" />
+    <Property Name="PaymentCurrency" Type="varchar" MaxLength="45" />
+    <Property Name="RequestDate" Type="datetime2" Precision="7" />
+    <Property Name="IsReversal" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="ReversalDate" Type="datetime2" Precision="7" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ErrorDesc" Type="varchar(max)" />
+    <Property Name="SuccessAmount" Type="real" />
+    <Property Name="SuccessDiscount" Type="real" />
+    <Property Name="CRMSuccess" Type="int" />
+    <Property Name="CRMErrorDesc" Type="varchar(max)" />
+    <Property Name="SwiftPaymentDate" Type="datetime2" Precision="7" />
+    <Property Name="cXDR" Type="varchar" MaxLength="45" />
+    <Property Name="aXDR" Type="varchar" MaxLength="45" />
+    <Property Name="accountDets" Type="varchar" MaxLength="1000" />
+    <Property Name="Partner" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="BillingUpdated" Type="int" />
+    <Property Name="i_account" Type="int" />
+    <Property Name="i_product" Type="int" />
+    <Property Name="macAddress" Type="varchar" MaxLength="50" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" />
+    <Property Name="paymentUID" Type="varchar" MaxLength="100" />
+    <Property Name="R_paymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+    <Property Name="DiscountAmount" Type="float" />
+    <Property Name="AllocationEffectiveDate" Type="datetime" />
+    <Property Name="AllocationExpirationDate" Type="datetime" />
+    <Property Name="AllocatedAmount" Type="float" />
+    <Property Name="Requeried" Type="int" />
+    <Property Name="Months" Type="int" />
+    <Property Name="IncentiveAmount" Type="float" />
+    <Property Name="ServerIP" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SwiftISWPayment_Codes">
+    <Key>
+      <PropertyRef Name="Partner" />
+      <PropertyRef Name="Subscription" />
+      <PropertyRef Name="Accessory" />
+      <PropertyRef Name="TopUp" />
+    </Key>
+    <Property Name="Partner" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Subscription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Accessory" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TopUp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SwiftISWPaymentItems">
+    <Key>
+      <PropertyRef Name="PaymentItemID" />
+    </Key>
+    <Property Name="PaymentItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentID" Type="int" />
+    <Property Name="ItemName" Type="varchar" MaxLength="100" />
+    <Property Name="ItemCode" Type="varchar" MaxLength="45" />
+    <Property Name="ItemAmount" Type="real" />
+    <Property Name="BillingUpdated" Type="int" />
+  </EntityType>
+  <EntityType Name="SwiftISWRequeryLogs">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CallTime" Type="datetime" />
+    <Property Name="SentDate" Type="datetime" />
+    <Property Name="ResponseCode" Type="varchar" MaxLength="45" />
+    <Property Name="ResponseDesc" Type="varchar" MaxLength="500" />
+    <Property Name="ResponseCount" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.SwiftISWRequestLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SwiftISWRequestLog">
+    <Key>
+      <PropertyRef Name="LogId" />
+      <PropertyRef Name="Partner" />
+      <PropertyRef Name="IPAddress" />
+      <PropertyRef Name="RequestXML" />
+      <PropertyRef Name="CreatedOn" />
+    </Key>
+    <Property Name="LogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Partner" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RequestXML" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SystemParameters">
+    <Key>
+      <PropertyRef Name="Server" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ParameterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Server" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Value" Type="varchar(max)" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_ModemName">
+    <Key>
+      <PropertyRef Name="i_account" />
+    </Key>
+    <Property Name="i_account" Type="int" Nullable="false" />
+    <Property Name="customer_id" Type="int" Nullable="false" />
+    <Property Name="productName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="modemName" Type="varchar" MaxLength="50" />
+    <Property Name="dateCreated" Type="date" />
+  </EntityType>
+  <EntityType Name="TermsandConditionsResponses">
+    <Key>
+      <PropertyRef Name="TermsID" />
+    </Key>
+    <Property Name="TermsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="Response" Type="int" />
+    <Property Name="DateResponded" Type="datetime" />
+    <Property Name="Source" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Timer_Reminders">
+    <Key>
+      <PropertyRef Name="i_customer" />
+      <PropertyRef Name="MAC" />
+    </Key>
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="MAC" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Daily1" Type="datetime" />
+    <Property Name="Daily2" Type="datetime" />
+    <Property Name="Daily3" Type="datetime" />
+    <Property Name="Volume1" Type="datetime" />
+    <Property Name="Volume2" Type="datetime" />
+    <Property Name="Volume3" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TransactionHistory">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="VoucherID" Type="int" />
+    <Property Name="EntryDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="OnlineID" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.UnmeritedBonusesReview_AllEnjoyed' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="UnmeritedBonusesReview_AllEnjoyed">
+          <Property Name="CustomerID" Type="float" />
+          <Property Name="AllocatedAmount" Type="float" />
+        </EntityType>-->
+  <EntityType Name="voip_plan_mapping">
+    <Key>
+      <PropertyRef Name="voip_plan_mapping_id" />
+    </Key>
+    <Property Name="voip_plan_mapping_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="old_product" Type="int" />
+    <Property Name="new_product" Type="int" />
+    <Property Name="new_product_name" Type="varchar" MaxLength="45" />
+    <Property Name="voip_product" Type="int" />
+    <Property Name="entrydate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="VOIPRelease_Reminders">
+    <Key>
+      <PropertyRef Name="i_customer" />
+      <PropertyRef Name="i_account" />
+    </Key>
+    <Property Name="i_customer" Type="int" Nullable="false" />
+    <Property Name="i_account" Type="int" Nullable="false" />
+    <Property Name="NotificationDay1_Date" Type="datetime" />
+    <Property Name="NotificationDay2_Date" Type="datetime" />
+    <Property Name="NotificationDay3_Date" Type="datetime" />
+    <Property Name="Termination_Date" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'swift_utility.dbo.voucherissue' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="voucherissue">
+          <Property Name="sn" Type="int" />
+        </EntityType>-->
+  <EntityType Name="Vouchers">
+    <Key>
+      <PropertyRef Name="VoucherID" />
+    </Key>
+    <Property Name="VoucherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Voucher" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Value" Type="real" Nullable="false" />
+    <Property Name="Batch_ID" Type="int" Nullable="false" />
+    <Property Name="EntryDate" Type="datetime" Nullable="false" />
+    <Property Name="Purchased" Type="int" />
+    <Property Name="PurchasedBy" Type="varchar" MaxLength="50" />
+    <Property Name="PurchaseOnlineID" Type="varchar" MaxLength="50" />
+    <Property Name="PurchasedDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.vwCheck_for_Vouchers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwCheck_for_Vouchers">
+    <Key>
+      <PropertyRef Name="VoucherID" />
+      <PropertyRef Name="Voucher" />
+      <PropertyRef Name="Value" />
+    </Key>
+    <Property Name="VoucherID" Type="int" Nullable="false" />
+    <Property Name="Voucher" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Value" Type="real" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="IsUsed" Type="int" />
+    <Property Name="DateUsed" Type="datetime2" Precision="7" />
+    <Property Name="WebPaymentID" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.vwCustomersEmailMessageLogs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwCustomersEmailMessageLogs">
+    <Key>
+      <PropertyRef Name="EmailID" />
+    </Key>
+    <Property Name="EmailID" Type="int" Nullable="false" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="Subject" Type="varchar" MaxLength="500" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="Message" Type="varchar(max)" />
+    <Property Name="Send_Date" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Sent_Date" Type="datetime" />
+    <Property Name="eReceiptNo" Type="varchar" MaxLength="50" />
+    <Property Name="ErrorMessage" Type="varchar" MaxLength="2000" />
+    <Property Name="FileName" Type="varchar" MaxLength="1000" />
+    <Property Name="BatchNo" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+    <Property Name="MailFrom" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.vwonlinepayment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwonlinepayment">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Gateway" />
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="Amount" />
+      <PropertyRef Name="Product" />
+      <PropertyRef Name="EntryDate" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Gateway" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="real" Nullable="false" />
+    <Property Name="Product" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Account" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="ResponseCode" Type="varchar" MaxLength="45" />
+    <Property Name="ResponseDesc" Type="varchar" MaxLength="500" />
+    <Property Name="EntryDate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="New_Online_User" Type="varchar" MaxLength="345" />
+    <Property Name="Card_Number" Type="varchar" MaxLength="500" />
+    <Property Name="Returned_Reference" Type="varchar" MaxLength="500" />
+    <Property Name="IPAddress" Type="varchar" MaxLength="45" />
+    <Property Name="BillingUpdated" Type="int" />
+    <Property Name="BillingTransID" Type="varchar" MaxLength="45" />
+    <Property Name="Charge_TransID" Type="varchar" MaxLength="45" />
+    <Property Name="Allocation_TransID" Type="varchar" MaxLength="45" />
+    <Property Name="Step_Status" Type="varchar" MaxLength="500" />
+    <Property Name="ConfirmCalled" Type="int" />
+    <Property Name="RequeryCount" Type="int" />
+    <Property Name="RequerySource" Type="varchar" MaxLength="500" />
+    <Property Name="OrderID" Type="varchar" MaxLength="45" />
+    <Property Name="SessionID" Type="varchar" MaxLength="45" />
+    <Property Name="PayURL" Type="varchar" MaxLength="400" />
+    <Property Name="PromoCode" Type="varchar" MaxLength="45" />
+    <Property Name="PromoPercent" Type="real" />
+    <Property Name="ModemType" Type="varchar" MaxLength="45" />
+    <Property Name="Reg_Encoded_Password" Type="varchar" MaxLength="2000" />
+    <Property Name="Gateway_Returned_Amount" Type="float" />
+    <Property Name="Email" Type="varchar" MaxLength="500" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="TradeIn" Type="int" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" />
+    <Property Name="aPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="cPaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_apaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_cpaymentUID" Type="varchar" MaxLength="50" />
+    <Property Name="R_Amount" Type="float" />
+    <Property Name="R_Status" Type="int" />
+    <Property Name="R_Date" Type="datetime" />
+    <Property Name="DiscountAmount" Type="float" />
+    <Property Name="AllocationEffectiveDate" Type="datetime" />
+    <Property Name="AllocationExpirationDate" Type="datetime" />
+    <Property Name="Months" Type="int" />
+    <Property Name="IncentiveAmount" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'swift_utility.dbo.vwSMSSender' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwSMSSender">
+    <Key>
+      <PropertyRef Name="SMSID" />
+      <PropertyRef Name="SMS_ID" />
+      <PropertyRef Name="Send_Date" />
+      <PropertyRef Name="Destination_Number" />
+      <PropertyRef Name="Message" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="SMSID" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SMS_ID" Type="int" Nullable="false" />
+    <Property Name="Send_Date" Type="datetime" Nullable="false" />
+    <Property Name="Destination_Number" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="Returned_Code" Type="varchar" MaxLength="50" />
+    <Property Name="Returned_Message" Type="varchar" MaxLength="450" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Sent_Date" Type="datetime" />
+    <Property Name="Called_URL" Type="varchar(max)" />
+    <Property Name="Counter" Type="int" />
+    <Property Name="i_customer" Type="int" />
+    <Property Name="DeliveryStatus" Type="varchar" MaxLength="50" />
+    <Property Name="DeliveryDate" Type="datetime" />
+    <Property Name="MessagePages" Type="int" />
+    <Property Name="BatchNo" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <Function Name="CCPoratal_LoadPostponementbyDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="days" Type="int" Mode="In" />
+    <Parameter Name="exactdate" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="fetch_ExpiredKYC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="customerid" Type="int" Mode="In" />
+    <Parameter Name="days" Type="int" Mode="In" />
+    <Parameter Name="accumulate" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LoadPostponementbyDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="days" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PortaOneTransactionNotes_FormUID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="uid" Type="varchar" Mode="In" />
+    <Parameter Name="paymentCategory" Type="varchar" Mode="In" />
+    <Parameter Name="paymentType" Type="varchar" Mode="In" />
+    <Parameter Name="source" Type="varchar" Mode="In" />
+    <Parameter Name="partner" Type="varchar" Mode="In" />
+    <Parameter Name="transID" Type="varchar" Mode="In" />
+    <Parameter Name="parentID" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="swift_utilityModelStoreContainer">
+    <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Auto_Allocate_Subscribers" EntityType="Self.Auto_Allocate_Subscribers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AutoAllocation_Transactions" EntityType="Self.AutoAllocation_Transactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Batch" EntityType="Self.Batch" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BiometricsBonus" EntityType="Self.BiometricsBonus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bonuses" EntityType="Self.Bonuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BulkSMS_EmailLogs" EntityType="Self.BulkSMS_EmailLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BulkVoucherDenominations" EntityType="Self.BulkVoucherDenominations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BulkVoucherFulfilments" EntityType="Self.BulkVoucherFulfilments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BulkVoucherPurchasers" EntityType="Self.BulkVoucherPurchasers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="coveragemap" EntityType="Self.coveragemap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CreditAccountExtensions" EntityType="Self.CreditAccountExtensions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRMFailedPayments" EntityType="Self.CRMFailedPayments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRMLoansRepayments" EntityType="Self.CRMLoansRepayments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CrmParameters" EntityType="Self.CrmParameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CRMPayments" EntityType="Self.CRMPayments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_BlockUnblock" EntityType="Self.Customer_BlockUnblock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_Reminders" EntityType="Self.Customer_Reminders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerEmailChanges" EntityType="Self.CustomerEmailChanges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers_LastPayments" EntityType="Self.Customers_LastPayments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customers_lock" EntityType="Self.customers_lock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomersEmailMessageLogs" EntityType="Self.CustomersEmailMessageLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomersEmailMessageLogs_BackUp" EntityType="Self.CustomersEmailMessageLogs_BackUp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DebitAccountsNotifications" EntityType="Self.DebitAccountsNotifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpirationDate_InvalidExtensions" EntityType="Self.ExpirationDate_InvalidExtensions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FailedPayments_Feb1to52013" EntityType="Self.FailedPayments_Feb1to52013" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FailedPortaOneTransactionNotes" EntityType="Self.FailedPortaOneTransactionNotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HotSpotPayments" EntityType="Self.HotSpotPayments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InternetTest_Feedback" EntityType="Self.InternetTest_Feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InterSwitch_Data" EntityType="Self.InterSwitch_Data" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Interswitch_Paydirect" EntityType="Self.Interswitch_Paydirect" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IrokoTVCode_Exceptions" EntityType="Self.IrokoTVCode_Exceptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IrokoTVCodes" EntityType="Self.IrokoTVCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IVRPayments" EntityType="Self.IVRPayments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KYCBlockUnbock" EntityType="Self.KYCBlockUnbock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KYCDeferments" EntityType="Self.KYCDeferments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KYCUploads" EntityType="Self.KYCUploads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LTEFUTFeedback" EntityType="Self.LTEFUTFeedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mobilepayment" EntityType="Self.mobilepayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModemCosts" EntityType="Self.ModemCosts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OnlineCustomerEntries" EntityType="Self.OnlineCustomerEntries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="onlinepayment" EntityType="Self.onlinepayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="onlinepayment_backup" EntityType="Self.onlinepayment_backup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OnlineSessions" EntityType="Self.OnlineSessions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PartnerLogins" EntityType="Self.PartnerLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pops" EntityType="Self.pops" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pops-old" EntityType="Self.pops-old" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PortaOneQueries" EntityType="Self.PortaOneQueries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PortaOneSessions" EntityType="Self.PortaOneSessions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PortaOneTransactionNotes" EntityType="Self.PortaOneTransactionNotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductIdealFors" EntityType="Self.ProductIdealFors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductTimings" EntityType="Self.ProductTimings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PromoDetails" EntityType="Self.PromoDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PromoPartners" EntityType="Self.PromoPartners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PromoPlansExclusionList" EntityType="Self.PromoPlansExclusionList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReceiptDetails" EntityType="Self.ReceiptDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReceiptNumbers" EntityType="Self.ReceiptNumbers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Referrals" EntityType="Self.Referrals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServicePlanChanges" EntityType="Self.ServicePlanChanges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceSchedules" EntityType="Self.ServiceSchedules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SignUp_Exceptionals" EntityType="Self.SignUp_Exceptionals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMSSender" EntityType="Self.SMSSender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMSSender_Backup" EntityType="Self.SMSSender_Backup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMSSender_Checker" EntityType="Self.SMSSender_Checker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Special_Discount_Products" EntityType="Self.Special_Discount_Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="swift_staff_accounts" EntityType="Self.swift_staff_accounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="swift_staff_internet" EntityType="Self.swift_staff_internet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SwiftDay_Subscribers" EntityType="Self.SwiftDay_Subscribers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SwiftISWErrorLog" EntityType="Self.SwiftISWErrorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SwiftISWFailedPayments" EntityType="Self.SwiftISWFailedPayments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SwiftISWPayment" EntityType="Self.SwiftISWPayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SwiftISWPayment_Codes" EntityType="Self.SwiftISWPayment_Codes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SwiftISWPaymentItems" EntityType="Self.SwiftISWPaymentItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SwiftISWRequeryLogs" EntityType="Self.SwiftISWRequeryLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemParameters" EntityType="Self.SystemParameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ModemName" EntityType="Self.tbl_ModemName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TermsandConditionsResponses" EntityType="Self.TermsandConditionsResponses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Timer_Reminders" EntityType="Self.Timer_Reminders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransactionHistory" EntityType="Self.TransactionHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="voip_plan_mapping" EntityType="Self.voip_plan_mapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VOIPRelease_Reminders" EntityType="Self.VOIPRelease_Reminders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vouchers" EntityType="Self.Vouchers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BiometricsBonusService" EntityType="Self.BiometricsBonusService" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BiometricsBonusService].[ID] AS [ID], 
+    [BiometricsBonusService].[PaymentTable] AS [PaymentTable], 
+    [BiometricsBonusService].[StartRow] AS [StartRow], 
+    [BiometricsBonusService].[EndRow] AS [EndRow], 
+    [BiometricsBonusService].[LastRun] AS [LastRun]
+    FROM [dbo].[BiometricsBonusService] AS [BiometricsBonusService]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DebitAccountsEmailAlertsChecks" EntityType="Self.DebitAccountsEmailAlertsChecks" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DebitAccountsEmailAlertsChecks].[RandomAlertID] AS [RandomAlertID], 
+    [DebitAccountsEmailAlertsChecks].[RunTime] AS [RunTime], 
+    [DebitAccountsEmailAlertsChecks].[StartTime] AS [StartTime], 
+    [DebitAccountsEmailAlertsChecks].[EndTime] AS [EndTime]
+    FROM [dbo].[DebitAccountsEmailAlertsChecks] AS [DebitAccountsEmailAlertsChecks]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="HotlinedFundedAccountsSessionExtensions" EntityType="Self.HotlinedFundedAccountsSessionExtensions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [HotlinedFundedAccountsSessionExtensions].[i_customer] AS [i_customer], 
+    [HotlinedFundedAccountsSessionExtensions].[macaddress] AS [macaddress], 
+    [HotlinedFundedAccountsSessionExtensions].[i_account] AS [i_account], 
+    [HotlinedFundedAccountsSessionExtensions].[ExtensionDate] AS [ExtensionDate], 
+    [HotlinedFundedAccountsSessionExtensions].[i_active_callleg] AS [i_active_callleg], 
+    [HotlinedFundedAccountsSessionExtensions].[Sessions] AS [Sessions]
+    FROM [dbo].[HotlinedFundedAccountsSessionExtensions] AS [HotlinedFundedAccountsSessionExtensions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="KYCRejectReasons" EntityType="Self.KYCRejectReasons" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [KYCRejectReasons].[Reason] AS [Reason], 
+    [KYCRejectReasons].[Status] AS [Status]
+    FROM [dbo].[KYCRejectReasons] AS [KYCRejectReasons]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LogonServersLogs" EntityType="Self.LogonServersLogs" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [LogonServersLogs].[LogID] AS [LogID], 
+    [LogonServersLogs].[LastServerUsed] AS [LastServerUsed], 
+    [LogonServersLogs].[LogDate] AS [LogDate], 
+    [LogonServersLogs].[Fetched] AS [Fetched]
+    FROM [dbo].[LogonServersLogs] AS [LogonServersLogs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Products" EntityType="Self.Products" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Products].[i_product] AS [i_product], 
+    [Products].[name] AS [name], 
+    [Products].[info_url] AS [info_url], 
+    [Products].[Maintenance_Fee] AS [Maintenance_Fee], 
+    [Products].[DateLastUpdated] AS [DateLastUpdated], 
+    [Products].[Cost] AS [Cost]
+    FROM [dbo].[Products] AS [Products]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Products_View_Mapping" EntityType="Self.Products_View_Mapping" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Products_View_Mapping].[Category1] AS [Category1], 
+    [Products_View_Mapping].[Category2] AS [Category2], 
+    [Products_View_Mapping].[isMapped] AS [isMapped]
+    FROM [dbo].[Products_View_Mapping] AS [Products_View_Mapping]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SIMSInventory" EntityType="Self.SIMSInventory" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SIMSInventory].[ICCID] AS [ICCID], 
+    [SIMSInventory].[IMSI] AS [IMSI], 
+    [SIMSInventory].[MSISDN] AS [MSISDN], 
+    [SIMSInventory].[ADM] AS [ADM], 
+    [SIMSInventory].[PIN1] AS [PIN1], 
+    [SIMSInventory].[PIN2] AS [PIN2], 
+    [SIMSInventory].[PUK1] AS [PUK1], 
+    [SIMSInventory].[PUK2] AS [PUK2], 
+    [SIMSInventory].[EKI] AS [EKI], 
+    [SIMSInventory].[EOPC] AS [EOPC], 
+    [SIMSInventory].[i_customer] AS [i_customer], 
+    [SIMSInventory].[DateAssigned] AS [DateAssigned], 
+    [SIMSInventory].[Source] AS [Source], 
+    [SIMSInventory].[SourceID] AS [SourceID], 
+    [SIMSInventory].[ModemMac] AS [ModemMac], 
+    [SIMSInventory].[rMSISDN] AS [rMSISDN], 
+    [SIMSInventory].[Username] AS [Username]
+    FROM [dbo].[SIMSInventory] AS [SIMSInventory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SwiftISWRequestLog" EntityType="Self.SwiftISWRequestLog" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SwiftISWRequestLog].[LogId] AS [LogId], 
+    [SwiftISWRequestLog].[Partner] AS [Partner], 
+    [SwiftISWRequestLog].[IPAddress] AS [IPAddress], 
+    [SwiftISWRequestLog].[RequestXML] AS [RequestXML], 
+    [SwiftISWRequestLog].[CreatedOn] AS [CreatedOn], 
+    [SwiftISWRequestLog].[CreatedBy] AS [CreatedBy]
+    FROM [dbo].[SwiftISWRequestLog] AS [SwiftISWRequestLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwCheck_for_Vouchers" EntityType="Self.vwCheck_for_Vouchers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwCheck_for_Vouchers].[VoucherID] AS [VoucherID], 
+    [vwCheck_for_Vouchers].[Voucher] AS [Voucher], 
+    [vwCheck_for_Vouchers].[Value] AS [Value], 
+    [vwCheck_for_Vouchers].[CustomerID] AS [CustomerID], 
+    [vwCheck_for_Vouchers].[IsUsed] AS [IsUsed], 
+    [vwCheck_for_Vouchers].[DateUsed] AS [DateUsed], 
+    [vwCheck_for_Vouchers].[WebPaymentID] AS [WebPaymentID]
+    FROM [dbo].[vwCheck_for_Vouchers] AS [vwCheck_for_Vouchers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwCustomersEmailMessageLogs" EntityType="Self.vwCustomersEmailMessageLogs" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwCustomersEmailMessageLogs].[EmailID] AS [EmailID], 
+    [vwCustomersEmailMessageLogs].[i_customer] AS [i_customer], 
+    [vwCustomersEmailMessageLogs].[Subject] AS [Subject], 
+    [vwCustomersEmailMessageLogs].[Email] AS [Email], 
+    [vwCustomersEmailMessageLogs].[Message] AS [Message], 
+    [vwCustomersEmailMessageLogs].[Send_Date] AS [Send_Date], 
+    [vwCustomersEmailMessageLogs].[Status] AS [Status], 
+    [vwCustomersEmailMessageLogs].[Sent_Date] AS [Sent_Date], 
+    [vwCustomersEmailMessageLogs].[eReceiptNo] AS [eReceiptNo], 
+    [vwCustomersEmailMessageLogs].[ErrorMessage] AS [ErrorMessage], 
+    [vwCustomersEmailMessageLogs].[FileName] AS [FileName], 
+    [vwCustomersEmailMessageLogs].[BatchNo] AS [BatchNo], 
+    [vwCustomersEmailMessageLogs].[CreatedBy] AS [CreatedBy], 
+    [vwCustomersEmailMessageLogs].[DateCreated] AS [DateCreated], 
+    [vwCustomersEmailMessageLogs].[MailFrom] AS [MailFrom]
+    FROM [dbo].[vwCustomersEmailMessageLogs] AS [vwCustomersEmailMessageLogs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwonlinepayment" EntityType="Self.vwonlinepayment" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwonlinepayment].[ID] AS [ID], 
+    [vwonlinepayment].[Gateway] AS [Gateway], 
+    [vwonlinepayment].[CustomerID] AS [CustomerID], 
+    [vwonlinepayment].[Amount] AS [Amount], 
+    [vwonlinepayment].[Product] AS [Product], 
+    [vwonlinepayment].[Account] AS [Account], 
+    [vwonlinepayment].[ProductID] AS [ProductID], 
+    [vwonlinepayment].[ResponseCode] AS [ResponseCode], 
+    [vwonlinepayment].[ResponseDesc] AS [ResponseDesc], 
+    [vwonlinepayment].[EntryDate] AS [EntryDate], 
+    [vwonlinepayment].[New_Online_User] AS [New_Online_User], 
+    [vwonlinepayment].[Card_Number] AS [Card_Number], 
+    [vwonlinepayment].[Returned_Reference] AS [Returned_Reference], 
+    [vwonlinepayment].[IPAddress] AS [IPAddress], 
+    [vwonlinepayment].[BillingUpdated] AS [BillingUpdated], 
+    [vwonlinepayment].[BillingTransID] AS [BillingTransID], 
+    [vwonlinepayment].[Charge_TransID] AS [Charge_TransID], 
+    [vwonlinepayment].[Allocation_TransID] AS [Allocation_TransID], 
+    [vwonlinepayment].[Step_Status] AS [Step_Status], 
+    [vwonlinepayment].[ConfirmCalled] AS [ConfirmCalled], 
+    [vwonlinepayment].[RequeryCount] AS [RequeryCount], 
+    [vwonlinepayment].[RequerySource] AS [RequerySource], 
+    [vwonlinepayment].[OrderID] AS [OrderID], 
+    [vwonlinepayment].[SessionID] AS [SessionID], 
+    [vwonlinepayment].[PayURL] AS [PayURL], 
+    [vwonlinepayment].[PromoCode] AS [PromoCode], 
+    [vwonlinepayment].[PromoPercent] AS [PromoPercent], 
+    [vwonlinepayment].[ModemType] AS [ModemType], 
+    [vwonlinepayment].[Reg_Encoded_Password] AS [Reg_Encoded_Password], 
+    [vwonlinepayment].[Gateway_Returned_Amount] AS [Gateway_Returned_Amount], 
+    [vwonlinepayment].[Email] AS [Email], 
+    [vwonlinepayment].[Telephone] AS [Telephone], 
+    [vwonlinepayment].[TradeIn] AS [TradeIn], 
+    [vwonlinepayment].[ProductName] AS [ProductName], 
+    [vwonlinepayment].[aPaymentUID] AS [aPaymentUID], 
+    [vwonlinepayment].[cPaymentUID] AS [cPaymentUID], 
+    [vwonlinepayment].[R_apaymentUID] AS [R_apaymentUID], 
+    [vwonlinepayment].[R_cpaymentUID] AS [R_cpaymentUID], 
+    [vwonlinepayment].[R_Amount] AS [R_Amount], 
+    [vwonlinepayment].[R_Status] AS [R_Status], 
+    [vwonlinepayment].[R_Date] AS [R_Date], 
+    [vwonlinepayment].[DiscountAmount] AS [DiscountAmount], 
+    [vwonlinepayment].[AllocationEffectiveDate] AS [AllocationEffectiveDate], 
+    [vwonlinepayment].[AllocationExpirationDate] AS [AllocationExpirationDate], 
+    [vwonlinepayment].[Months] AS [Months], 
+    [vwonlinepayment].[IncentiveAmount] AS [IncentiveAmount]
+    FROM [dbo].[vwonlinepayment] AS [vwonlinepayment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vwSMSSender" EntityType="Self.vwSMSSender" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwSMSSender].[SMSID] AS [SMSID], 
+    [vwSMSSender].[SMS_ID] AS [SMS_ID], 
+    [vwSMSSender].[Send_Date] AS [Send_Date], 
+    [vwSMSSender].[Destination_Number] AS [Destination_Number], 
+    [vwSMSSender].[Message] AS [Message], 
+    [vwSMSSender].[Returned_Code] AS [Returned_Code], 
+    [vwSMSSender].[Returned_Message] AS [Returned_Message], 
+    [vwSMSSender].[Status] AS [Status], 
+    [vwSMSSender].[Sent_Date] AS [Sent_Date], 
+    [vwSMSSender].[Called_URL] AS [Called_URL], 
+    [vwSMSSender].[Counter] AS [Counter], 
+    [vwSMSSender].[i_customer] AS [i_customer], 
+    [vwSMSSender].[DeliveryStatus] AS [DeliveryStatus], 
+    [vwSMSSender].[DeliveryDate] AS [DeliveryDate], 
+    [vwSMSSender].[MessagePages] AS [MessagePages], 
+    [vwSMSSender].[BatchNo] AS [BatchNo], 
+    [vwSMSSender].[CreatedBy] AS [CreatedBy], 
+    [vwSMSSender].[DateCreated] AS [DateCreated]
+    FROM [dbo].[vwSMSSender] AS [vwSMSSender]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

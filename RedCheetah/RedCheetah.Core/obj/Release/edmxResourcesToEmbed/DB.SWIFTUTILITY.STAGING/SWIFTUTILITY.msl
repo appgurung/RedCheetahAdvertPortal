@@ -1,0 +1,1925 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="swift_utilityModelStoreContainer" CdmEntityContainer="SwiftUtilityEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="swift_utilityModel.Account">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="billing_model" ColumnName="billing_model" />
+          <ScalarProperty Name="activation_date" ColumnName="activation_date" />
+          <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+          <ScalarProperty Name="blocked" ColumnName="blocked" />
+          <ScalarProperty Name="last_usage" ColumnName="last_usage" />
+          <ScalarProperty Name="first_usage" ColumnName="first_usage" />
+          <ScalarProperty Name="credit_limit" ColumnName="credit_limit" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="i_subscriber" ColumnName="i_subscriber" />
+          <ScalarProperty Name="bill_status" ColumnName="bill_status" />
+          <ScalarProperty Name="i_master_account" ColumnName="i_master_account" />
+          <ScalarProperty Name="subscriber_email" ColumnName="subscriber_email" />
+          <ScalarProperty Name="batch_name" ColumnName="batch_name" />
+          <ScalarProperty Name="baddr1" ColumnName="baddr1" />
+          <ScalarProperty Name="baddr2" ColumnName="baddr2" />
+          <ScalarProperty Name="baddr3" ColumnName="baddr3" />
+          <ScalarProperty Name="baddr4" ColumnName="baddr4" />
+          <ScalarProperty Name="baddr5" ColumnName="baddr5" />
+          <ScalarProperty Name="bcc" ColumnName="bcc" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="cont1" ColumnName="cont1" />
+          <ScalarProperty Name="cont2" ColumnName="cont2" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="faxnum" ColumnName="faxnum" />
+          <ScalarProperty Name="last_recharge" ColumnName="last_recharge" />
+          <ScalarProperty Name="life_time" ColumnName="life_time" />
+          <ScalarProperty Name="mac" ColumnName="mac" />
+          <ScalarProperty Name="midinit" ColumnName="midinit" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="opening_balance" ColumnName="opening_balance" />
+          <ScalarProperty Name="password_timestamp" ColumnName="password_timestamp" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zero_balance_date" ColumnName="zero_balance_date" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="DateLastUpdated" ColumnName="DateLastUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Auto_Allocate_Subscribers">
+      <EntityTypeMapping TypeName="swift_utilityModel.Auto_Allocate_Subscribers">
+        <MappingFragment StoreEntitySet="Auto_Allocate_Subscribers">
+          <ScalarProperty Name="SettingID" ColumnName="SettingID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="AutoMove" ColumnName="AutoMove" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="DateLastUpdated" ColumnName="DateLastUpdated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="DateDeleted" ColumnName="DateDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutoAllocation_Transactions">
+      <EntityTypeMapping TypeName="swift_utilityModel.AutoAllocation_Transactions">
+        <MappingFragment StoreEntitySet="AutoAllocation_Transactions">
+          <ScalarProperty Name="AllocateID" ColumnName="AllocateID" />
+          <ScalarProperty Name="AutoSettingID" ColumnName="AutoSettingID" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="OnlineID" ColumnName="OnlineID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Batches">
+      <EntityTypeMapping TypeName="swift_utilityModel.Batch">
+        <MappingFragment StoreEntitySet="Batch">
+          <ScalarProperty Name="Batch_ID" ColumnName="Batch_ID" />
+          <ScalarProperty Name="BatchName" ColumnName="BatchName" />
+          <ScalarProperty Name="NoOfVouchers" ColumnName="NoOfVouchers" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="eVoucher" ColumnName="eVoucher" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BiometricsBonus">
+      <EntityTypeMapping TypeName="swift_utilityModel.BiometricsBonu">
+        <MappingFragment StoreEntitySet="BiometricsBonus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="PaymentSource" ColumnName="PaymentSource" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+          <ScalarProperty Name="BonusType" ColumnName="BonusType" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Granted" ColumnName="Granted" />
+          <ScalarProperty Name="macAddress" ColumnName="macAddress" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="cXDR" ColumnName="cXDR" />
+          <ScalarProperty Name="aXDR" ColumnName="aXDR" />
+          <ScalarProperty Name="aPaymentUID" ColumnName="aPaymentUID" />
+          <ScalarProperty Name="cPaymentUID" ColumnName="cPaymentUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bonuses">
+      <EntityTypeMapping TypeName="swift_utilityModel.Bonus">
+        <MappingFragment StoreEntitySet="Bonuses">
+          <ScalarProperty Name="BonusID" ColumnName="BonusID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="PPlatform" ColumnName="PPlatform" />
+          <ScalarProperty Name="PRefID" ColumnName="PRefID" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="BonusAmount" ColumnName="BonusAmount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="BonusCategory" ColumnName="BonusCategory" />
+          <ScalarProperty Name="AllocatePattern" ColumnName="AllocatePattern" />
+          <ScalarProperty Name="Allocated" ColumnName="Allocated" />
+          <ScalarProperty Name="DateFirstAllocated" ColumnName="DateFirstAllocated" />
+          <ScalarProperty Name="TotalAllocatedAmount" ColumnName="TotalAllocatedAmount" />
+          <ScalarProperty Name="AllocationCount" ColumnName="AllocationCount" />
+          <ScalarProperty Name="DateLastAllocated" ColumnName="DateLastAllocated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BulkSMS_EmailLogs">
+      <EntityTypeMapping TypeName="swift_utilityModel.BulkSMS_EmailLogs">
+        <MappingFragment StoreEntitySet="BulkSMS_EmailLogs">
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="SqlString" ColumnName="SqlString" />
+          <ScalarProperty Name="BaseStations" ColumnName="BaseStations" />
+          <ScalarProperty Name="Sectors" ColumnName="Sectors" />
+          <ScalarProperty Name="BaseStationStatus" ColumnName="BaseStationStatus" />
+          <ScalarProperty Name="BaseStationAliveStatus" ColumnName="BaseStationAliveStatus" />
+          <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+          <ScalarProperty Name="EmailMessage" ColumnName="EmailMessage" />
+          <ScalarProperty Name="EmailFrom" ColumnName="EmailFrom" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="SMSContent" ColumnName="SMSContent" />
+          <ScalarProperty Name="SMSFrom" ColumnName="SMSFrom" />
+          <ScalarProperty Name="EmailStatus" ColumnName="EmailStatus" />
+          <ScalarProperty Name="SMSStatus" ColumnName="SMSStatus" />
+          <ScalarProperty Name="Date_Created" ColumnName="Date_Created" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EmailDateSent" ColumnName="EmailDateSent" />
+          <ScalarProperty Name="SMSDateSent" ColumnName="SMSDateSent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BulkVoucherDenominations">
+      <EntityTypeMapping TypeName="swift_utilityModel.BulkVoucherDenomination">
+        <MappingFragment StoreEntitySet="BulkVoucherDenominations">
+          <ScalarProperty Name="DenominationID" ColumnName="DenominationID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+          <ScalarProperty Name="MinimumCount" ColumnName="MinimumCount" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BulkVoucherFulfilments">
+      <EntityTypeMapping TypeName="swift_utilityModel.BulkVoucherFulfilment">
+        <MappingFragment StoreEntitySet="BulkVoucherFulfilments">
+          <ScalarProperty Name="BulkVoucherID" ColumnName="BulkVoucherID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="MinimumCount" ColumnName="MinimumCount" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Payable" ColumnName="Payable" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Generated" ColumnName="Generated" />
+          <ScalarProperty Name="BatchID" ColumnName="BatchID" />
+          <ScalarProperty Name="GenerationFlag" ColumnName="GenerationFlag" />
+          <ScalarProperty Name="DateGenerated" ColumnName="DateGenerated" />
+          <ScalarProperty Name="Sent" ColumnName="Sent" />
+          <ScalarProperty Name="DateSent" ColumnName="DateSent" />
+          <ScalarProperty Name="PurchaseOnlineID" ColumnName="PurchaseOnlineID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BulkVoucherPurchasers">
+      <EntityTypeMapping TypeName="swift_utilityModel.BulkVoucherPurchaser">
+        <MappingFragment StoreEntitySet="BulkVoucherPurchasers">
+          <ScalarProperty Name="DealerID" ColumnName="DealerID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coveragemaps">
+      <EntityTypeMapping TypeName="swift_utilityModel.coveragemap">
+        <MappingFragment StoreEntitySet="coveragemap">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Radius_Good" ColumnName="Radius_Good" />
+          <ScalarProperty Name="Radius_Fair" ColumnName="Radius_Fair" />
+          <ScalarProperty Name="Radius_Poor" ColumnName="Radius_Poor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreditAccountExtensions">
+      <EntityTypeMapping TypeName="swift_utilityModel.CreditAccountExtension">
+        <MappingFragment StoreEntitySet="CreditAccountExtensions">
+          <ScalarProperty Name="AccountExtensionID" ColumnName="AccountExtensionID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="txnref" ColumnName="txnref" />
+          <ScalarProperty Name="paymentdate" ColumnName="paymentdate" />
+          <ScalarProperty Name="StatusMsg" ColumnName="StatusMsg" />
+          <ScalarProperty Name="dateimplemented" ColumnName="dateimplemented" />
+          <ScalarProperty Name="days" ColumnName="days" />
+          <ScalarProperty Name="charge" ColumnName="charge" />
+          <ScalarProperty Name="process" ColumnName="process" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AccountIDs" ColumnName="AccountIDs" />
+          <ScalarProperty Name="R_paymentUID" ColumnName="R_paymentUID" />
+          <ScalarProperty Name="R_AccountIDs" ColumnName="R_AccountIDs" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRMFailedPayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.CRMFailedPayment">
+        <MappingFragment StoreEntitySet="CRMFailedPayments">
+          <ScalarProperty Name="FailureID" ColumnName="FailureID" />
+          <ScalarProperty Name="subscriber_id" ColumnName="subscriber_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="transtype" ColumnName="transtype" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="gway" ColumnName="gway" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="FailureError" ColumnName="FailureError" />
+          <ScalarProperty Name="Retried" ColumnName="Retried" />
+          <ScalarProperty Name="RetryCount" ColumnName="RetryCount" />
+          <ScalarProperty Name="LastRetriedDate" ColumnName="LastRetriedDate" />
+          <ScalarProperty Name="Success" ColumnName="Success" />
+          <ScalarProperty Name="SuccessDate" ColumnName="SuccessDate" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="TransTable" ColumnName="TransTable" />
+          <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRMLoansRepayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.CRMLoansRepayment">
+        <MappingFragment StoreEntitySet="CRMLoansRepayments">
+          <ScalarProperty Name="LoanRepaymentID" ColumnName="LoanRepaymentID" />
+          <ScalarProperty Name="i_Loan" ColumnName="i_Loan" />
+          <ScalarProperty Name="PaymentSource" ColumnName="PaymentSource" />
+          <ScalarProperty Name="PaymentRef" ColumnName="PaymentRef" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrmParameters">
+      <EntityTypeMapping TypeName="swift_utilityModel.CrmParameter">
+        <MappingFragment StoreEntitySet="CrmParameters">
+          <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CRMPayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.CRMPayment">
+        <MappingFragment StoreEntitySet="CRMPayments">
+          <ScalarProperty Name="i_Loan" ColumnName="i_Loan" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="TransType" ColumnName="TransType" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Deducted" ColumnName="Deducted" />
+          <ScalarProperty Name="DateDeducted" ColumnName="DateDeducted" />
+          <ScalarProperty Name="DeductionTransID" ColumnName="DeductionTransID" />
+          <ScalarProperty Name="NoofDays" ColumnName="NoofDays" />
+          <ScalarProperty Name="cXDR" ColumnName="cXDR" />
+          <ScalarProperty Name="aXDR" ColumnName="aXDR" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="macAddress" ColumnName="macAddress" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="aPaymentUID" ColumnName="aPaymentUID" />
+          <ScalarProperty Name="cPaymentUID" ColumnName="cPaymentUID" />
+          <ScalarProperty Name="R_apaymentUID" ColumnName="R_apaymentUID" />
+          <ScalarProperty Name="R_cpaymentUID" ColumnName="R_cpaymentUID" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="BonusAmount" ColumnName="BonusAmount" />
+          <ScalarProperty Name="BonusCategory" ColumnName="BonusCategory" />
+          <ScalarProperty Name="AllocationEffectiveDate" ColumnName="AllocationEffectiveDate" />
+          <ScalarProperty Name="AllocationExpirationDate" ColumnName="AllocationExpirationDate" />
+          <ScalarProperty Name="Months" ColumnName="Months" />
+          <ScalarProperty Name="AdditionalPayment" ColumnName="AdditionalPayment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_BlockUnblock">
+      <EntityTypeMapping TypeName="swift_utilityModel.Customer_BlockUnblock">
+        <MappingFragment StoreEntitySet="Customer_BlockUnblock">
+          <ScalarProperty Name="BlockID" ColumnName="BlockID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="RemDays" ColumnName="RemDays" />
+          <ScalarProperty Name="DateBlocked" ColumnName="DateBlocked" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateUnblocked" ColumnName="DateUnblocked" />
+          <ScalarProperty Name="BlockSource" ColumnName="BlockSource" />
+          <ScalarProperty Name="BlockUsername" ColumnName="BlockUsername" />
+          <ScalarProperty Name="UnblockSource" ColumnName="UnblockSource" />
+          <ScalarProperty Name="UnblockUsername" ColumnName="UnblockUsername" />
+          <ScalarProperty Name="aXDR" ColumnName="aXDR" />
+          <ScalarProperty Name="cantOnline" ColumnName="cantOnline" />
+          <ScalarProperty Name="paymentUID" ColumnName="paymentUID" />
+          <ScalarProperty Name="R_paymentUID" ColumnName="R_paymentUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Reminders">
+      <EntityTypeMapping TypeName="swift_utilityModel.Customer_Reminders">
+        <MappingFragment StoreEntitySet="Customer_Reminders">
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="Daily1" ColumnName="Daily1" />
+          <ScalarProperty Name="Daily2" ColumnName="Daily2" />
+          <ScalarProperty Name="Daily3" ColumnName="Daily3" />
+          <ScalarProperty Name="Volume1" ColumnName="Volume1" />
+          <ScalarProperty Name="Volume2" ColumnName="Volume2" />
+          <ScalarProperty Name="Volume3" ColumnName="Volume3" />
+          <ScalarProperty Name="Monthly" ColumnName="Monthly" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerEmailChanges">
+      <EntityTypeMapping TypeName="swift_utilityModel.CustomerEmailChanx">
+        <MappingFragment StoreEntitySet="CustomerEmailChanges">
+          <ScalarProperty Name="Change_ID" ColumnName="Change_ID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="Old_Email" ColumnName="Old_Email" />
+          <ScalarProperty Name="New_Email" ColumnName="New_Email" />
+          <ScalarProperty Name="Email_UID" ColumnName="Email_UID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Validated" ColumnName="Validated" />
+          <ScalarProperty Name="DateValidated" ColumnName="DateValidated" />
+          <ScalarProperty Name="FirstLogin" ColumnName="FirstLogin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="swift_utilityModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="salutation" ColumnName="salutation" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="midinit" ColumnName="midinit" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="baddr1" ColumnName="baddr1" />
+          <ScalarProperty Name="baddr2" ColumnName="baddr2" />
+          <ScalarProperty Name="baddr3" ColumnName="baddr3" />
+          <ScalarProperty Name="baddr4" ColumnName="baddr4" />
+          <ScalarProperty Name="baddr5" ColumnName="baddr5" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone1" ColumnName="phone1" />
+          <ScalarProperty Name="phone2" ColumnName="phone2" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="creation_date" ColumnName="creation_date" />
+          <ScalarProperty Name="bill_status" ColumnName="bill_status" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="bcc" ColumnName="bcc" />
+          <ScalarProperty Name="cont1" ColumnName="cont1" />
+          <ScalarProperty Name="cont2" ColumnName="cont2" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="DateLastUpdated" ColumnName="DateLastUpdated" />
+          <ScalarProperty Name="blocked" ColumnName="blocked" />
+          <ScalarProperty Name="KYCStatus" ColumnName="KYCStatus" />
+          <ScalarProperty Name="hasStaffAcct" ColumnName="hasStaffAcct" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="homephone" ColumnName="homephone" />
+          <ScalarProperty Name="occupation" ColumnName="occupation" />
+          <ScalarProperty Name="officeaddress" ColumnName="officeaddress" />
+          <ScalarProperty Name="jobtitle" ColumnName="jobtitle" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="manager" ColumnName="manager" />
+          <ScalarProperty Name="managerphone" ColumnName="managerphone" />
+          <ScalarProperty Name="assistant" ColumnName="assistant" />
+          <ScalarProperty Name="assistantphone" ColumnName="assistantphone" />
+          <ScalarProperty Name="maritalstatus" ColumnName="maritalstatus" />
+          <ScalarProperty Name="anniversary" ColumnName="anniversary" />
+          <ScalarProperty Name="spousename" ColumnName="spousename" />
+          <ScalarProperty Name="nok" ColumnName="nok" />
+          <ScalarProperty Name="nokphone" ColumnName="nokphone" />
+          <ScalarProperty Name="nokaddress" ColumnName="nokaddress" />
+          <ScalarProperty Name="contactmethods" ColumnName="contactmethods" />
+          <ScalarProperty Name="identificationnumber" ColumnName="identificationnumber" />
+          <ScalarProperty Name="monthlyincome" ColumnName="monthlyincome" />
+          <ScalarProperty Name="favouriteinternetactivity" ColumnName="favouriteinternetactivity" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+          <ScalarProperty Name="ModemType" ColumnName="ModemType" />
+          <ScalarProperty Name="CreditLimit" ColumnName="CreditLimit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers_LastPayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.Customers_LastPayments">
+        <MappingFragment StoreEntitySet="Customers_LastPayments">
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="c_balance" ColumnName="c_balance" />
+          <ScalarProperty Name="c_payment" ColumnName="c_payment" />
+          <ScalarProperty Name="payment_date" ColumnName="payment_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers_lock">
+      <EntityTypeMapping TypeName="swift_utilityModel.customers_lock">
+        <MappingFragment StoreEntitySet="customers_lock">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="lock_status" ColumnName="lock_status" />
+          <ScalarProperty Name="eff_date" ColumnName="eff_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomersEmailMessageLogs">
+      <EntityTypeMapping TypeName="swift_utilityModel.CustomersEmailMessageLog">
+        <MappingFragment StoreEntitySet="CustomersEmailMessageLogs">
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Send_Date" ColumnName="Send_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sent_Date" ColumnName="Sent_Date" />
+          <ScalarProperty Name="eReceiptNo" ColumnName="eReceiptNo" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="MailFrom" ColumnName="MailFrom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomersEmailMessageLogs_BackUp">
+      <EntityTypeMapping TypeName="swift_utilityModel.CustomersEmailMessageLogs_BackUp">
+        <MappingFragment StoreEntitySet="CustomersEmailMessageLogs_BackUp">
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Send_Date" ColumnName="Send_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sent_Date" ColumnName="Sent_Date" />
+          <ScalarProperty Name="eReceiptNo" ColumnName="eReceiptNo" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="MailFrom" ColumnName="MailFrom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DebitAccountsNotifications">
+      <EntityTypeMapping TypeName="swift_utilityModel.DebitAccountsNotification">
+        <MappingFragment StoreEntitySet="DebitAccountsNotifications">
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="macaddress" ColumnName="macaddress" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="NotificationDate" ColumnName="NotificationDate" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="EmailMessage" ColumnName="EmailMessage" />
+          <ScalarProperty Name="SMSMessage" ColumnName="SMSMessage" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpirationDate_InvalidExtensions">
+      <EntityTypeMapping TypeName="swift_utilityModel.ExpirationDate_InvalidExtensions">
+        <MappingFragment StoreEntitySet="ExpirationDate_InvalidExtensions">
+          <ScalarProperty Name="OccurenceID" ColumnName="OccurenceID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="macAddress" ColumnName="macAddress" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="activation_date" ColumnName="activation_date" />
+          <ScalarProperty Name="expiration_date" ColumnName="expiration_date" />
+          <ScalarProperty Name="cust_balance" ColumnName="cust_balance" />
+          <ScalarProperty Name="account_balance" ColumnName="account_balance" />
+          <ScalarProperty Name="DateChecked" ColumnName="DateChecked" />
+          <ScalarProperty Name="Adjusted" ColumnName="Adjusted" />
+          <ScalarProperty Name="new_activation_date" ColumnName="new_activation_date" />
+          <ScalarProperty Name="new_expiration_date" ColumnName="new_expiration_date" />
+          <ScalarProperty Name="AdjustedBy" ColumnName="AdjustedBy" />
+          <ScalarProperty Name="AdjustedByName" ColumnName="AdjustedByName" />
+          <ScalarProperty Name="DateAdjusted" ColumnName="DateAdjusted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FailedPayments_Feb1to52013">
+      <EntityTypeMapping TypeName="swift_utilityModel.FailedPayments_Feb1to52013">
+        <MappingFragment StoreEntitySet="FailedPayments_Feb1to52013">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TransID" ColumnName="TransID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="BillingUpdated" ColumnName="BillingUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FailedPortaOneTransactionNotes">
+      <EntityTypeMapping TypeName="swift_utilityModel.FailedPortaOneTransactionNote">
+        <MappingFragment StoreEntitySet="FailedPortaOneTransactionNotes">
+          <ScalarProperty Name="FailedID" ColumnName="FailedID" />
+          <ScalarProperty Name="DescriptionLogID" ColumnName="DescriptionLogID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="credit" ColumnName="credit" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="usebalance" ColumnName="usebalance" />
+          <ScalarProperty Name="charge" ColumnName="charge" />
+          <ScalarProperty Name="billingcycle" ColumnName="billingcycle" />
+          <ScalarProperty Name="blockacct" ColumnName="blockacct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotSpotPayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.HotSpotPayment">
+        <MappingFragment StoreEntitySet="HotSpotPayments">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="aXDR" ColumnName="aXDR" />
+          <ScalarProperty Name="cXDR" ColumnName="cXDR" />
+          <ScalarProperty Name="Transtype" ColumnName="Transtype" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="VoucherPin" ColumnName="VoucherPin" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="macAddress" ColumnName="macAddress" />
+          <ScalarProperty Name="aPaymentUID" ColumnName="aPaymentUID" />
+          <ScalarProperty Name="cPaymentUID" ColumnName="cPaymentUID" />
+          <ScalarProperty Name="R_apaymentUID" ColumnName="R_apaymentUID" />
+          <ScalarProperty Name="R_cpaymentUID" ColumnName="R_cpaymentUID" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="AllocationEffectiveDate" ColumnName="AllocationEffectiveDate" />
+          <ScalarProperty Name="AllocationExpirationDate" ColumnName="AllocationExpirationDate" />
+          <ScalarProperty Name="Months" ColumnName="Months" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InternetTest_Feedback">
+      <EntityTypeMapping TypeName="swift_utilityModel.InternetTest_Feedback">
+        <MappingFragment StoreEntitySet="InternetTest_Feedback">
+          <ScalarProperty Name="FeedbackID" ColumnName="FeedbackID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Que1Radio" ColumnName="Que1Radio" />
+          <ScalarProperty Name="Que1Text" ColumnName="Que1Text" />
+          <ScalarProperty Name="Que2Radio" ColumnName="Que2Radio" />
+          <ScalarProperty Name="Que2Text" ColumnName="Que2Text" />
+          <ScalarProperty Name="Que3Radio" ColumnName="Que3Radio" />
+          <ScalarProperty Name="Que3Text" ColumnName="Que3Text" />
+          <ScalarProperty Name="Que4Radio" ColumnName="Que4Radio" />
+          <ScalarProperty Name="Que5Radio" ColumnName="Que5Radio" />
+          <ScalarProperty Name="Que6Ping1" ColumnName="Que6Ping1" />
+          <ScalarProperty Name="Que6Ping2" ColumnName="Que6Ping2" />
+          <ScalarProperty Name="Que6Ping3" ColumnName="Que6Ping3" />
+          <ScalarProperty Name="Que6Download1" ColumnName="Que6Download1" />
+          <ScalarProperty Name="Que6Download2" ColumnName="Que6Download2" />
+          <ScalarProperty Name="Que6Download3" ColumnName="Que6Download3" />
+          <ScalarProperty Name="Que6Upload1" ColumnName="Que6Upload1" />
+          <ScalarProperty Name="Que6Upload2" ColumnName="Que6Upload2" />
+          <ScalarProperty Name="Que6Upload3" ColumnName="Que6Upload3" />
+          <ScalarProperty Name="Que7Radio" ColumnName="Que7Radio" />
+          <ScalarProperty Name="Que8Text" ColumnName="Que8Text" />
+          <ScalarProperty Name="EntryIPAddress" ColumnName="EntryIPAddress" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Submitted" ColumnName="Submitted" />
+          <ScalarProperty Name="SubmissionIPAddress" ColumnName="SubmissionIPAddress" />
+          <ScalarProperty Name="SubmissionDate" ColumnName="SubmissionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterSwitch_Data">
+      <EntityTypeMapping TypeName="swift_utilityModel.InterSwitch_Data">
+        <MappingFragment StoreEntitySet="InterSwitch_Data">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Upload_Status" ColumnName="Upload_Status" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Interswitch_Paydirect">
+      <EntityTypeMapping TypeName="swift_utilityModel.Interswitch_Paydirect">
+        <MappingFragment StoreEntitySet="Interswitch_Paydirect">
+          <ScalarProperty Name="PaydirectID" ColumnName="PaydirectID" />
+          <ScalarProperty Name="subscriberid" ColumnName="subscriberid" />
+          <ScalarProperty Name="customername" ColumnName="customername" />
+          <ScalarProperty Name="servicetype" ColumnName="servicetype" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="paymentdate" ColumnName="paymentdate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cardnumber" ColumnName="cardnumber" />
+          <ScalarProperty Name="cardbank" ColumnName="cardbank" />
+          <ScalarProperty Name="TransLocation" ColumnName="TransLocation" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IrokoTVCode_Exceptions">
+      <EntityTypeMapping TypeName="swift_utilityModel.IrokoTVCode_Exceptions">
+        <MappingFragment StoreEntitySet="IrokoTVCode_Exceptions">
+          <ScalarProperty Name="IrokoCodeID" ColumnName="IrokoCodeID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="PaymentReference" ColumnName="PaymentReference" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="ServicePlanID" ColumnName="ServicePlanID" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IrokoTVCodes">
+      <EntityTypeMapping TypeName="swift_utilityModel.IrokoTVCode">
+        <MappingFragment StoreEntitySet="IrokoTVCodes">
+          <ScalarProperty Name="IrokoCodeID" ColumnName="IrokoCodeID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="DateUploaded" ColumnName="DateUploaded" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="PaymentReference" ColumnName="PaymentReference" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="ServicePlanID" ColumnName="ServicePlanID" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="DateAssigned" ColumnName="DateAssigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IVRPayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.IVRPayment">
+        <MappingFragment StoreEntitySet="IVRPayments">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="macAddress" ColumnName="macAddress" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="aXDR" ColumnName="aXDR" />
+          <ScalarProperty Name="cXDR" ColumnName="cXDR" />
+          <ScalarProperty Name="aPaymentUID" ColumnName="aPaymentUID" />
+          <ScalarProperty Name="cPaymentUID" ColumnName="cPaymentUID" />
+          <ScalarProperty Name="R_apaymentUID" ColumnName="R_apaymentUID" />
+          <ScalarProperty Name="R_cpaymentUID" ColumnName="R_cpaymentUID" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+          <ScalarProperty Name="AllocationEffectiveDate" ColumnName="AllocationEffectiveDate" />
+          <ScalarProperty Name="AllocationExpirationDate" ColumnName="AllocationExpirationDate" />
+          <ScalarProperty Name="Months" ColumnName="Months" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KYCBlockUnbocks">
+      <EntityTypeMapping TypeName="swift_utilityModel.KYCBlockUnbock">
+        <MappingFragment StoreEntitySet="KYCBlockUnbock">
+          <ScalarProperty Name="KYCBlockID" ColumnName="KYCBlockID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="DateBlocked" ColumnName="DateBlocked" />
+          <ScalarProperty Name="BlockID" ColumnName="BlockID" />
+          <ScalarProperty Name="Unblocked" ColumnName="Unblocked" />
+          <ScalarProperty Name="DateUnblocked" ColumnName="DateUnblocked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KYCDeferments">
+      <EntityTypeMapping TypeName="swift_utilityModel.KYCDeferment">
+        <MappingFragment StoreEntitySet="KYCDeferments">
+          <ScalarProperty Name="KYCDeferID" ColumnName="KYCDeferID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="DatePushed" ColumnName="DatePushed" />
+          <ScalarProperty Name="DaysDeferred" ColumnName="DaysDeferred" />
+          <ScalarProperty Name="Repushed" ColumnName="Repushed" />
+          <ScalarProperty Name="DateRepushed" ColumnName="DateRepushed" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KYCUploads">
+      <EntityTypeMapping TypeName="swift_utilityModel.KYCUpload">
+        <MappingFragment StoreEntitySet="KYCUploads">
+          <ScalarProperty Name="KYCID" ColumnName="KYCID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DoB" ColumnName="DoB" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="MiddleInitial" ColumnName="MiddleInitial" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="Prof_Occupation" ColumnName="Prof_Occupation" />
+          <ScalarProperty Name="Prof_Company" ColumnName="Prof_Company" />
+          <ScalarProperty Name="Prof_CompanyAddress" ColumnName="Prof_CompanyAddress" />
+          <ScalarProperty Name="Prof_JobTitle" ColumnName="Prof_JobTitle" />
+          <ScalarProperty Name="Prof_Department" ColumnName="Prof_Department" />
+          <ScalarProperty Name="Prof_Manager" ColumnName="Prof_Manager" />
+          <ScalarProperty Name="Prof_ManagerPhone" ColumnName="Prof_ManagerPhone" />
+          <ScalarProperty Name="Prof_Assistant" ColumnName="Prof_Assistant" />
+          <ScalarProperty Name="Prof_AssistantPhone" ColumnName="Prof_AssistantPhone" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Anniversary" ColumnName="Anniversary" />
+          <ScalarProperty Name="SpouseName" ColumnName="SpouseName" />
+          <ScalarProperty Name="NextofKin" ColumnName="NextofKin" />
+          <ScalarProperty Name="NOK_Phone" ColumnName="NOK_Phone" />
+          <ScalarProperty Name="NOK_Address" ColumnName="NOK_Address" />
+          <ScalarProperty Name="Primary_Contact" ColumnName="Primary_Contact" />
+          <ScalarProperty Name="Contact_Methods" ColumnName="Contact_Methods" />
+          <ScalarProperty Name="Identification_Number" ColumnName="Identification_Number" />
+          <ScalarProperty Name="Monthly_Income" ColumnName="Monthly_Income" />
+          <ScalarProperty Name="Favourite_Internet_Activity" ColumnName="Favourite_Internet_Activity" />
+          <ScalarProperty Name="Upload_Document_Server" ColumnName="Upload_Document_Server" />
+          <ScalarProperty Name="Upload_Document_Link1" ColumnName="Upload_Document_Link1" />
+          <ScalarProperty Name="Upload_Document_Link2" ColumnName="Upload_Document_Link2" />
+          <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+          <ScalarProperty Name="Date_Uploaded" ColumnName="Date_Uploaded" />
+          <ScalarProperty Name="Approval_Comment" ColumnName="Approval_Comment" />
+          <ScalarProperty Name="Validated_Document_Link1" ColumnName="Validated_Document_Link1" />
+          <ScalarProperty Name="Validated_Document_Link2" ColumnName="Validated_Document_Link2" />
+          <ScalarProperty Name="Date_Validated" ColumnName="Date_Validated" />
+          <ScalarProperty Name="Validated" ColumnName="Validated" />
+          <ScalarProperty Name="ValidatedBy" ColumnName="ValidatedBy" />
+          <ScalarProperty Name="Rejected" ColumnName="Rejected" />
+          <ScalarProperty Name="RejectReason" ColumnName="RejectReason" />
+          <ScalarProperty Name="Date_Rejected" ColumnName="Date_Rejected" />
+          <ScalarProperty Name="RejectedBy" ColumnName="RejectedBy" />
+          <ScalarProperty Name="CRMSuccess" ColumnName="CRMSuccess" />
+          <ScalarProperty Name="CRMSuccess_Date" ColumnName="CRMSuccess_Date" />
+          <ScalarProperty Name="BillingSuccess" ColumnName="BillingSuccess" />
+          <ScalarProperty Name="BillingSuccess_Date" ColumnName="BillingSuccess_Date" />
+          <ScalarProperty Name="Document1Success" ColumnName="Document1Success" />
+          <ScalarProperty Name="Document1Success_Date" ColumnName="Document1Success_Date" />
+          <ScalarProperty Name="Document2Success" ColumnName="Document2Success" />
+          <ScalarProperty Name="Document2Success_Date" ColumnName="Document2Success_Date" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Date_Deleted" ColumnName="Date_Deleted" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Blocked" ColumnName="Blocked" />
+          <ScalarProperty Name="DateBlocked" ColumnName="DateBlocked" />
+          <ScalarProperty Name="Unblocked" ColumnName="Unblocked" />
+          <ScalarProperty Name="DateUnbloked" ColumnName="DateUnbloked" />
+          <ScalarProperty Name="Credited" ColumnName="Credited" />
+          <ScalarProperty Name="DateCredited" ColumnName="DateCredited" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="PlatformRef" ColumnName="PlatformRef" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+          <ScalarProperty Name="PromoAmount" ColumnName="PromoAmount" />
+          <ScalarProperty Name="paymentUID" ColumnName="paymentUID" />
+          <ScalarProperty Name="R_paymentUID" ColumnName="R_paymentUID" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+          <ScalarProperty Name="FirstDate" ColumnName="FirstDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LTEFUTFeedbacks">
+      <EntityTypeMapping TypeName="swift_utilityModel.LTEFUTFeedback">
+        <MappingFragment StoreEntitySet="LTEFUTFeedback">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="Question1a" ColumnName="Question1a" />
+          <ScalarProperty Name="Question1b" ColumnName="Question1b" />
+          <ScalarProperty Name="Question2" ColumnName="Question2" />
+          <ScalarProperty Name="Question3" ColumnName="Question3" />
+          <ScalarProperty Name="Question4" ColumnName="Question4" />
+          <ScalarProperty Name="Question5a" ColumnName="Question5a" />
+          <ScalarProperty Name="Question5b" ColumnName="Question5b" />
+          <ScalarProperty Name="Question5c" ColumnName="Question5c" />
+          <ScalarProperty Name="Question6" ColumnName="Question6" />
+          <ScalarProperty Name="Question7" ColumnName="Question7" />
+          <ScalarProperty Name="Question8Ping1" ColumnName="Question8Ping1" />
+          <ScalarProperty Name="Question8Ping2" ColumnName="Question8Ping2" />
+          <ScalarProperty Name="Question8Ping3" ColumnName="Question8Ping3" />
+          <ScalarProperty Name="Question8Download1" ColumnName="Question8Download1" />
+          <ScalarProperty Name="Question8Download2" ColumnName="Question8Download2" />
+          <ScalarProperty Name="Question8Download3" ColumnName="Question8Download3" />
+          <ScalarProperty Name="Question8Upload1" ColumnName="Question8Upload1" />
+          <ScalarProperty Name="Question8Upload2" ColumnName="Question8Upload2" />
+          <ScalarProperty Name="Question8Upload3" ColumnName="Question8Upload3" />
+          <ScalarProperty Name="Question9" ColumnName="Question9" />
+          <ScalarProperty Name="Question10" ColumnName="Question10" />
+          <ScalarProperty Name="Question11" ColumnName="Question11" />
+          <ScalarProperty Name="Question12" ColumnName="Question12" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IPCreated" ColumnName="IPCreated" />
+          <ScalarProperty Name="DateLastUpdated" ColumnName="DateLastUpdated" />
+          <ScalarProperty Name="Sent" ColumnName="Sent" />
+          <ScalarProperty Name="IPSent" ColumnName="IPSent" />
+          <ScalarProperty Name="DateSent" ColumnName="DateSent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mobilepayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.mobilepayment">
+        <MappingFragment StoreEntitySet="mobilepayment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gateway" ColumnName="Gateway" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PartnerPaymentDate" ColumnName="PartnerPaymentDate" />
+          <ScalarProperty Name="PartnerReference" ColumnName="PartnerReference" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="merchantCode" ColumnName="merchantCode" />
+          <ScalarProperty Name="bankCode" ColumnName="bankCode" />
+          <ScalarProperty Name="bankName" ColumnName="bankName" />
+          <ScalarProperty Name="ipaddress" ColumnName="ipaddress" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="macAddress" ColumnName="macAddress" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="aXDR" ColumnName="aXDR" />
+          <ScalarProperty Name="cXDR" ColumnName="cXDR" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="apaymentUID" ColumnName="apaymentUID" />
+          <ScalarProperty Name="R_apaymentUID" ColumnName="R_apaymentUID" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="AllocationEffectiveDate" ColumnName="AllocationEffectiveDate" />
+          <ScalarProperty Name="AllocationExpirationDate" ColumnName="AllocationExpirationDate" />
+          <ScalarProperty Name="AllocatedAmount" ColumnName="AllocatedAmount" />
+          <ScalarProperty Name="Months" ColumnName="Months" />
+          <ScalarProperty Name="IncentiveAmount" ColumnName="IncentiveAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModemCosts">
+      <EntityTypeMapping TypeName="swift_utilityModel.ModemCost">
+        <MappingFragment StoreEntitySet="ModemCosts">
+          <ScalarProperty Name="ModemType" ColumnName="ModemType" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="DisCost" ColumnName="DisCost" />
+          <ScalarProperty Name="DisPayAmount" ColumnName="DisPayAmount" />
+          <ScalarProperty Name="DisplayOnline" ColumnName="DisplayOnline" />
+          <ScalarProperty Name="CPESeries" ColumnName="CPESeries" />
+          <ScalarProperty Name="isLTE" ColumnName="isLTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OnlineCustomerEntries">
+      <EntityTypeMapping TypeName="swift_utilityModel.OnlineCustomerEntry">
+        <MappingFragment StoreEntitySet="OnlineCustomerEntries">
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="entrydate" ColumnName="entrydate" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="onlinepayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.onlinepayment">
+        <MappingFragment StoreEntitySet="onlinepayment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gateway" ColumnName="Gateway" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+          <ScalarProperty Name="ResponseDesc" ColumnName="ResponseDesc" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="New_Online_User" ColumnName="New_Online_User" />
+          <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
+          <ScalarProperty Name="Returned_Reference" ColumnName="Returned_Reference" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="BillingUpdated" ColumnName="BillingUpdated" />
+          <ScalarProperty Name="BillingTransID" ColumnName="BillingTransID" />
+          <ScalarProperty Name="Charge_TransID" ColumnName="Charge_TransID" />
+          <ScalarProperty Name="Allocation_TransID" ColumnName="Allocation_TransID" />
+          <ScalarProperty Name="Step_Status" ColumnName="Step_Status" />
+          <ScalarProperty Name="ConfirmCalled" ColumnName="ConfirmCalled" />
+          <ScalarProperty Name="RequeryCount" ColumnName="RequeryCount" />
+          <ScalarProperty Name="RequerySource" ColumnName="RequerySource" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="PayURL" ColumnName="PayURL" />
+          <ScalarProperty Name="PromoCode" ColumnName="PromoCode" />
+          <ScalarProperty Name="PromoPercent" ColumnName="PromoPercent" />
+          <ScalarProperty Name="ModemType" ColumnName="ModemType" />
+          <ScalarProperty Name="Reg_Encoded_Password" ColumnName="Reg_Encoded_Password" />
+          <ScalarProperty Name="Gateway_Returned_Amount" ColumnName="Gateway_Returned_Amount" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="TradeIn" ColumnName="TradeIn" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="aPaymentUID" ColumnName="aPaymentUID" />
+          <ScalarProperty Name="cPaymentUID" ColumnName="cPaymentUID" />
+          <ScalarProperty Name="R_apaymentUID" ColumnName="R_apaymentUID" />
+          <ScalarProperty Name="R_cpaymentUID" ColumnName="R_cpaymentUID" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="AllocationEffectiveDate" ColumnName="AllocationEffectiveDate" />
+          <ScalarProperty Name="AllocationExpirationDate" ColumnName="AllocationExpirationDate" />
+          <ScalarProperty Name="Months" ColumnName="Months" />
+          <ScalarProperty Name="IncentiveAmount" ColumnName="IncentiveAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="onlinepayment_backup">
+      <EntityTypeMapping TypeName="swift_utilityModel.onlinepayment_backup">
+        <MappingFragment StoreEntitySet="onlinepayment_backup">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gateway" ColumnName="Gateway" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+          <ScalarProperty Name="ResponseDesc" ColumnName="ResponseDesc" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="New_Online_User" ColumnName="New_Online_User" />
+          <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
+          <ScalarProperty Name="Returned_Reference" ColumnName="Returned_Reference" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="BillingUpdated" ColumnName="BillingUpdated" />
+          <ScalarProperty Name="BillingTransID" ColumnName="BillingTransID" />
+          <ScalarProperty Name="Charge_TransID" ColumnName="Charge_TransID" />
+          <ScalarProperty Name="Allocation_TransID" ColumnName="Allocation_TransID" />
+          <ScalarProperty Name="Step_Status" ColumnName="Step_Status" />
+          <ScalarProperty Name="ConfirmCalled" ColumnName="ConfirmCalled" />
+          <ScalarProperty Name="RequeryCount" ColumnName="RequeryCount" />
+          <ScalarProperty Name="RequerySource" ColumnName="RequerySource" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="PayURL" ColumnName="PayURL" />
+          <ScalarProperty Name="PromoCode" ColumnName="PromoCode" />
+          <ScalarProperty Name="PromoPercent" ColumnName="PromoPercent" />
+          <ScalarProperty Name="ModemType" ColumnName="ModemType" />
+          <ScalarProperty Name="Reg_Encoded_Password" ColumnName="Reg_Encoded_Password" />
+          <ScalarProperty Name="Gateway_Returned_Amount" ColumnName="Gateway_Returned_Amount" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="TradeIn" ColumnName="TradeIn" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="aPaymentUID" ColumnName="aPaymentUID" />
+          <ScalarProperty Name="cPaymentUID" ColumnName="cPaymentUID" />
+          <ScalarProperty Name="R_apaymentUID" ColumnName="R_apaymentUID" />
+          <ScalarProperty Name="R_cpaymentUID" ColumnName="R_cpaymentUID" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="AllocationEffectiveDate" ColumnName="AllocationEffectiveDate" />
+          <ScalarProperty Name="AllocationExpirationDate" ColumnName="AllocationExpirationDate" />
+          <ScalarProperty Name="Months" ColumnName="Months" />
+          <ScalarProperty Name="IncentiveAmount" ColumnName="IncentiveAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OnlineSessions">
+      <EntityTypeMapping TypeName="swift_utilityModel.OnlineSession">
+        <MappingFragment StoreEntitySet="OnlineSessions">
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="i_Customer" ColumnName="i_Customer" />
+          <ScalarProperty Name="Session_Start" ColumnName="Session_Start" />
+          <ScalarProperty Name="Closed" ColumnName="Closed" />
+          <ScalarProperty Name="Session_Ref" ColumnName="Session_Ref" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerLogins">
+      <EntityTypeMapping TypeName="swift_utilityModel.PartnerLogin">
+        <MappingFragment StoreEntitySet="PartnerLogins">
+          <ScalarProperty Name="PartnerID" ColumnName="PartnerID" />
+          <ScalarProperty Name="Partner_Name" ColumnName="Partner_Name" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pops">
+      <EntityTypeMapping TypeName="swift_utilityModel.pop">
+        <MappingFragment StoreEntitySet="pops">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Radius" ColumnName="Radius" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pops_old">
+      <EntityTypeMapping TypeName="swift_utilityModel.pops_old">
+        <MappingFragment StoreEntitySet="pops-old">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Radius" ColumnName="Radius" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PortaOneQueries">
+      <EntityTypeMapping TypeName="swift_utilityModel.PortaOneQuery">
+        <MappingFragment StoreEntitySet="PortaOneQueries">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Query" ColumnName="Query" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="DateSent" ColumnName="DateSent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PortaOneSessions">
+      <EntityTypeMapping TypeName="swift_utilityModel.PortaOneSession">
+        <MappingFragment StoreEntitySet="PortaOneSessions">
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="Application" ColumnName="Application" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Session" ColumnName="Session" />
+          <ScalarProperty Name="ApiIp" ColumnName="ApiIp" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Offline" ColumnName="Offline" />
+          <ScalarProperty Name="Deactive_Time" ColumnName="Deactive_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PortaOneTransactionNotes">
+      <EntityTypeMapping TypeName="swift_utilityModel.PortaOneTransactionNote">
+        <MappingFragment StoreEntitySet="PortaOneTransactionNotes">
+          <ScalarProperty Name="DesciptionID" ColumnName="DesciptionID" />
+          <ScalarProperty Name="DescriptionRef" ColumnName="DescriptionRef" />
+          <ScalarProperty Name="PaymentCategory" ColumnName="PaymentCategory" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Partner" ColumnName="Partner" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="macaddress" ColumnName="macaddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductIdealFors">
+      <EntityTypeMapping TypeName="swift_utilityModel.ProductIdealFor">
+        <MappingFragment StoreEntitySet="ProductIdealFors">
+          <ScalarProperty Name="idealID" ColumnName="idealID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTimings">
+      <EntityTypeMapping TypeName="swift_utilityModel.ProductTiming">
+        <MappingFragment StoreEntitySet="ProductTimings">
+          <ScalarProperty Name="TimingID" ColumnName="TimingID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoDetails">
+      <EntityTypeMapping TypeName="swift_utilityModel.PromoDetail">
+        <MappingFragment StoreEntitySet="PromoDetails">
+          <ScalarProperty Name="PromoDetaiID" ColumnName="PromoDetaiID" />
+          <ScalarProperty Name="PartnerID" ColumnName="PartnerID" />
+          <ScalarProperty Name="PromoApp" ColumnName="PromoApp" />
+          <ScalarProperty Name="PartnerModemDiscount" ColumnName="PartnerModemDiscount" />
+          <ScalarProperty Name="PartnerSubscriptionDiscount" ColumnName="PartnerSubscriptionDiscount" />
+          <ScalarProperty Name="CustomerDiscount" ColumnName="CustomerDiscount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoPartners">
+      <EntityTypeMapping TypeName="swift_utilityModel.PromoPartner">
+        <MappingFragment StoreEntitySet="PromoPartners">
+          <ScalarProperty Name="PartnerID" ColumnName="PartnerID" />
+          <ScalarProperty Name="Partner_Name" ColumnName="Partner_Name" />
+          <ScalarProperty Name="PromoCode" ColumnName="PromoCode" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoPlansExclusionLists">
+      <EntityTypeMapping TypeName="swift_utilityModel.PromoPlansExclusionList">
+        <MappingFragment StoreEntitySet="PromoPlansExclusionList">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="serviceplan" ColumnName="serviceplan" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="agent" ColumnName="agent" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="mac_address" ColumnName="mac_address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptDetails">
+      <EntityTypeMapping TypeName="swift_utilityModel.ReceiptDetail">
+        <MappingFragment StoreEntitySet="ReceiptDetails">
+          <ScalarProperty Name="ReceiptID" ColumnName="ReceiptID" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="ReceiptContent" ColumnName="ReceiptContent" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="LogoName" ColumnName="LogoName" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="TableFieldName" ColumnName="TableFieldName" />
+          <ScalarProperty Name="TableFieldValue" ColumnName="TableFieldValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptNumbers">
+      <EntityTypeMapping TypeName="swift_utilityModel.ReceiptNumber">
+        <MappingFragment StoreEntitySet="ReceiptNumbers">
+          <ScalarProperty Name="Receipt_No" ColumnName="Receipt_No" />
+          <ScalarProperty Name="Receipt_Name" ColumnName="Receipt_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Referrals">
+      <EntityTypeMapping TypeName="swift_utilityModel.Referral">
+        <MappingFragment StoreEntitySet="Referrals">
+          <ScalarProperty Name="ReferralID" ColumnName="ReferralID" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="ReferralCode" ColumnName="ReferralCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ReferreeID" ColumnName="ReferreeID" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="CRMSuccess" ColumnName="CRMSuccess" />
+          <ScalarProperty Name="DateUsed" ColumnName="DateUsed" />
+          <ScalarProperty Name="Trans_ID" ColumnName="Trans_ID" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="ContactMyFriend" ColumnName="ContactMyFriend" />
+          <ScalarProperty Name="ReferrerShare" ColumnName="ReferrerShare" />
+          <ScalarProperty Name="ReferredShare" ColumnName="ReferredShare" />
+          <ScalarProperty Name="ShareUpdatedBy" ColumnName="ShareUpdatedBy" />
+          <ScalarProperty Name="DateShareUpdated" ColumnName="DateShareUpdated" />
+          <ScalarProperty Name="ReferrerAmount" ColumnName="ReferrerAmount" />
+          <ScalarProperty Name="ReferredAmount" ColumnName="ReferredAmount" />
+          <ScalarProperty Name="Credited" ColumnName="Credited" />
+          <ScalarProperty Name="DateCredited" ColumnName="DateCredited" />
+          <ScalarProperty Name="SourceSharedUpdated" ColumnName="SourceSharedUpdated" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Platform" ColumnName="Platform" />
+          <ScalarProperty Name="PlatformRef" ColumnName="PlatformRef" />
+          <ScalarProperty Name="DatePaid" ColumnName="DatePaid" />
+          <ScalarProperty Name="PaidBy" ColumnName="PaidBy" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentSource" ColumnName="PaymentSource" />
+          <ScalarProperty Name="PromoCode" ColumnName="PromoCode" />
+          <ScalarProperty Name="PromoPercent" ColumnName="PromoPercent" />
+          <ScalarProperty Name="Referrer_ProductID" ColumnName="Referrer_ProductID" />
+          <ScalarProperty Name="Referree_ProductID" ColumnName="Referree_ProductID" />
+          <ScalarProperty Name="Referrer_ProductName" ColumnName="Referrer_ProductName" />
+          <ScalarProperty Name="Referree_ProductName" ColumnName="Referree_ProductName" />
+          <ScalarProperty Name="Referrer_XDR" ColumnName="Referrer_XDR" />
+          <ScalarProperty Name="Referree_XDR" ColumnName="Referree_XDR" />
+          <ScalarProperty Name="Referrer_CRMRecNo" ColumnName="Referrer_CRMRecNo" />
+          <ScalarProperty Name="Referred_CRMRecNo" ColumnName="Referred_CRMRecNo" />
+          <ScalarProperty Name="Billing_Called" ColumnName="Billing_Called" />
+          <ScalarProperty Name="Activated" ColumnName="Activated" />
+          <ScalarProperty Name="DateActivated" ColumnName="DateActivated" />
+          <ScalarProperty Name="paymentUID" ColumnName="paymentUID" />
+          <ScalarProperty Name="CreditedBy" ColumnName="CreditedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicePlanChanges">
+      <EntityTypeMapping TypeName="swift_utilityModel.ServicePlanChanx">
+        <MappingFragment StoreEntitySet="ServicePlanChanges">
+          <ScalarProperty Name="Change_ID" ColumnName="Change_ID" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="InitialPlan_ID" ColumnName="InitialPlan_ID" />
+          <ScalarProperty Name="NewPlan_ID" ColumnName="NewPlan_ID" />
+          <ScalarProperty Name="Charged_Unused_Balance" ColumnName="Charged_Unused_Balance" />
+          <ScalarProperty Name="Account_Balance" ColumnName="Account_Balance" />
+          <ScalarProperty Name="Topup_Amount" ColumnName="Topup_Amount" />
+          <ScalarProperty Name="Change_Date" ColumnName="Change_Date" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OnlineID" ColumnName="OnlineID" />
+          <ScalarProperty Name="SDChanged" ColumnName="SDChanged" />
+          <ScalarProperty Name="apaymentUID" ColumnName="apaymentUID" />
+          <ScalarProperty Name="cpaymentUID" ColumnName="cpaymentUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceSchedules">
+      <EntityTypeMapping TypeName="swift_utilityModel.ServiceSchedule">
+        <MappingFragment StoreEntitySet="ServiceSchedules">
+          <ScalarProperty Name="ScheduleID" ColumnName="ScheduleID" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="MethodName" ColumnName="MethodName" />
+          <ScalarProperty Name="Interval" ColumnName="Interval" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="NextRunTime" ColumnName="NextRunTime" />
+          <ScalarProperty Name="StartTimespan" ColumnName="StartTimespan" />
+          <ScalarProperty Name="StartInterval" ColumnName="StartInterval" />
+          <ScalarProperty Name="StartType" ColumnName="StartType" />
+          <ScalarProperty Name="RunPeriod" ColumnName="RunPeriod" />
+          <ScalarProperty Name="LastRunTime" ColumnName="LastRunTime" />
+          <ScalarProperty Name="exactTiming" ColumnName="exactTiming" />
+          <ScalarProperty Name="StartTimeexactTiming" ColumnName="StartTimeexactTiming" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SignUp_Exceptionals">
+      <EntityTypeMapping TypeName="swift_utilityModel.SignUp_Exceptionals">
+        <MappingFragment StoreEntitySet="SignUp_Exceptionals">
+          <ScalarProperty Name="SignUpID" ColumnName="SignUpID" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="SingleUserValidity" ColumnName="SingleUserValidity" />
+          <ScalarProperty Name="MultiUserValidity" ColumnName="MultiUserValidity" />
+          <ScalarProperty Name="SingleUserModem" ColumnName="SingleUserModem" />
+          <ScalarProperty Name="MultiUserModem" ColumnName="MultiUserModem" />
+          <ScalarProperty Name="TradeIn" ColumnName="TradeIn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateSetUp" ColumnName="DateSetUp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMSSenders">
+      <EntityTypeMapping TypeName="swift_utilityModel.SMSSender">
+        <MappingFragment StoreEntitySet="SMSSender">
+          <ScalarProperty Name="SMSID" ColumnName="SMSID" />
+          <ScalarProperty Name="SMS_ID" ColumnName="SMS_ID" />
+          <ScalarProperty Name="Send_Date" ColumnName="Send_Date" />
+          <ScalarProperty Name="Destination_Number" ColumnName="Destination_Number" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Returned_Code" ColumnName="Returned_Code" />
+          <ScalarProperty Name="Returned_Message" ColumnName="Returned_Message" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sent_Date" ColumnName="Sent_Date" />
+          <ScalarProperty Name="Called_URL" ColumnName="Called_URL" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="MessagePages" ColumnName="MessagePages" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMSSender_Backup">
+      <EntityTypeMapping TypeName="swift_utilityModel.SMSSender_Backup">
+        <MappingFragment StoreEntitySet="SMSSender_Backup">
+          <ScalarProperty Name="SMSID" ColumnName="SMSID" />
+          <ScalarProperty Name="SMS_ID" ColumnName="SMS_ID" />
+          <ScalarProperty Name="Send_Date" ColumnName="Send_Date" />
+          <ScalarProperty Name="Destination_Number" ColumnName="Destination_Number" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Returned_Code" ColumnName="Returned_Code" />
+          <ScalarProperty Name="Returned_Message" ColumnName="Returned_Message" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sent_Date" ColumnName="Sent_Date" />
+          <ScalarProperty Name="Called_URL" ColumnName="Called_URL" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="MessagePages" ColumnName="MessagePages" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMSSender_Checker">
+      <EntityTypeMapping TypeName="swift_utilityModel.SMSSender_Checker">
+        <MappingFragment StoreEntitySet="SMSSender_Checker">
+          <ScalarProperty Name="Last_Status" ColumnName="Last_Status" />
+          <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Special_Discount_Products">
+      <EntityTypeMapping TypeName="swift_utilityModel.Special_Discount_Products">
+        <MappingFragment StoreEntitySet="Special_Discount_Products">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="Threshold" ColumnName="Threshold" />
+          <ScalarProperty Name="Pattern" ColumnName="Pattern" />
+          <ScalarProperty Name="RepeatPattern" ColumnName="RepeatPattern" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="swift_staff_accounts">
+      <EntityTypeMapping TypeName="swift_utilityModel.swift_staff_accounts">
+        <MappingFragment StoreEntitySet="swift_staff_accounts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="dept" ColumnName="dept" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="acct_type" ColumnName="acct_type" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="last_credited" ColumnName="last_credited" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="swift_staff_internet">
+      <EntityTypeMapping TypeName="swift_utilityModel.swift_staff_internet">
+        <MappingFragment StoreEntitySet="swift_staff_internet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="dept" ColumnName="dept" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="next_due_date" ColumnName="next_due_date" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SwiftDay_Subscribers">
+      <EntityTypeMapping TypeName="swift_utilityModel.SwiftDay_Subscribers">
+        <MappingFragment StoreEntitySet="SwiftDay_Subscribers">
+          <ScalarProperty Name="SubscriberID" ColumnName="SubscriberID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="balance" ColumnName="balance" />
+          <ScalarProperty Name="remDays" ColumnName="remDays" />
+          <ScalarProperty Name="change_date" ColumnName="change_date" />
+          <ScalarProperty Name="ipaddress" ColumnName="ipaddress" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="OnlineID" ColumnName="OnlineID" />
+          <ScalarProperty Name="SDChanged" ColumnName="SDChanged" />
+          <ScalarProperty Name="paymentUID" ColumnName="paymentUID" />
+          <ScalarProperty Name="R_paymentUID" ColumnName="R_paymentUID" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SwiftISWErrorLogs">
+      <EntityTypeMapping TypeName="swift_utilityModel.SwiftISWErrorLog">
+        <MappingFragment StoreEntitySet="SwiftISWErrorLog">
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="SuccessAmount" ColumnName="SuccessAmount" />
+          <ScalarProperty Name="SuccessDiscount" ColumnName="SuccessDiscount" />
+          <ScalarProperty Name="CRMSuccess" ColumnName="CRMSuccess" />
+          <ScalarProperty Name="CRMErrorDesc" ColumnName="CRMErrorDesc" />
+          <ScalarProperty Name="SwiftPaymentDate" ColumnName="SwiftPaymentDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SwiftISWFailedPayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.SwiftISWFailedPayment">
+        <MappingFragment StoreEntitySet="SwiftISWFailedPayments">
+          <ScalarProperty Name="FailedID" ColumnName="FailedID" />
+          <ScalarProperty Name="XMLContent" ColumnName="XMLContent" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="DateCredited" ColumnName="DateCredited" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SwiftISWPayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.SwiftISWPayment">
+        <MappingFragment StoreEntitySet="SwiftISWPayment">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentLogId" ColumnName="PaymentLogId" />
+          <ScalarProperty Name="CustReference" ColumnName="CustReference" />
+          <ScalarProperty Name="AlternateCustReference" ColumnName="AlternateCustReference" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="PaymentReference" ColumnName="PaymentReference" />
+          <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+          <ScalarProperty Name="ChannelName" ColumnName="ChannelName" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ISWPaymentDate" ColumnName="ISWPaymentDate" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="SettlementDate" ColumnName="SettlementDate" />
+          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+          <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="OtherCustomerInfo" ColumnName="OtherCustomerInfo" />
+          <ScalarProperty Name="ReceiptNo" ColumnName="ReceiptNo" />
+          <ScalarProperty Name="CollectionsAccount" ColumnName="CollectionsAccount" />
+          <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+          <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+          <ScalarProperty Name="CustomerPhoneNumber" ColumnName="CustomerPhoneNumber" />
+          <ScalarProperty Name="DepositorName" ColumnName="DepositorName" />
+          <ScalarProperty Name="DepositSlipNumber" ColumnName="DepositSlipNumber" />
+          <ScalarProperty Name="PaymentCurrency" ColumnName="PaymentCurrency" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="IsReversal" ColumnName="IsReversal" />
+          <ScalarProperty Name="ReversalDate" ColumnName="ReversalDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ErrorDesc" ColumnName="ErrorDesc" />
+          <ScalarProperty Name="SuccessAmount" ColumnName="SuccessAmount" />
+          <ScalarProperty Name="SuccessDiscount" ColumnName="SuccessDiscount" />
+          <ScalarProperty Name="CRMSuccess" ColumnName="CRMSuccess" />
+          <ScalarProperty Name="CRMErrorDesc" ColumnName="CRMErrorDesc" />
+          <ScalarProperty Name="SwiftPaymentDate" ColumnName="SwiftPaymentDate" />
+          <ScalarProperty Name="cXDR" ColumnName="cXDR" />
+          <ScalarProperty Name="aXDR" ColumnName="aXDR" />
+          <ScalarProperty Name="accountDets" ColumnName="accountDets" />
+          <ScalarProperty Name="Partner" ColumnName="Partner" />
+          <ScalarProperty Name="BillingUpdated" ColumnName="BillingUpdated" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="macAddress" ColumnName="macAddress" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="paymentUID" ColumnName="paymentUID" />
+          <ScalarProperty Name="R_paymentUID" ColumnName="R_paymentUID" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="AllocationEffectiveDate" ColumnName="AllocationEffectiveDate" />
+          <ScalarProperty Name="AllocationExpirationDate" ColumnName="AllocationExpirationDate" />
+          <ScalarProperty Name="AllocatedAmount" ColumnName="AllocatedAmount" />
+          <ScalarProperty Name="Requeried" ColumnName="Requeried" />
+          <ScalarProperty Name="Months" ColumnName="Months" />
+          <ScalarProperty Name="IncentiveAmount" ColumnName="IncentiveAmount" />
+          <ScalarProperty Name="ServerIP" ColumnName="ServerIP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SwiftISWPayment_Codes">
+      <EntityTypeMapping TypeName="swift_utilityModel.SwiftISWPayment_Codes">
+        <MappingFragment StoreEntitySet="SwiftISWPayment_Codes">
+          <ScalarProperty Name="Partner" ColumnName="Partner" />
+          <ScalarProperty Name="Subscription" ColumnName="Subscription" />
+          <ScalarProperty Name="Accessory" ColumnName="Accessory" />
+          <ScalarProperty Name="TopUp" ColumnName="TopUp" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SwiftISWPaymentItems">
+      <EntityTypeMapping TypeName="swift_utilityModel.SwiftISWPaymentItem">
+        <MappingFragment StoreEntitySet="SwiftISWPaymentItems">
+          <ScalarProperty Name="PaymentItemID" ColumnName="PaymentItemID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="ItemAmount" ColumnName="ItemAmount" />
+          <ScalarProperty Name="BillingUpdated" ColumnName="BillingUpdated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SwiftISWRequeryLogs">
+      <EntityTypeMapping TypeName="swift_utilityModel.SwiftISWRequeryLog">
+        <MappingFragment StoreEntitySet="SwiftISWRequeryLogs">
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+          <ScalarProperty Name="CallTime" ColumnName="CallTime" />
+          <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+          <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+          <ScalarProperty Name="ResponseDesc" ColumnName="ResponseDesc" />
+          <ScalarProperty Name="ResponseCount" ColumnName="ResponseCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemParameters">
+      <EntityTypeMapping TypeName="swift_utilityModel.SystemParameter">
+        <MappingFragment StoreEntitySet="SystemParameters">
+          <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ModemName">
+      <EntityTypeMapping TypeName="swift_utilityModel.tbl_ModemName">
+        <MappingFragment StoreEntitySet="tbl_ModemName">
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="modemName" ColumnName="modemName" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TermsandConditionsResponses">
+      <EntityTypeMapping TypeName="swift_utilityModel.TermsandConditionsRespons">
+        <MappingFragment StoreEntitySet="TermsandConditionsResponses">
+          <ScalarProperty Name="TermsID" ColumnName="TermsID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="DateResponded" ColumnName="DateResponded" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Timer_Reminders">
+      <EntityTypeMapping TypeName="swift_utilityModel.Timer_Reminders">
+        <MappingFragment StoreEntitySet="Timer_Reminders">
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="MAC" ColumnName="MAC" />
+          <ScalarProperty Name="Daily1" ColumnName="Daily1" />
+          <ScalarProperty Name="Daily2" ColumnName="Daily2" />
+          <ScalarProperty Name="Daily3" ColumnName="Daily3" />
+          <ScalarProperty Name="Volume1" ColumnName="Volume1" />
+          <ScalarProperty Name="Volume2" ColumnName="Volume2" />
+          <ScalarProperty Name="Volume3" ColumnName="Volume3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransactionHistories">
+      <EntityTypeMapping TypeName="swift_utilityModel.TransactionHistory">
+        <MappingFragment StoreEntitySet="TransactionHistory">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="VoucherID" ColumnName="VoucherID" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="OnlineID" ColumnName="OnlineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="voip_plan_mapping">
+      <EntityTypeMapping TypeName="swift_utilityModel.voip_plan_mapping">
+        <MappingFragment StoreEntitySet="voip_plan_mapping">
+          <ScalarProperty Name="voip_plan_mapping_id" ColumnName="voip_plan_mapping_id" />
+          <ScalarProperty Name="old_product" ColumnName="old_product" />
+          <ScalarProperty Name="new_product" ColumnName="new_product" />
+          <ScalarProperty Name="new_product_name" ColumnName="new_product_name" />
+          <ScalarProperty Name="voip_product" ColumnName="voip_product" />
+          <ScalarProperty Name="entrydate" ColumnName="entrydate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOIPRelease_Reminders">
+      <EntityTypeMapping TypeName="swift_utilityModel.VOIPRelease_Reminders">
+        <MappingFragment StoreEntitySet="VOIPRelease_Reminders">
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="NotificationDay1_Date" ColumnName="NotificationDay1_Date" />
+          <ScalarProperty Name="NotificationDay2_Date" ColumnName="NotificationDay2_Date" />
+          <ScalarProperty Name="NotificationDay3_Date" ColumnName="NotificationDay3_Date" />
+          <ScalarProperty Name="Termination_Date" ColumnName="Termination_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vouchers">
+      <EntityTypeMapping TypeName="swift_utilityModel.Voucher">
+        <MappingFragment StoreEntitySet="Vouchers">
+          <ScalarProperty Name="VoucherID" ColumnName="VoucherID" />
+          <ScalarProperty Name="Voucher1" ColumnName="Voucher" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Batch_ID" ColumnName="Batch_ID" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Purchased" ColumnName="Purchased" />
+          <ScalarProperty Name="PurchasedBy" ColumnName="PurchasedBy" />
+          <ScalarProperty Name="PurchaseOnlineID" ColumnName="PurchaseOnlineID" />
+          <ScalarProperty Name="PurchasedDate" ColumnName="PurchasedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BiometricsBonusServices">
+      <EntityTypeMapping TypeName="swift_utilityModel.BiometricsBonusService">
+        <MappingFragment StoreEntitySet="BiometricsBonusService">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PaymentTable" ColumnName="PaymentTable" />
+          <ScalarProperty Name="StartRow" ColumnName="StartRow" />
+          <ScalarProperty Name="EndRow" ColumnName="EndRow" />
+          <ScalarProperty Name="LastRun" ColumnName="LastRun" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DebitAccountsEmailAlertsChecks">
+      <EntityTypeMapping TypeName="swift_utilityModel.DebitAccountsEmailAlertsCheck">
+        <MappingFragment StoreEntitySet="DebitAccountsEmailAlertsChecks">
+          <ScalarProperty Name="RandomAlertID" ColumnName="RandomAlertID" />
+          <ScalarProperty Name="RunTime" ColumnName="RunTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotlinedFundedAccountsSessionExtensions">
+      <EntityTypeMapping TypeName="swift_utilityModel.HotlinedFundedAccountsSessionExtension">
+        <MappingFragment StoreEntitySet="HotlinedFundedAccountsSessionExtensions">
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="macaddress" ColumnName="macaddress" />
+          <ScalarProperty Name="i_account" ColumnName="i_account" />
+          <ScalarProperty Name="ExtensionDate" ColumnName="ExtensionDate" />
+          <ScalarProperty Name="i_active_callleg" ColumnName="i_active_callleg" />
+          <ScalarProperty Name="Sessions" ColumnName="Sessions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KYCRejectReasons">
+      <EntityTypeMapping TypeName="swift_utilityModel.KYCRejectReason">
+        <MappingFragment StoreEntitySet="KYCRejectReasons">
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogonServersLogs">
+      <EntityTypeMapping TypeName="swift_utilityModel.LogonServersLog">
+        <MappingFragment StoreEntitySet="LogonServersLogs">
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+          <ScalarProperty Name="LastServerUsed" ColumnName="LastServerUsed" />
+          <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+          <ScalarProperty Name="Fetched" ColumnName="Fetched" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="swift_utilityModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="i_product" ColumnName="i_product" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="info_url" ColumnName="info_url" />
+          <ScalarProperty Name="Maintenance_Fee" ColumnName="Maintenance_Fee" />
+          <ScalarProperty Name="DateLastUpdated" ColumnName="DateLastUpdated" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products_View_Mapping">
+      <EntityTypeMapping TypeName="swift_utilityModel.Products_View_Mapping">
+        <MappingFragment StoreEntitySet="Products_View_Mapping">
+          <ScalarProperty Name="Category1" ColumnName="Category1" />
+          <ScalarProperty Name="Category2" ColumnName="Category2" />
+          <ScalarProperty Name="isMapped" ColumnName="isMapped" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIMSInventories">
+      <EntityTypeMapping TypeName="swift_utilityModel.SIMSInventory">
+        <MappingFragment StoreEntitySet="SIMSInventory">
+          <ScalarProperty Name="ICCID" ColumnName="ICCID" />
+          <ScalarProperty Name="IMSI" ColumnName="IMSI" />
+          <ScalarProperty Name="MSISDN" ColumnName="MSISDN" />
+          <ScalarProperty Name="ADM" ColumnName="ADM" />
+          <ScalarProperty Name="PIN1" ColumnName="PIN1" />
+          <ScalarProperty Name="PIN2" ColumnName="PIN2" />
+          <ScalarProperty Name="PUK1" ColumnName="PUK1" />
+          <ScalarProperty Name="PUK2" ColumnName="PUK2" />
+          <ScalarProperty Name="EKI" ColumnName="EKI" />
+          <ScalarProperty Name="EOPC" ColumnName="EOPC" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="DateAssigned" ColumnName="DateAssigned" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="SourceID" ColumnName="SourceID" />
+          <ScalarProperty Name="ModemMac" ColumnName="ModemMac" />
+          <ScalarProperty Name="rMSISDN" ColumnName="rMSISDN" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SwiftISWRequestLogs">
+      <EntityTypeMapping TypeName="swift_utilityModel.SwiftISWRequestLog">
+        <MappingFragment StoreEntitySet="SwiftISWRequestLog">
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+          <ScalarProperty Name="Partner" ColumnName="Partner" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="RequestXML" ColumnName="RequestXML" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwCheck_for_Vouchers">
+      <EntityTypeMapping TypeName="swift_utilityModel.vwCheck_for_Vouchers">
+        <MappingFragment StoreEntitySet="vwCheck_for_Vouchers">
+          <ScalarProperty Name="VoucherID" ColumnName="VoucherID" />
+          <ScalarProperty Name="Voucher" ColumnName="Voucher" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+          <ScalarProperty Name="DateUsed" ColumnName="DateUsed" />
+          <ScalarProperty Name="WebPaymentID" ColumnName="WebPaymentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwCustomersEmailMessageLogs">
+      <EntityTypeMapping TypeName="swift_utilityModel.vwCustomersEmailMessageLog">
+        <MappingFragment StoreEntitySet="vwCustomersEmailMessageLogs">
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Send_Date" ColumnName="Send_Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sent_Date" ColumnName="Sent_Date" />
+          <ScalarProperty Name="eReceiptNo" ColumnName="eReceiptNo" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="MailFrom" ColumnName="MailFrom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwonlinepayments">
+      <EntityTypeMapping TypeName="swift_utilityModel.vwonlinepayment">
+        <MappingFragment StoreEntitySet="vwonlinepayment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gateway" ColumnName="Gateway" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+          <ScalarProperty Name="ResponseDesc" ColumnName="ResponseDesc" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="New_Online_User" ColumnName="New_Online_User" />
+          <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
+          <ScalarProperty Name="Returned_Reference" ColumnName="Returned_Reference" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="BillingUpdated" ColumnName="BillingUpdated" />
+          <ScalarProperty Name="BillingTransID" ColumnName="BillingTransID" />
+          <ScalarProperty Name="Charge_TransID" ColumnName="Charge_TransID" />
+          <ScalarProperty Name="Allocation_TransID" ColumnName="Allocation_TransID" />
+          <ScalarProperty Name="Step_Status" ColumnName="Step_Status" />
+          <ScalarProperty Name="ConfirmCalled" ColumnName="ConfirmCalled" />
+          <ScalarProperty Name="RequeryCount" ColumnName="RequeryCount" />
+          <ScalarProperty Name="RequerySource" ColumnName="RequerySource" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+          <ScalarProperty Name="PayURL" ColumnName="PayURL" />
+          <ScalarProperty Name="PromoCode" ColumnName="PromoCode" />
+          <ScalarProperty Name="PromoPercent" ColumnName="PromoPercent" />
+          <ScalarProperty Name="ModemType" ColumnName="ModemType" />
+          <ScalarProperty Name="Reg_Encoded_Password" ColumnName="Reg_Encoded_Password" />
+          <ScalarProperty Name="Gateway_Returned_Amount" ColumnName="Gateway_Returned_Amount" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="TradeIn" ColumnName="TradeIn" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="aPaymentUID" ColumnName="aPaymentUID" />
+          <ScalarProperty Name="cPaymentUID" ColumnName="cPaymentUID" />
+          <ScalarProperty Name="R_apaymentUID" ColumnName="R_apaymentUID" />
+          <ScalarProperty Name="R_cpaymentUID" ColumnName="R_cpaymentUID" />
+          <ScalarProperty Name="R_Amount" ColumnName="R_Amount" />
+          <ScalarProperty Name="R_Status" ColumnName="R_Status" />
+          <ScalarProperty Name="R_Date" ColumnName="R_Date" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="AllocationEffectiveDate" ColumnName="AllocationEffectiveDate" />
+          <ScalarProperty Name="AllocationExpirationDate" ColumnName="AllocationExpirationDate" />
+          <ScalarProperty Name="Months" ColumnName="Months" />
+          <ScalarProperty Name="IncentiveAmount" ColumnName="IncentiveAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwSMSSenders">
+      <EntityTypeMapping TypeName="swift_utilityModel.vwSMSSender">
+        <MappingFragment StoreEntitySet="vwSMSSender">
+          <ScalarProperty Name="SMSID" ColumnName="SMSID" />
+          <ScalarProperty Name="SMS_ID" ColumnName="SMS_ID" />
+          <ScalarProperty Name="Send_Date" ColumnName="Send_Date" />
+          <ScalarProperty Name="Destination_Number" ColumnName="Destination_Number" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Returned_Code" ColumnName="Returned_Code" />
+          <ScalarProperty Name="Returned_Message" ColumnName="Returned_Message" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sent_Date" ColumnName="Sent_Date" />
+          <ScalarProperty Name="Called_URL" ColumnName="Called_URL" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="MessagePages" ColumnName="MessagePages" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CCPoratal_LoadPostponementbyDate" FunctionName="swift_utilityModel.Store.CCPoratal_LoadPostponementbyDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="swift_utilityModel.CCPoratal_LoadPostponementbyDate_Result">
+          <ScalarProperty Name="i_customer" ColumnName="i_customer" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone1" ColumnName="phone1" />
+          <ScalarProperty Name="phone2" ColumnName="phone2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="fetch_ExpiredKYC" FunctionName="swift_utilityModel.Store.fetch_ExpiredKYC" />
+    <FunctionImportMapping FunctionImportName="LoadPostponementbyDate" FunctionName="swift_utilityModel.Store.LoadPostponementbyDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="swift_utilityModel.LoadPostponementbyDate_Result">
+          <ScalarProperty Name="Dates" ColumnName="Dates" />
+          <ScalarProperty Name="DateCounts" ColumnName="DateCounts" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="PortaOneTransactionNotes_FormUID" FunctionName="swift_utilityModel.Store.PortaOneTransactionNotes_FormUID" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,12 @@
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\bin\Debug\RedCheetah.Infrastructure.dll
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\bin\Debug\RedCheetah.Infrastructure.pdb
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\bin\Debug\RedCheetah.Core.dll
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\bin\Debug\EntityFramework.dll
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\bin\Debug\RedCheetah.Core.pdb
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\bin\Debug\RedCheetah.Core.dll.config
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\bin\Debug\EntityFramework.xml
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\obj\Debug\RedCheetah.Infrastructure.csprojAssemblyReference.cache
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\obj\Debug\RedCheetah.Infrastructure.csproj.CoreCompileInputs.cache
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\obj\Debug\RedCheetah.Infrastructure.csproj.CopyComplete
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\obj\Debug\RedCheetah.Infrastructure.dll
+C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\obj\Debug\RedCheetah.Infrastructure.pdb

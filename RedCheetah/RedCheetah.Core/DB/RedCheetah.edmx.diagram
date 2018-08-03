@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6df19a166cca4ac2b7949b80bec2ed50" Name="Diagram1">
+        <EntityTypeShape EntityType="RedCheetahDB.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.AdPlan" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.AdvertisersRequest" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.AuditTrail" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerPaymentInstallment" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerReferralQuestionResponse" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerRepCode" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnersRequest" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerUser" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerUsers_Temp" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.City" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ContactUsRequest" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.CustomerCount" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.CustomerRange" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.DeliveryMethod" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.Device" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.DeviceCode" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.DeviceConnect" Width="1.5" PointX="8" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.DeviceInfo" Width="1.5" PointX="5.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.DeviceLocation" Width="1.5" PointX="8" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.Industry" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.KYCUploadId" Width="1.5" PointX="16.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.MessageRead" Width="1.5" PointX="8" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.Message" Width="1.5" PointX="8" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.NatureOfBusiness" Width="1.5" PointX="16.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.NatureOfCustomerBusiness" Width="1.5" PointX="10.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.Order" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.OrderDetail" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.Payment" Width="1.5" PointX="4.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.PickUpLocation_old" Width="1.5" PointX="12.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.RC_CHANNELS" Width="1.5" PointX="13" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.RC_LOCATIONS" Width="1.5" PointX="15.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.RC_MODEMS" Width="1.5" PointX="17.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.RC_SECTORS" Width="1.5" PointX="10.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.RC_Sessions" Width="1.5" PointX="14.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.RCRegisteredDevice" Width="1.5" PointX="16.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.RedCheetahUser" Width="1.5" PointX="18.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ServiceParameter" Width="1.5" PointX="6.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.State" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.SwiftSite" Width="1.5" PointX="18.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.sysdiagram" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.UserToDisableOrEnable" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.WorldCupRegistration" Width="1.5" PointX="18.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.C__MigrationHistory_bkup" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerPaymentOption" Width="1.5" PointX="8.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerRepCode2" Width="1.5" PointX="20.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerUsers_18thMay2018" Width="1.5" PointX="20.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerUsers_19_Mar_2018" Width="1.5" PointX="10.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerUsers_bakup" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ChannelPartnerUsers_old" Width="1.5" PointX="20.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.City1" Width="1.5" PointX="18.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.Payment_21_May_2018" Width="1.5" PointX="20.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.PickUpLocation" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.RC_MODEMS_BKP_050718" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.RCRegisteredDevices_BETA_BKP_260218" Width="1.5" PointX="22.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.Referral" Width="1.5" PointX="6.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.ReferralType" Width="1.5" PointX="22.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.States_old" Width="1.5" PointX="22.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.UserStatu" Width="1.5" PointX="22.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RedCheetahDB.RC_MODEM_INFORMATION" Width="1.5" PointX="14.75" PointY="22.75" IsExpanded="true" />
+        <AssociationConnector Association="RedCheetahDB.FK_ChannelPartnerUsers_DeliveryMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_ChannelPartnerUsers_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_ChannelPartnerUsers_Payments" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_ChannelPartnerUsers_States" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_DeliveryMethod_DeliveryMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_DeviceConnects_DeviceInfos" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_DeviceLocations_DeviceInfos" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_MessageReads_DeviceInfos" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_Messages_DeviceInfos" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_RC_CHANNELS_RC_SECTORS" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_RC_LOCATIONS_RC_CHANNELS" ManuallyRouted="false" />
+        <AssociationConnector Association="RedCheetahDB.FK_RC_MODEMS_RC_LOCATIONS" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

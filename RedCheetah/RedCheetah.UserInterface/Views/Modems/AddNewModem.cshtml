@@ -1,0 +1,610 @@
+﻿
+@model IEnumerable<RedCheetah.Core.Models.Location>
+@{
+
+
+    ViewBag.Title = "AddNewLocation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Data table dependency-->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <br />
+            <br />
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" style="font-weight:bold"><i class="fa fa-plus"></i> Add New Modem</button>
+        </div>
+    </div>
+    <br />
+    @Html.Partial("_ListModems")
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" style="text-align:center">Add Modem</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <select class="form-control" id="ChannelListType">
+                                                <option value="0" selected>--Select channel name--</option>
+
+                                                @*@foreach (var content in Model)
+                                                    {
+                                                        <option value="@content.LocationId">@content.LocationName</option>
+                                                    }*@
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ChannelModal"><i class="fa fa-plus"> <b>Add Channel</b></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <select class="form-control" id="LocationListType">
+                                                <option value="" selected>--Select channel Location--</option>
+
+                                                @*@foreach (var content in Model)
+                                                    {
+                                                        <option value="@content.LocationId">@content.LocationName</option>
+                                                    }*@
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LocationModal"><i class="fa fa-plus"> <b>Add Location</b></i></button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Customer ID:</label>
+                                    <input type="text" class="form-control" id="CustomerID" placeholder="Provide Customer ID">
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">IMSI Name:</label>
+                                    <input type="text" class="form-control" id="IMSI" placeholder="Provide IMSI">
+                                </div>
+                                <div class="form-group">
+                                    <d style="color:blue;font-style:italic;font-weight:bold" id="Checking"></d>
+                                    <label for="recipient-name" class="col-form-label">Account Name: <d style="color:red;font-style:italic;font-weight:bold" id="NameCount"></d></label>
+                                    <select class="form-control" id="AccountName">
+                                        <option value="0" selected>--Select Accoount Name--</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Account ID:</label>
+                                    <input type="text" class="form-control" id="AccountID" placeholder="Auto Populated" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">IP Address:</label>
+                                    <input type="text" class="form-control" id="IpAddress" placeholder="Enter IP Address (Optional)">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Close</b></button>
+                            <button type="button" class="btn btn-primary" id="AddModem"><i class="fa fa-plus"> <b>Save</b></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--CHANNEL STARTS HERE-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="modal fade" id="ChannelModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" style="text-align:center">Add Channel</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <select class="form-control" id="SectorType">
+                                                <option value="">--Select Sector--</option>
+
+                                                @foreach (var content in ViewBag.Sectors)
+                                                {
+                                                    <option value="@content.SectorId">@content.SectorName</option>
+                                                }
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Channel Name:</label>
+                                    <input type="text" class="form-control" id="ChannelName" placeholder="Enter Channel Name">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Close</b></button>
+                            <button type="button" class="btn btn-primary" id="AddChannel"><i class="fa fa-plus"> <b>Save</b></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--LOCATION STARTS HERE-->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="modal fade" id="LocationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" style="text-align:center">Add Location</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <select class="form-control" id="ChannelType">
+                                                <option value="double chocolate">--Select Channel--</option>
+                                                @foreach (var content in ViewBag.Channels)
+                                                {
+                                                    <option value="@content.ChannelId">@content.ChannelName</option>
+                                                }
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Location Name:</label>
+                                    <input type="text" class="form-control" id="locationName" placeholder="Enter Location Name">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Close</b></button>
+                            <button type="button" class="btn btn-primary" id="AddLocation"><i class="fa fa-plus"> <b>Save</b></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        function LoadChannels() {
+            $("#ChannelListType").empty();
+            $.ajax({
+                url: '/Channels/GetChannels',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                }),
+                success: function (result) {
+
+                    result.data.forEach(function (element) {
+                        // alert(element.channelName);
+                        $('#ChannelListType').append('<option value="' + element.ChannelId + '">' + element.ChannelName + '</option>')
+                    });
+
+                    $('#ChannelModal').modal('hide');
+
+                },
+                error: function (result) {
+                    swal({
+                        title: "Error",
+                        text: "Server Side Error, please check internet connection",
+                        type: "error"
+                    });
+                }
+            })
+        }
+
+        function LoadLocations(channelId) {
+            $("#LocationListType").empty();
+            $.ajax({
+                url: '/Locations/GetLocationFromChannelId',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    channelId: channelId
+                }),
+                success: function (result) {
+
+                    //if (result == null)
+                    //    return false;
+                    console.log(result)
+                    result.data.forEach(function (element) {
+                        //$("#LocationListType").empty();
+                        $('#LocationListType').append('<option value="' + element.locationId + '">' + element.locationName + '</option>')
+                    });
+
+                   // $('#ChannelModal').modal('hide');
+
+                },
+                error: function (result) {
+                    swal({
+                        title: "Error",
+                        text: "Server Side Error, please check internet connection",
+                        type: "error"
+                    });
+                }
+            })
+        }
+
+        document.getElementById("ChannelListType").onchange  = function Execute() {
+            var channel = document.getElementById("ChannelListType");
+            var channelValue = channel.options[channel.selectedIndex].value;
+            //alert(channelValue)
+            if (channelValue == "0") {
+
+            }
+            else {
+                LoadLocations(channelValue);
+            }
+
+        }
+
+
+        document.getElementById("AddModem").onclick = function () {
+
+
+            if ($('#IMSI').val() == null || $('#IMSI').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "IMSI is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+
+            if ($('#CustomerID').val() == null || $('#CustomerID').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "Customer ID is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+            if ($('#AccountID').val() == null || $('#AccountID').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "Account ID is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+
+            if ($('#AccountName').val() == null || $('#AccountName').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "Account name is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+            if ($('#LocationListType').val() == null || $('#LocationListType').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "Location Type is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+            document.getElementById("AddModem").innerHTML = "Please Wait...";
+
+            document.getElementById("AddModem").disabled = true;
+
+            $.ajax({
+                url: '/Modems/CreateModem',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    CustomerId: $('#CustomerID').val(),
+                    AccountId: $('#AccountID').val(),
+                    AccountName: $('#AccountName').val(),
+                    LocationId: $('#LocationListType').val(),
+                    IMSI: $('#IMSI').val(),
+                    IpAddres: $('#IpAddress').val()
+                }),
+                success: function (result) {
+
+                    if (result == "Success") {
+                        document.getElementById("AddModem").innerHTML = "Save";
+
+                        document.getElementById("AddModem").disabled = false;
+
+                        $('#exampleModal').modal('hide');
+                        //window.location.href = "/Modems/AddNewModem";
+                        $('#example').DataTable().ajax.reload();
+                        swal({
+                            title: "Successful",
+                            text: "New Modem Created",
+                            type: "success",
+                            confirmButtonText: "DISMISS"
+                        },
+                            function (isConfirm) {
+                                if (isConfirm) {
+                                    window.location.href = "/Modems/AddNewModem";
+                                    //$('#example').DataTable().ajax.reload();
+                                }
+                            });
+                    } else {
+                        swal({
+                            title: "Create Failure",
+                            text: "An error occured while creating",
+                            type: "warning",
+                            confirmButtonText: "DISMISS"
+                        });
+                    }
+                },
+                error: function (result) {
+                    document.getElementById("AddModem").innerHTML = "Save";
+
+                    document.getElementById("AddModem").disabled = false;
+                    swal({
+                        title: "Error",
+                        text: "Server Side Error, please check internet connection",
+                        type: "error"
+                    });
+                }
+            })
+        }
+
+
+        document.getElementById("CustomerID").onkeyup = function () {
+
+            document.getElementById("Checking").innerHTML = "Searching...";
+            $('#AccountName').empty();
+            $('#AccountName').append('<option value="0" selected>--Select Accoount Name--</option>')
+            
+            $.ajax({
+                url: '/SwiftUtility/getMsisdn',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    customerId: $('#CustomerID').val(),
+                }),
+                success: function (result) {
+                    var count = 0;
+                    result.data.forEach(function (element) {
+                        
+                        var accountName = element.PhoneNo + "@@msisdn";
+                        $('#AccountName').append('<option value="' + accountName + '">' + accountName + '</option>');
+                        count++
+                    });
+                    document.getElementById("NameCount").innerHTML = count + " Name Found";
+                    document.getElementById("Checking").innerHTML = "";
+                },
+                error: function (result) {
+                    document.getElementById("Checking").innerHTML = "";
+                    console.log(result)
+                }
+            })
+        }
+
+
+        $("#AccountName").change(function () {
+       
+            $.ajax({
+                url: '/SwiftUtility/getAccountId',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    accountName: $('#AccountName').val(),
+                }),
+                success: function (result) {
+
+                    console.log(result)
+                    document.getElementById("AccountID").value = result;
+                },
+                error: function (result) {
+
+                    console.log(result)
+                }
+            })
+        });
+
+        //Populate data into drop down when page load completes
+        window.onload = codeAddress = LoadChannels();
+
+
+        //CHANNEL SCRIPT STARTS HERE
+        document.getElementById("AddChannel").onclick = function () {
+
+            if ($('#ChannelName').val() == null || $('#ChannelName').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "Channel name is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+            if ($('#SectorType').val() == null || $('#SectorType').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "Sector Type is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+            document.getElementById("AddChannel").innerHTML = "Please Wait...";
+
+            document.getElementById("AddChannel").disabled = true;
+
+            $.ajax({
+                url: '/Channels/CreateChannel',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    channelName: $('#ChannelName').val(),
+                    sectorId: $('#SectorType').val()
+                }),
+                success: function (result) {
+                   
+                    if (result == "Success") {
+                        document.getElementById("AddChannel").innerHTML = "Save";
+
+                        document.getElementById("AddChannel").disabled = false;
+                        LoadChannels(); 
+                        $('#ChannelModal').modal('hide');
+
+                        swal({
+                            title: "Successful",
+                            text: "New Channel Created",
+                            type: "success",
+                            confirmButtonText: "DISMISS"
+                        });
+
+                    } else {
+                        swal({
+                            title: "Create Failure",
+                            text: "An error occured while creating",
+                            type: "warning",
+                            confirmButtonText: "DISMISS"
+                        });
+                    }
+                },
+                error: function (result) {
+                    document.getElementById("AddChannel").innerHTML = "Save";
+
+                    document.getElementById("AddChannel").disabled = false;
+                    swal({
+                        title: "Error",
+                        text: "Server Side Error, please check internet connection",
+                        type: "error"
+                    });
+                }
+            })
+        }
+
+
+
+        //LOCATION SCRIPT STARTS HERE
+        document.getElementById("AddLocation").onclick = function () {
+
+            if ($('#locationName').val() == null || $('#locationName').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "location name is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+            if ($('#ChannelType').val() == null || $('#ChannelType').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "Channel Type is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+            document.getElementById("AddLocation").innerHTML = "Please Wait...";
+
+            document.getElementById("AddLocation").disabled = true;
+
+            $.ajax({
+                url: '/Locations/CreateLocation',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    LocatonName: $('#locationName').val(),
+                    channelId: $('#ChannelType').val()
+                }),
+                success: function (result) {
+
+                    if (result == "Success") {
+                        document.getElementById("AddLocation").innerHTML = "Save";
+
+                        document.getElementById("AddLocation").disabled = false;
+
+                        $('#LocationModal').modal('hide');
+                        $('#example').DataTable().ajax.reload();
+                        swal({
+                            title: "Successful",
+                            text: "New Location Created",
+                            type: "success",
+                            confirmButtonText: "DISMISS"
+                        });
+                    } else {
+                        swal({
+                            title: "Create Failure",
+                            text: "An error occured while creating",
+                            type: "warning",
+                            confirmButtonText: "DISMISS"
+                        });
+                    }
+                },
+                error: function (result) {
+                    document.getElementById("AddLocation").innerHTML = "Save";
+
+                    document.getElementById("AddLocation").disabled = false;
+                    swal({
+                        title: "Error",
+                        text: "Server Side Error, please check internet connection",
+                        type: "error"
+                    });
+                }
+            })
+        }
+    })
+</script>

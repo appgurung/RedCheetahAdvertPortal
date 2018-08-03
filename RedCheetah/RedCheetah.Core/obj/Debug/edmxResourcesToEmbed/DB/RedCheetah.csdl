@@ -1,0 +1,1591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RedCheetahDB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdPlan">
+    <Key>
+      <PropertyRef Name="AdPlanId" />
+    </Key>
+    <Property Name="AdPlanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlanName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NoVideosToPlay" Type="Int32" />
+    <Property Name="NoBannersToShow" Type="Int32" />
+    <Property Name="MinTimeBetweenAds" Type="Int32" />
+    <Property Name="MaxTimeBetwenAds" Type="Int32" />
+    <Property Name="MinDataConsumption" Type="Int32" />
+    <Property Name="MaxDataConsumption" Type="Int32" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="MarkedForDeletion" Type="Boolean" />
+    <Property Name="MarkedDeletedDate" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="AdvertisersRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="companyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="companyAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="companyPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Industry" Type="Int32" />
+    <Property Name="emailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContactPersonsPhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+    <Property Name="statusMessage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TryCount" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuditTrail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Useremail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Action" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerPaymentInstallment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IsVisible" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerReferralQuestionResponse">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Response" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerRepCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferralCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Owner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" Nullable="false" />
+    <Property Name="Timestamp" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ChannelPartnersRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BusinessName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContactPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContactAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="totalDailyWalkInCustomers" Type="Int32" />
+    <Property Name="averageDailyWalkInCustomers" Type="Int32" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="StatusMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="requestType" Type="Int32" Nullable="false" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MsgDeliveredTimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="NatureOfBusiness" Type="Int32" />
+    <Property Name="TryCount" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BusinessName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StreetAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="UserStatus" Type="Int32" />
+    <Property Name="KYCUpload" Type="Int32" Nullable="false" />
+    <Property Name="KYCRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KYC_ID_Path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="KYC_Utility_Path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordReset" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="VCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationProgress" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationStatus" Type="Int32" />
+    <Property Name="DeliveryMethodId" Type="Int32" Nullable="false" />
+    <Property Name="PickUpLocationId" Type="Int32" />
+    <Property Name="Signature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferralQuestionResponse" Type="Int32" />
+    <Property Name="ReferralOption" Type="Int32" />
+    <Property Name="ReferralValueDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="DeliveryMethod" Relationship="Self.FK_ChannelPartnerUsers_DeliveryMethod" FromRole="ChannelPartnerUsers" ToRole="DeliveryMethod" />
+    <NavigationProperty Name="ChannelPartnerUsers1" Relationship="Self.FK_ChannelPartnerUsers_Payment" FromRole="ChannelPartnerUsers" ToRole="ChannelPartnerUsers1" />
+    <NavigationProperty Name="ChannelPartnerUser1" Relationship="Self.FK_ChannelPartnerUsers_Payment" FromRole="ChannelPartnerUsers1" ToRole="ChannelPartnerUsers" />
+    <NavigationProperty Name="ChannelPartnerUsers11" Relationship="Self.FK_ChannelPartnerUsers_Payments" FromRole="ChannelPartnerUsers" ToRole="ChannelPartnerUsers1" />
+    <NavigationProperty Name="ChannelPartnerUser2" Relationship="Self.FK_ChannelPartnerUsers_Payments" FromRole="ChannelPartnerUsers1" ToRole="ChannelPartnerUsers" />
+    <NavigationProperty Name="State" Relationship="Self.FK_ChannelPartnerUsers_States" FromRole="ChannelPartnerUsers" ToRole="States" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerUsers_Temp">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BusinessName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StreetAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="UserStatus" Type="Int32" />
+    <Property Name="KYCUpload" Type="Int32" Nullable="false" />
+    <Property Name="KYC_ID_Path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="KYC_Utility_Path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordReset" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="VCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationProgress" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationStatus" Type="Int32" Nullable="false" />
+    <Property Name="ReferralQuestionResponse" Type="Int32" />
+    <Property Name="ReferralOption" Type="Int32" />
+    <Property Name="ReferralValueDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactUsRequest">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="14" FixedLength="true" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="StatusMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Timestamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MessageSentTimestamp" Type="DateTime" Precision="3" />
+    <Property Name="TryCount" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerCount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerRange">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeliveryMethod">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsVisible" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ChannelPartnerUsers" Relationship="Self.FK_ChannelPartnerUsers_DeliveryMethod" FromRole="DeliveryMethod" ToRole="ChannelPartnerUsers" />
+    <NavigationProperty Name="DeliveryMethod1" Relationship="Self.FK_DeliveryMethod_DeliveryMethod" FromRole="DeliveryMethod" ToRole="DeliveryMethod1" />
+    <NavigationProperty Name="DeliveryMethod2" Relationship="Self.FK_DeliveryMethod_DeliveryMethod" FromRole="DeliveryMethod1" ToRole="DeliveryMethod" />
+  </EntityType>
+  <EntityType Name="Device">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DevicePrice" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Visible" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DeviceCode">
+    <Key>
+      <PropertyRef Name="DeviceCodesId" />
+    </Key>
+    <Property Name="DeviceCodesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceId" Type="Int32" />
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="MobileNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+  </EntityType>
+  <EntityType Name="DeviceConnect">
+    <Key>
+      <PropertyRef Name="ConnectId" />
+    </Key>
+    <Property Name="ConnectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="MarkedForDeletion" Type="Boolean" />
+    <Property Name="MarkedDeletedDate" Type="DateTime" Precision="7" />
+    <Property Name="IPAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ConnectedTo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DeviceInfo" Relationship="Self.FK_DeviceConnects_DeviceInfos" FromRole="DeviceConnects" ToRole="DeviceInfos" />
+  </EntityType>
+  <EntityType Name="DeviceInfo">
+    <Key>
+      <PropertyRef Name="DeviceId" />
+    </Key>
+    <Property Name="DeviceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SwiftId" Type="Int32" Nullable="false" />
+    <Property Name="AgeRange" Type="Int32" Nullable="false" />
+    <Property Name="Gender" Type="Int32" Nullable="false" />
+    <Property Name="HardwareId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Platform" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FormFactor" Type="Int32" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="MarkedForDeletion" Type="Boolean" />
+    <Property Name="MarkedDeletedDate" Type="DateTime" Precision="7" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="LastTimeActive" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="LastMessageId" Type="Int32" />
+    <Property Name="LastMessageDate" Type="DateTime" Precision="7" />
+    <Property Name="LastConnectId" Type="Int32" />
+    <Property Name="CityOfResidence" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MobileNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="InfoType" Type="Int32" Nullable="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MacAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ConnectedTo" Type="Int32" Nullable="false" />
+    <Property Name="NotificationID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DeviceConnects" Relationship="Self.FK_DeviceConnects_DeviceInfos" FromRole="DeviceInfos" ToRole="DeviceConnects" />
+    <NavigationProperty Name="DeviceLocations" Relationship="Self.FK_DeviceLocations_DeviceInfos" FromRole="DeviceInfos" ToRole="DeviceLocations" />
+    <NavigationProperty Name="MessageReads" Relationship="Self.FK_MessageReads_DeviceInfos" FromRole="DeviceInfos" ToRole="MessageReads" />
+    <NavigationProperty Name="Messages" Relationship="Self.FK_Messages_DeviceInfos" FromRole="DeviceInfos" ToRole="Messages" />
+  </EntityType>
+  <EntityType Name="DeviceLocation">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceId" Type="Int32" Nullable="false" />
+    <Property Name="Longitude" Type="Double" Nullable="false" />
+    <Property Name="Latitude" Type="Double" Nullable="false" />
+    <Property Name="Altitude" Type="Double" Nullable="false" />
+    <Property Name="Building" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="MarkedForDeletion" Type="Boolean" />
+    <Property Name="MarkedDeletedDate" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="DeviceInfo" Relationship="Self.FK_DeviceLocations_DeviceInfos" FromRole="DeviceLocations" ToRole="DeviceInfos" />
+  </EntityType>
+  <EntityType Name="Industry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KYCUploadId">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KYC_Desc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MessageRead">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FromDeviceId" Type="Int32" Nullable="false" />
+    <Property Name="ToDeviceId" Type="Int32" Nullable="false" />
+    <Property Name="MessageType" Type="Int32" Nullable="false" />
+    <Property Name="Parameter1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="MarkedForDeletion" Type="Boolean" />
+    <Property Name="MarkedDeletedDate" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="DeviceInfo" Relationship="Self.FK_MessageReads_DeviceInfos" FromRole="MessageReads" ToRole="DeviceInfos" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FromDeviceId" Type="Int32" Nullable="false" />
+    <Property Name="ToDeviceId" Type="Int32" Nullable="false" />
+    <Property Name="MessageType" Type="Int32" Nullable="false" />
+    <Property Name="Parameter1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="MarkedForDeletion" Type="Boolean" />
+    <Property Name="MarkedDeletedDate" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="DeviceInfo" Relationship="Self.FK_Messages_DeviceInfos" FromRole="Messages" ToRole="DeviceInfos" />
+  </EntityType>
+  <EntityType Name="NatureOfBusiness">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NatureOfCustomerBusiness">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OrderTotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OrderPlaced" Type="Int32" />
+    <Property Name="TotalPaymentExpected" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalPaymentMade" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="OutstandingBalance" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailsId" />
+    </Key>
+    <Property Name="OrderDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ProductIdNo" Type="Int32" />
+    <Property Name="ProductDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ApplicationId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gateway" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Single" Nullable="false" />
+    <Property Name="OrderId" Type="Int32" />
+    <Property Name="ResponseCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ResponseDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="ReturnedReference" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="39" FixedLength="false" Unicode="false" />
+    <Property Name="ChargeTransID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ConfirmationDate" Type="DateTime" Precision="3" />
+    <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ConfirmCalled" Type="Int32" />
+    <Property Name="PaymentStep" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentOption" Type="Int32" Nullable="false" />
+    <Property Name="Card_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gateway_Returned_Amount" Type="Double" />
+    <Property Name="PaymentStatus" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PickUpLocation_old">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PickUpLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PickUpAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RC_CHANNELS">
+    <Key>
+      <PropertyRef Name="CHANNEL_ID" />
+    </Key>
+    <Property Name="CHANNEL_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CHANNEL_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SECTOR_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RC_SECTORS" Relationship="Self.FK_RC_CHANNELS_RC_SECTORS" FromRole="RC_CHANNELS" ToRole="RC_SECTORS" />
+    <NavigationProperty Name="RC_LOCATIONS" Relationship="Self.FK_RC_LOCATIONS_RC_CHANNELS" FromRole="RC_CHANNELS" ToRole="RC_LOCATIONS" />
+  </EntityType>
+  <EntityType Name="RC_LOCATIONS">
+    <Key>
+      <PropertyRef Name="LOCATION_ID" />
+    </Key>
+    <Property Name="LOCATION_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LOCATION_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CHANNEL_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RC_CHANNELS" Relationship="Self.FK_RC_LOCATIONS_RC_CHANNELS" FromRole="RC_LOCATIONS" ToRole="RC_CHANNELS" />
+    <NavigationProperty Name="RC_MODEMS" Relationship="Self.FK_RC_MODEMS_RC_LOCATIONS" FromRole="RC_LOCATIONS" ToRole="RC_MODEMS" />
+  </EntityType>
+  <EntityType Name="RC_MODEMS">
+    <Key>
+      <PropertyRef Name="MODEM_ID" />
+    </Key>
+    <Property Name="MODEM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_ID" Type="Int32" Nullable="false" />
+    <Property Name="ACCOUNT_ID" Type="Int32" Nullable="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LOCATION_ID" Type="Int32" Nullable="false" />
+    <Property Name="IMSI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IP_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RC_LOCATIONS" Relationship="Self.FK_RC_MODEMS_RC_LOCATIONS" FromRole="RC_MODEMS" ToRole="RC_LOCATIONS" />
+  </EntityType>
+  <EntityType Name="RC_SECTORS">
+    <Key>
+      <PropertyRef Name="SECTOR_ID" />
+    </Key>
+    <Property Name="SECTOR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SECTOR_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="RC_CHANNELS" Relationship="Self.FK_RC_CHANNELS_RC_SECTORS" FromRole="RC_SECTORS" ToRole="RC_CHANNELS" />
+  </EntityType>
+  <EntityType Name="RC_Sessions">
+    <Key>
+      <PropertyRef Name="SessionId" />
+    </Key>
+    <Property Name="SessionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceIMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AccessPointIPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="VPNIPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SessionStartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SessionEndTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RCRegisteredDevice">
+    <Key>
+      <PropertyRef Name="deviceId" />
+    </Key>
+    <Property Name="deviceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="macAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ageRange" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="regStatus" Type="Int32" Nullable="false" />
+    <Property Name="remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="agentCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RedCheetahUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IpAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Enable" Type="Boolean" Nullable="false" />
+    <Property Name="AddedToRadius" Type="Boolean" Nullable="false" />
+    <Property Name="DeleteUser" Type="Boolean" Nullable="false" />
+    <Property Name="MacAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IpAddressUpdated" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiceParameter">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Frequency" Type="Int32" Nullable="false" />
+    <Property Name="MinMessageTime" Type="Int32" Nullable="false" />
+    <Property Name="MaxMessageTime" Type="Int32" />
+    <Property Name="MinLastMessageTime" Type="Int32" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="url2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="state1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ChannelPartnerUsers" Relationship="Self.FK_ChannelPartnerUsers_States" FromRole="States" ToRole="ChannelPartnerUsers" />
+  </EntityType>
+  <EntityType Name="SwiftSite">
+    <Key>
+      <PropertyRef Name="SiteID" />
+    </Key>
+    <Property Name="SiteID" Type="Int32" Nullable="false" />
+    <Property Name="SiteName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SiteAddress" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserToDisableOrEnable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ShouldEnable" Type="Boolean" Nullable="false" />
+    <Property Name="Processed" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorldCupRegistration">
+    <Key>
+      <PropertyRef Name="RegistrationId" />
+    </Key>
+    <Property Name="RegistrationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="C__MigrationHistory_bkup">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+      <PropertyRef Name="Model" />
+      <PropertyRef Name="ProductVersion" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerPaymentOption">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerRepCode2">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferralCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Owner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerUsers_18thMay2018">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="KYCUpload" />
+      <PropertyRef Name="PaymentStatus" />
+      <PropertyRef Name="ApplicationProgress" />
+      <PropertyRef Name="DeliveryMethodId" />
+      <PropertyRef Name="TimeStamp" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BusinessName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StreetAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="UserStatus" Type="Int32" />
+    <Property Name="KYCUpload" Type="Int32" Nullable="false" />
+    <Property Name="KYCRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KYC_ID_Path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="KYC_Utility_Path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordReset" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="VCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationProgress" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationStatus" Type="Int32" />
+    <Property Name="DeliveryMethodId" Type="Int32" Nullable="false" />
+    <Property Name="PickUpLocationId" Type="Int32" />
+    <Property Name="Signature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferralQuestionResponse" Type="Int32" />
+    <Property Name="ReferralOption" Type="Int32" />
+    <Property Name="ReferralValueDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerUsers_19_Mar_2018">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="KYCUpload" />
+      <PropertyRef Name="PaymentStatus" />
+      <PropertyRef Name="ApplicationStatus" />
+      <PropertyRef Name="TimeStamp" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StreetAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="UserStatus" Type="Int32" />
+    <Property Name="KYCUpload" Type="Int32" Nullable="false" />
+    <Property Name="KYCRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KYC_ID_Path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="KYC_Utility_Path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordReset" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="VCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationStatus" Type="Int32" Nullable="false" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerUsers_bakup">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="KYCUpload" />
+      <PropertyRef Name="PaymentStatus" />
+      <PropertyRef Name="ApplicationProgress" />
+      <PropertyRef Name="DeliveryMethodId" />
+      <PropertyRef Name="TimeStamp" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BusinessName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StreetAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="UserStatus" Type="Int32" />
+    <Property Name="KYCUpload" Type="Int32" Nullable="false" />
+    <Property Name="KYCRemarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KYC_ID_Path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="KYC_Utility_Path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordReset" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PaymentStatus" Type="Int32" Nullable="false" />
+    <Property Name="VCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationProgress" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationStatus" Type="Int32" />
+    <Property Name="DeliveryMethodId" Type="Int32" Nullable="false" />
+    <Property Name="PickUpLocationId" Type="Int32" />
+    <Property Name="Signature" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReferralOption" Type="Int32" />
+    <Property Name="ReferralValueDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ChannelPartnerUsers_old">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="KYCUpload" />
+      <PropertyRef Name="TimeStamp" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobilePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StreetAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="Int32" />
+    <Property Name="City" Type="Int32" />
+    <Property Name="UserStatus" Type="Int32" />
+    <Property Name="KYCUpload" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PasswordReset" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="City1">
+    <Key>
+      <PropertyRef Name="CityId" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment_21_May_2018">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="Amount" />
+      <PropertyRef Name="TimeStamp" />
+      <PropertyRef Name="TransactionID" />
+      <PropertyRef Name="PaymentOption" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ApplicationId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gateway" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Single" Nullable="false" />
+    <Property Name="OrderId" Type="Int32" />
+    <Property Name="ResponseCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ResponseDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="EntryDate" Type="DateTime" Precision="3" />
+    <Property Name="ReturnedReference" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="39" FixedLength="false" Unicode="false" />
+    <Property Name="ChargeTransID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ConfirmationDate" Type="DateTime" Precision="3" />
+    <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ConfirmCalled" Type="Int32" />
+    <Property Name="PaymentStep" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentOption" Type="Int32" Nullable="false" />
+    <Property Name="Card_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Gateway_Returned_Amount" Type="Double" />
+    <Property Name="PaymentStatus" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PickUpLocation">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IsVisible" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PickUpLoc" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="PickUpAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsVisible" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RC_MODEMS_BKP_050718">
+    <Key>
+      <PropertyRef Name="MODEM_ID" />
+      <PropertyRef Name="CUSTOMER_ID" />
+      <PropertyRef Name="ACCOUNT_ID" />
+      <PropertyRef Name="ACCOUNT_NAME" />
+      <PropertyRef Name="LOCATION_ID" />
+    </Key>
+    <Property Name="MODEM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_ID" Type="Int32" Nullable="false" />
+    <Property Name="ACCOUNT_ID" Type="Int32" Nullable="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LOCATION_ID" Type="Int32" Nullable="false" />
+    <Property Name="IMSI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IP_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RCRegisteredDevices_BETA_BKP_260218">
+    <Key>
+      <PropertyRef Name="deviceId" />
+      <PropertyRef Name="macAddress" />
+      <PropertyRef Name="firstName" />
+      <PropertyRef Name="lastName" />
+      <PropertyRef Name="phoneNumber" />
+      <PropertyRef Name="gender" />
+      <PropertyRef Name="ageRange" />
+      <PropertyRef Name="creationDate" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="regStatus" />
+    </Key>
+    <Property Name="deviceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="macAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ageRange" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="regStatus" Type="Int32" Nullable="false" />
+    <Property Name="remarks" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Referral">
+    <Key>
+      <PropertyRef Name="RefereeName" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Phone" />
+      <PropertyRef Name="ReferralCode" />
+      <PropertyRef Name="DateReferred" />
+      <PropertyRef Name="ReferrerName" />
+    </Key>
+    <Property Name="RefereeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReferralCode" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DateReferred" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ReferrerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReferralType">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IsVisible" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsVisible" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="States_old">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RC_MODEM_INFORMATION">
+    <Key>
+      <PropertyRef Name="SECTOR_NAME" />
+      <PropertyRef Name="CHANNEL_NAME" />
+      <PropertyRef Name="LOCATION_NAME" />
+      <PropertyRef Name="ACCOUNT_NAME" />
+      <PropertyRef Name="ACCOUNT_ID" />
+    </Key>
+    <Property Name="SECTOR_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CHANNEL_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LOCATION_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ACCOUNT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IMSI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_ID" Type="Int32" Nullable="false" />
+    <Property Name="IP_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_ChannelPartnerUsers_DeliveryMethod">
+    <End Role="DeliveryMethod" Type="Self.DeliveryMethod" Multiplicity="1" />
+    <End Role="ChannelPartnerUsers" Type="Self.ChannelPartnerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeliveryMethod">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChannelPartnerUsers">
+        <PropertyRef Name="DeliveryMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChannelPartnerUsers_Payment">
+    <End Role="ChannelPartnerUsers" Type="Self.ChannelPartnerUser" Multiplicity="1" />
+    <End Role="ChannelPartnerUsers1" Type="Self.ChannelPartnerUser" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ChannelPartnerUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ChannelPartnerUsers1">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChannelPartnerUsers_Payments">
+    <End Role="ChannelPartnerUsers" Type="Self.ChannelPartnerUser" Multiplicity="1" />
+    <End Role="ChannelPartnerUsers1" Type="Self.ChannelPartnerUser" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ChannelPartnerUsers">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ChannelPartnerUsers1">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChannelPartnerUsers_States">
+    <End Role="States" Type="Self.State" Multiplicity="0..1" />
+    <End Role="ChannelPartnerUsers" Type="Self.ChannelPartnerUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ChannelPartnerUsers">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeliveryMethod_DeliveryMethod">
+    <End Role="DeliveryMethod" Type="Self.DeliveryMethod" Multiplicity="1" />
+    <End Role="DeliveryMethod1" Type="Self.DeliveryMethod" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DeliveryMethod">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DeliveryMethod1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeviceConnects_DeviceInfos">
+    <End Role="DeviceInfos" Type="Self.DeviceInfo" Multiplicity="1" />
+    <End Role="DeviceConnects" Type="Self.DeviceConnect" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceInfos">
+        <PropertyRef Name="DeviceId" />
+      </Principal>
+      <Dependent Role="DeviceConnects">
+        <PropertyRef Name="DeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DeviceLocations_DeviceInfos">
+    <End Role="DeviceInfos" Type="Self.DeviceInfo" Multiplicity="1" />
+    <End Role="DeviceLocations" Type="Self.DeviceLocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceInfos">
+        <PropertyRef Name="DeviceId" />
+      </Principal>
+      <Dependent Role="DeviceLocations">
+        <PropertyRef Name="DeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageReads_DeviceInfos">
+    <End Role="DeviceInfos" Type="Self.DeviceInfo" Multiplicity="1" />
+    <End Role="MessageReads" Type="Self.MessageRead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceInfos">
+        <PropertyRef Name="DeviceId" />
+      </Principal>
+      <Dependent Role="MessageReads">
+        <PropertyRef Name="ToDeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_DeviceInfos">
+    <End Role="DeviceInfos" Type="Self.DeviceInfo" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeviceInfos">
+        <PropertyRef Name="DeviceId" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="ToDeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RC_CHANNELS_RC_SECTORS">
+    <End Role="RC_SECTORS" Type="Self.RC_SECTORS" Multiplicity="1" />
+    <End Role="RC_CHANNELS" Type="Self.RC_CHANNELS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RC_SECTORS">
+        <PropertyRef Name="SECTOR_ID" />
+      </Principal>
+      <Dependent Role="RC_CHANNELS">
+        <PropertyRef Name="SECTOR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RC_LOCATIONS_RC_CHANNELS">
+    <End Role="RC_CHANNELS" Type="Self.RC_CHANNELS" Multiplicity="1" />
+    <End Role="RC_LOCATIONS" Type="Self.RC_LOCATIONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RC_CHANNELS">
+        <PropertyRef Name="CHANNEL_ID" />
+      </Principal>
+      <Dependent Role="RC_LOCATIONS">
+        <PropertyRef Name="CHANNEL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RC_MODEMS_RC_LOCATIONS">
+    <End Role="RC_LOCATIONS" Type="Self.RC_LOCATIONS" Multiplicity="1" />
+    <End Role="RC_MODEMS" Type="Self.RC_MODEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RC_LOCATIONS">
+        <PropertyRef Name="LOCATION_ID" />
+      </Principal>
+      <Dependent Role="RC_MODEMS">
+        <PropertyRef Name="LOCATION_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RedCheetahEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AdPlans" EntityType="Self.AdPlan" />
+    <EntitySet Name="AdvertisersRequests" EntityType="Self.AdvertisersRequest" />
+    <EntitySet Name="AuditTrails" EntityType="Self.AuditTrail" />
+    <EntitySet Name="ChannelPartnerPaymentInstallments" EntityType="Self.ChannelPartnerPaymentInstallment" />
+    <EntitySet Name="ChannelPartnerReferralQuestionResponses" EntityType="Self.ChannelPartnerReferralQuestionResponse" />
+    <EntitySet Name="ChannelPartnerRepCodes" EntityType="Self.ChannelPartnerRepCode" />
+    <EntitySet Name="ChannelPartnersRequests" EntityType="Self.ChannelPartnersRequest" />
+    <EntitySet Name="ChannelPartnerUsers" EntityType="Self.ChannelPartnerUser" />
+    <EntitySet Name="ChannelPartnerUsers_Temp" EntityType="Self.ChannelPartnerUsers_Temp" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="ContactUsRequests" EntityType="Self.ContactUsRequest" />
+    <EntitySet Name="CustomerCounts" EntityType="Self.CustomerCount" />
+    <EntitySet Name="CustomerRanges" EntityType="Self.CustomerRange" />
+    <EntitySet Name="DeliveryMethods" EntityType="Self.DeliveryMethod" />
+    <EntitySet Name="Devices" EntityType="Self.Device" />
+    <EntitySet Name="DeviceCodes" EntityType="Self.DeviceCode" />
+    <EntitySet Name="DeviceConnects" EntityType="Self.DeviceConnect" />
+    <EntitySet Name="DeviceInfos" EntityType="Self.DeviceInfo" />
+    <EntitySet Name="DeviceLocations" EntityType="Self.DeviceLocation" />
+    <EntitySet Name="Industries" EntityType="Self.Industry" />
+    <EntitySet Name="KYCUploadIds" EntityType="Self.KYCUploadId" />
+    <EntitySet Name="MessageReads" EntityType="Self.MessageRead" />
+    <EntitySet Name="Messages" EntityType="Self.Message" />
+    <EntitySet Name="NatureOfBusinesses" EntityType="Self.NatureOfBusiness" />
+    <EntitySet Name="NatureOfCustomerBusinesses" EntityType="Self.NatureOfCustomerBusiness" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="PickUpLocation_old" EntityType="Self.PickUpLocation_old" />
+    <EntitySet Name="RC_CHANNELS" EntityType="Self.RC_CHANNELS" />
+    <EntitySet Name="RC_LOCATIONS" EntityType="Self.RC_LOCATIONS" />
+    <EntitySet Name="RC_MODEMS" EntityType="Self.RC_MODEMS" />
+    <EntitySet Name="RC_SECTORS" EntityType="Self.RC_SECTORS" />
+    <EntitySet Name="RC_Sessions" EntityType="Self.RC_Sessions" />
+    <EntitySet Name="RCRegisteredDevices" EntityType="Self.RCRegisteredDevice" />
+    <EntitySet Name="RedCheetahUsers" EntityType="Self.RedCheetahUser" />
+    <EntitySet Name="ServiceParameters" EntityType="Self.ServiceParameter" />
+    <EntitySet Name="States" EntityType="Self.State" />
+    <EntitySet Name="SwiftSites" EntityType="Self.SwiftSite" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="UserToDisableOrEnables" EntityType="Self.UserToDisableOrEnable" />
+    <EntitySet Name="WorldCupRegistrations" EntityType="Self.WorldCupRegistration" />
+    <EntitySet Name="C__MigrationHistory_bkup" EntityType="Self.C__MigrationHistory_bkup" />
+    <EntitySet Name="ChannelPartnerPaymentOptions" EntityType="Self.ChannelPartnerPaymentOption" />
+    <EntitySet Name="ChannelPartnerRepCode2" EntityType="Self.ChannelPartnerRepCode2" />
+    <EntitySet Name="ChannelPartnerUsers_18thMay2018" EntityType="Self.ChannelPartnerUsers_18thMay2018" />
+    <EntitySet Name="ChannelPartnerUsers_19_Mar_2018" EntityType="Self.ChannelPartnerUsers_19_Mar_2018" />
+    <EntitySet Name="ChannelPartnerUsers_bakup" EntityType="Self.ChannelPartnerUsers_bakup" />
+    <EntitySet Name="ChannelPartnerUsers_old" EntityType="Self.ChannelPartnerUsers_old" />
+    <EntitySet Name="City1" EntityType="Self.City1" />
+    <EntitySet Name="Payment_21_May_2018" EntityType="Self.Payment_21_May_2018" />
+    <EntitySet Name="PickUpLocations" EntityType="Self.PickUpLocation" />
+    <EntitySet Name="RC_MODEMS_BKP_050718" EntityType="Self.RC_MODEMS_BKP_050718" />
+    <EntitySet Name="RCRegisteredDevices_BETA_BKP_260218" EntityType="Self.RCRegisteredDevices_BETA_BKP_260218" />
+    <EntitySet Name="Referrals" EntityType="Self.Referral" />
+    <EntitySet Name="ReferralTypes" EntityType="Self.ReferralType" />
+    <EntitySet Name="States_old" EntityType="Self.States_old" />
+    <EntitySet Name="UserStatus" EntityType="Self.UserStatu" />
+    <EntitySet Name="RC_MODEM_INFORMATION" EntityType="Self.RC_MODEM_INFORMATION" />
+    <AssociationSet Name="FK_ChannelPartnerUsers_DeliveryMethod" Association="Self.FK_ChannelPartnerUsers_DeliveryMethod">
+      <End Role="DeliveryMethod" EntitySet="DeliveryMethods" />
+      <End Role="ChannelPartnerUsers" EntitySet="ChannelPartnerUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChannelPartnerUsers_Payment" Association="Self.FK_ChannelPartnerUsers_Payment">
+      <End Role="ChannelPartnerUsers" EntitySet="ChannelPartnerUsers" />
+      <End Role="ChannelPartnerUsers1" EntitySet="ChannelPartnerUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChannelPartnerUsers_Payments" Association="Self.FK_ChannelPartnerUsers_Payments">
+      <End Role="ChannelPartnerUsers" EntitySet="ChannelPartnerUsers" />
+      <End Role="ChannelPartnerUsers1" EntitySet="ChannelPartnerUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChannelPartnerUsers_States" Association="Self.FK_ChannelPartnerUsers_States">
+      <End Role="States" EntitySet="States" />
+      <End Role="ChannelPartnerUsers" EntitySet="ChannelPartnerUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeliveryMethod_DeliveryMethod" Association="Self.FK_DeliveryMethod_DeliveryMethod">
+      <End Role="DeliveryMethod" EntitySet="DeliveryMethods" />
+      <End Role="DeliveryMethod1" EntitySet="DeliveryMethods" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeviceConnects_DeviceInfos" Association="Self.FK_DeviceConnects_DeviceInfos">
+      <End Role="DeviceInfos" EntitySet="DeviceInfos" />
+      <End Role="DeviceConnects" EntitySet="DeviceConnects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DeviceLocations_DeviceInfos" Association="Self.FK_DeviceLocations_DeviceInfos">
+      <End Role="DeviceInfos" EntitySet="DeviceInfos" />
+      <End Role="DeviceLocations" EntitySet="DeviceLocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageReads_DeviceInfos" Association="Self.FK_MessageReads_DeviceInfos">
+      <End Role="DeviceInfos" EntitySet="DeviceInfos" />
+      <End Role="MessageReads" EntitySet="MessageReads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_DeviceInfos" Association="Self.FK_Messages_DeviceInfos">
+      <End Role="DeviceInfos" EntitySet="DeviceInfos" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RC_CHANNELS_RC_SECTORS" Association="Self.FK_RC_CHANNELS_RC_SECTORS">
+      <End Role="RC_SECTORS" EntitySet="RC_SECTORS" />
+      <End Role="RC_CHANNELS" EntitySet="RC_CHANNELS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RC_LOCATIONS_RC_CHANNELS" Association="Self.FK_RC_LOCATIONS_RC_CHANNELS">
+      <End Role="RC_CHANNELS" EntitySet="RC_CHANNELS" />
+      <End Role="RC_LOCATIONS" EntitySet="RC_LOCATIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RC_MODEMS_RC_LOCATIONS" Association="Self.FK_RC_MODEMS_RC_LOCATIONS">
+      <End Role="RC_LOCATIONS" EntitySet="RC_LOCATIONS" />
+      <End Role="RC_MODEMS" EntitySet="RC_MODEMS" />
+    </AssociationSet>
+    <FunctionImport Name="proc_AdvertiserInsertRequest">
+      <Parameter Name="companyName" Mode="In" Type="String" />
+      <Parameter Name="companyAddress" Mode="In" Type="String" />
+      <Parameter Name="companyPhone" Mode="In" Type="String" />
+      <Parameter Name="Industry" Mode="In" Type="String" />
+      <Parameter Name="emailAddress" Mode="In" Type="String" />
+      <Parameter Name="ContactPersonsPhoneNumber" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_AuditTrailInsert">
+      <Parameter Name="Useremail" Mode="In" Type="String" />
+      <Parameter Name="IPAddress" Mode="In" Type="String" />
+      <Parameter Name="Action" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ChannelPartnerInsertRequest">
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="ContactPerson" Mode="In" Type="String" />
+      <Parameter Name="ContactAddress" Mode="In" Type="String" />
+      <Parameter Name="EmailAddress" Mode="In" Type="String" />
+      <Parameter Name="NatureOfBusiness" Mode="In" Type="String" />
+      <Parameter Name="totalDailyWalkInCustomers" Mode="In" Type="Int32" />
+      <Parameter Name="averageDailyWalkInCustomers" Mode="In" Type="Int32" />
+      <Parameter Name="requestType" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ChannelPartnerInsertRequest_old">
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="ContactPerson" Mode="In" Type="String" />
+      <Parameter Name="ContactAddress" Mode="In" Type="String" />
+      <Parameter Name="EmailAddress" Mode="In" Type="String" />
+      <Parameter Name="NatureOfBusiness" Mode="In" Type="String" />
+      <Parameter Name="totalDailyWalkInCustomers" Mode="In" Type="Int32" />
+      <Parameter Name="averageDailyWalkInCustomers" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ChannelPartnerInsertRequest_uat">
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="ContactPerson" Mode="In" Type="String" />
+      <Parameter Name="ContactAddress" Mode="In" Type="String" />
+      <Parameter Name="EmailAddress" Mode="In" Type="String" />
+      <Parameter Name="NatureOfBusiness" Mode="In" Type="String" />
+      <Parameter Name="totalDailyWalkInCustomers" Mode="In" Type="Int32" />
+      <Parameter Name="averageDailyWalkInCustomers" Mode="In" Type="Int32" />
+      <Parameter Name="phoneNumber" Mode="In" Type="String" />
+      <Parameter Name="requestType" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ChannelPartnerInsertRequestNew">
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="ContactPerson" Mode="In" Type="String" />
+      <Parameter Name="ContactAddress" Mode="In" Type="String" />
+      <Parameter Name="EmailAddress" Mode="In" Type="String" />
+      <Parameter Name="NatureOfBusiness" Mode="In" Type="String" />
+      <Parameter Name="totalDailyWalkInCustomers" Mode="In" Type="Int32" />
+      <Parameter Name="averageDailyWalkInCustomers" Mode="In" Type="Int32" />
+      <Parameter Name="phoneNumber" Mode="In" Type="String" />
+      <Parameter Name="requestType" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ChannelPartnerReferralReports" ReturnType="Collection(RedCheetahDB.proc_ChannelPartnerReferralReports_Result)">
+      <Parameter Name="referraltype" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="proc_chkIfEmailExists" ReturnType="Collection(RedCheetahDB.proc_chkIfEmailExists_Result)">
+      <Parameter Name="email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_ContactUsInsertRequest">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="phone" Mode="In" Type="String" />
+      <Parameter Name="emailAddress" Mode="In" Type="String" />
+      <Parameter Name="message" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GeneraetRedCheetahRepCode" ReturnType="Collection(Decimal)">
+      <Parameter Name="ReferralCode" Mode="In" Type="String" />
+      <Parameter Name="Surname" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="OtherName" Mode="In" Type="String" />
+      <Parameter Name="PhoneNo" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_GenerateRedCheetahRepCode" ReturnType="Collection(Decimal)">
+      <Parameter Name="ReferralCode" Mode="In" Type="String" />
+      <Parameter Name="Surname" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="OtherName" Mode="In" Type="String" />
+      <Parameter Name="PhoneNo" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_InsertOrderDetailRecord">
+      <Parameter Name="orderId" Mode="In" Type="Int32" />
+      <Parameter Name="productDescription" Mode="In" Type="String" />
+      <Parameter Name="price" Mode="In" Type="Decimal" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_InsertOrderRecord">
+      <Parameter Name="emailAddress" Mode="In" Type="String" />
+      <Parameter Name="amount_paid" Mode="In" Type="Decimal" />
+      <Parameter Name="actual_amount" Mode="In" Type="Decimal" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_InsertSignUpRecords">
+      <Parameter Name="applicationId" Mode="In" Type="String" />
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="OtherName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="mobilePhone" Mode="In" Type="String" />
+      <Parameter Name="emailAddress" Mode="In" Type="String" />
+      <Parameter Name="streetAddress" Mode="In" Type="String" />
+      <Parameter Name="state" Mode="In" Type="Int32" />
+      <Parameter Name="city" Mode="In" Type="Int32" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="VCode" Mode="In" Type="String" />
+      <Parameter Name="deliveryoption" Mode="In" Type="Int32" />
+      <Parameter Name="pickUpLocation" Mode="In" Type="Int32" />
+      <Parameter Name="signature" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_InsertSignUpRecordsInTempTable">
+      <Parameter Name="applicationId" Mode="In" Type="String" />
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="OtherName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="mobilePhone" Mode="In" Type="String" />
+      <Parameter Name="emailAddress" Mode="In" Type="String" />
+      <Parameter Name="streetAddress" Mode="In" Type="String" />
+      <Parameter Name="state" Mode="In" Type="Int32" />
+      <Parameter Name="city" Mode="In" Type="Int32" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="VCode" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_InsertSignUpRecordsInTempTableNew">
+      <Parameter Name="applicationId" Mode="In" Type="String" />
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="OtherName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="mobilePhone" Mode="In" Type="String" />
+      <Parameter Name="emailAddress" Mode="In" Type="String" />
+      <Parameter Name="streetAddress" Mode="In" Type="String" />
+      <Parameter Name="state" Mode="In" Type="Int32" />
+      <Parameter Name="city" Mode="In" Type="Int32" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="VCode" Mode="In" Type="String" />
+      <Parameter Name="ReferralQuestionResponse" Mode="In" Type="Int32" />
+      <Parameter Name="referralOption" Mode="In" Type="Int32" />
+      <Parameter Name="ReferralValueDesc" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_InsertSignUpRecordsNew">
+      <Parameter Name="applicationId" Mode="In" Type="String" />
+      <Parameter Name="BusinessName" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="OtherName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="mobilePhone" Mode="In" Type="String" />
+      <Parameter Name="emailAddress" Mode="In" Type="String" />
+      <Parameter Name="streetAddress" Mode="In" Type="String" />
+      <Parameter Name="state" Mode="In" Type="Int32" />
+      <Parameter Name="city" Mode="In" Type="Int32" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="VCode" Mode="In" Type="String" />
+      <Parameter Name="deliveryoption" Mode="In" Type="Int32" />
+      <Parameter Name="pickUpLocation" Mode="In" Type="Int32" />
+      <Parameter Name="signature" Mode="In" Type="String" />
+      <Parameter Name="ReferralQuestionResponse" Mode="In" Type="Int32" />
+      <Parameter Name="referralOption" Mode="In" Type="Int32" />
+      <Parameter Name="ReferralValueDesc" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_RptRedCheetahChannelPartners" ReturnType="Collection(RedCheetahDB.proc_RptRedCheetahChannelPartners_Result)" />
+    <FunctionImport Name="proc_RptRedCheetahChannelPartnersFullPaymt" ReturnType="Collection(RedCheetahDB.proc_RptRedCheetahChannelPartnersFullPaymt_Result)" />
+    <FunctionImport Name="proc_RptRedCheetahChannelPartnersInstalmtPaymt" ReturnType="Collection(RedCheetahDB.proc_RptRedCheetahChannelPartnersInstalmtPaymt_Result)" />
+    <FunctionImport Name="proc_updateApplicationProgressStatus">
+      <Parameter Name="applicationId" Mode="In" Type="String" />
+      <Parameter Name="applicationProgress" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_updateDbWithIDRecord">
+      <Parameter Name="recordNo" Mode="In" Type="Int32" />
+      <Parameter Name="ftp_file_path_id" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_updateDbWithUtilityRecord">
+      <Parameter Name="recordNo" Mode="In" Type="Int32" />
+      <Parameter Name="ftp_file_path_utility" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_UpdateOrderRecordWithPaymt">
+      <Parameter Name="orderId" Mode="In" Type="Int32" />
+      <Parameter Name="camount" Mode="In" Type="Decimal" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_UpdateOrderTable">
+      <Parameter Name="camount" Mode="In" Type="Decimal" />
+      <Parameter Name="orderId" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="proc_updateUserPassword">
+      <Parameter Name="Useremail" Mode="In" Type="String" />
+      <Parameter Name="pwd" Mode="In" Type="String" />
+      <Parameter Name="status" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(RedCheetahDB.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(RedCheetahDB.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="uspCalcVelocity">
+      <Parameter Name="distance" Mode="In" Type="Double" />
+      <Parameter Name="time" Mode="In" Type="Double" />
+      <Parameter Name="velocity" Mode="InOut" Type="Double" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="proc_ChannelPartnerReferralReports_Result">
+    <Property Type="DateTime" Name="date" Nullable="false" Precision="23" />
+    <Property Type="String" Name="ApplicationId" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Referred_By" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PaymentOption" Nullable="false" MaxLength="19" />
+    <Property Type="Single" Name="Amount" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="proc_chkIfEmailExists_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="ReferralCode" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Surname" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="OtherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="IsActive" Nullable="false" />
+    <Property Type="DateTime" Name="Timestamp" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="proc_RptRedCheetahChannelPartners_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="ApplicationId" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="OtherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="StreetAddress" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="StateId" Nullable="true" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="Int32" Name="UserStatus" Nullable="true" />
+    <Property Type="Int32" Name="KYCUpload" Nullable="false" />
+    <Property Type="String" Name="KYCRemarks" Nullable="true" />
+    <Property Type="String" Name="KYC_ID_Path" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="KYC_Utility_Path" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="PasswordReset" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="PaymentStatus" Nullable="false" />
+    <Property Type="String" Name="VCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ApplicationProgress" Nullable="false" />
+    <Property Type="Int32" Name="ApplicationStatus" Nullable="true" />
+    <Property Type="Int32" Name="DeliveryMethodId" Nullable="false" />
+    <Property Type="Int32" Name="PickUpLocationId" Nullable="true" />
+    <Property Type="String" Name="Signature" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ReferralQuestionResponse" Nullable="true" />
+    <Property Type="Int32" Name="ReferralOption" Nullable="true" />
+    <Property Type="String" Name="ReferralValueDesc" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="TimeStamp" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Email1" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ApplicationId1" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gateway" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+    <Property Type="Single" Name="Amount" Nullable="false" />
+    <Property Type="Int32" Name="OrderId" Nullable="true" />
+    <Property Type="String" Name="ResponseCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ResponseDescription" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ReturnedReference" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="39" />
+    <Property Type="String" Name="ChargeTransID" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="TimeStamp1" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TransactionID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="ConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProductName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ConfirmCalled" Nullable="true" />
+    <Property Type="String" Name="PaymentStep" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="PaymentOption" Nullable="false" />
+    <Property Type="String" Name="Card_Number" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="Gateway_Returned_Amount" Nullable="true" />
+    <Property Type="Int32" Name="PaymentStatus1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_RptRedCheetahChannelPartnersFullPaymt_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="ApplicationId" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="OtherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="StreetAddress" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="StateId" Nullable="true" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="Int32" Name="UserStatus" Nullable="true" />
+    <Property Type="Int32" Name="KYCUpload" Nullable="false" />
+    <Property Type="String" Name="KYCRemarks" Nullable="true" />
+    <Property Type="String" Name="KYC_ID_Path" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="KYC_Utility_Path" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="PasswordReset" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="PaymentStatus" Nullable="false" />
+    <Property Type="String" Name="VCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ApplicationProgress" Nullable="false" />
+    <Property Type="Int32" Name="ApplicationStatus" Nullable="true" />
+    <Property Type="Int32" Name="DeliveryMethodId" Nullable="false" />
+    <Property Type="Int32" Name="PickUpLocationId" Nullable="true" />
+    <Property Type="String" Name="Signature" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ReferralQuestionResponse" Nullable="true" />
+    <Property Type="Int32" Name="ReferralOption" Nullable="true" />
+    <Property Type="String" Name="ReferralValueDesc" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="TimeStamp" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Email1" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ApplicationId1" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gateway" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+    <Property Type="Single" Name="Amount" Nullable="false" />
+    <Property Type="Int32" Name="OrderId" Nullable="true" />
+    <Property Type="String" Name="ResponseCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ResponseDescription" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ReturnedReference" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="39" />
+    <Property Type="String" Name="ChargeTransID" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="TimeStamp1" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TransactionID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="ConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProductName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ConfirmCalled" Nullable="true" />
+    <Property Type="String" Name="PaymentStep" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="PaymentOption" Nullable="false" />
+    <Property Type="String" Name="Card_Number" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="Gateway_Returned_Amount" Nullable="true" />
+    <Property Type="Int32" Name="PaymentStatus1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="proc_RptRedCheetahChannelPartnersInstalmtPaymt_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="ApplicationId" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="BusinessName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="OtherName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobilePhone" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="StreetAddress" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="StateId" Nullable="true" />
+    <Property Type="Int32" Name="CityId" Nullable="true" />
+    <Property Type="Int32" Name="UserStatus" Nullable="true" />
+    <Property Type="Int32" Name="KYCUpload" Nullable="false" />
+    <Property Type="String" Name="KYCRemarks" Nullable="true" />
+    <Property Type="String" Name="KYC_ID_Path" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="KYC_Utility_Path" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="PasswordReset" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="PaymentStatus" Nullable="false" />
+    <Property Type="String" Name="VCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ApplicationProgress" Nullable="false" />
+    <Property Type="Int32" Name="ApplicationStatus" Nullable="true" />
+    <Property Type="Int32" Name="DeliveryMethodId" Nullable="false" />
+    <Property Type="Int32" Name="PickUpLocationId" Nullable="true" />
+    <Property Type="String" Name="Signature" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ReferralQuestionResponse" Nullable="true" />
+    <Property Type="Int32" Name="ReferralOption" Nullable="true" />
+    <Property Type="String" Name="ReferralValueDesc" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="TimeStamp" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Email1" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ApplicationId1" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gateway" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="200" />
+    <Property Type="Single" Name="Amount" Nullable="false" />
+    <Property Type="Int32" Name="OrderId" Nullable="true" />
+    <Property Type="String" Name="ResponseCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ResponseDescription" Nullable="true" MaxLength="200" />
+    <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ReturnedReference" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="39" />
+    <Property Type="String" Name="ChargeTransID" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="TimeStamp1" Nullable="false" Precision="23" />
+    <Property Type="String" Name="TransactionID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="ConfirmationDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProductName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ConfirmCalled" Nullable="true" />
+    <Property Type="String" Name="PaymentStep" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="PaymentOption" Nullable="false" />
+    <Property Type="String" Name="Card_Number" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="Gateway_Returned_Amount" Nullable="true" />
+    <Property Type="Int32" Name="PaymentStatus1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

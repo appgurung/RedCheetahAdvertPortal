@@ -1,0 +1,11 @@
+C:\SwiftBox\RedCheetah\RedCheetah.Core\bin\Debug\RedCheetah.Core.dll.config
+C:\SwiftBox\RedCheetah\RedCheetah.Core\bin\Debug\RedCheetah.Core.dll
+C:\SwiftBox\RedCheetah\RedCheetah.Core\bin\Debug\RedCheetah.Core.pdb
+C:\SwiftBox\RedCheetah\RedCheetah.Core\bin\Debug\EntityFramework.dll
+C:\SwiftBox\RedCheetah\RedCheetah.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\SwiftBox\RedCheetah\RedCheetah.Core\bin\Debug\EntityFramework.xml
+C:\SwiftBox\RedCheetah\RedCheetah.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\SwiftBox\RedCheetah\RedCheetah.Core\obj\Debug\RedCheetah.Core.csproj.CoreCompileInputs.cache
+C:\SwiftBox\RedCheetah\RedCheetah.Core\obj\Debug\RedCheetah.Core.csproj.CopyComplete
+C:\SwiftBox\RedCheetah\RedCheetah.Core\obj\Debug\RedCheetah.Core.dll
+C:\SwiftBox\RedCheetah\RedCheetah.Core\obj\Debug\RedCheetah.Core.pdb

@@ -1,0 +1,325 @@
+﻿<div class="row" style="overflow-x:scroll;overflow-y:scroll">
+    <div class="col-md-12">
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Modem ID</th>
+                    <th>Account Name</th>
+                    <th>IMSI</th>
+                    <th>IP Address</th>
+                    <th>Location Name</th>
+                    <th>Channel Name</th>
+                    <th>Sector Name</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="modal fade" id="UpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel" style="text-align:center">Update Modem Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Select Location:</label>
+                                        <select class="form-control" id="UpdateLocationType">
+                                            <option value="double chocolate">--Select Modem Location--</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Account Name:</label>
+                                <input type="text" class="form-control" id="UpdateAccountName" placeholder="Enter Account Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Account ID:</label>
+                                <input type="text" class="form-control" id="UpdateAccountId" placeholder="Enter Account ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Customer ID:</label>
+                                <input type="text" class="form-control" id="UpdateCustomerId" placeholder="Enter Customer ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">IMSI Name:</label>
+                                <input type="text" class="form-control" id="UpdateIMSI" placeholder="Provide IMSI">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">IP Address:</label>
+                                <input type="text" class="form-control" id="UpdateIpAddress" placeholder="Enter IP Address">
+                                <input type="text" class="form-control" id="ModemId" style="display:none">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Close</b></button>
+                        <button type="button" class="btn btn-primary" id="UpdateModem"><i class="fa fa-plus"> <b>Save</b></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Content/vendor/jquery/jquery.min.js"></script>
+<script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<link href="~/Content/sweetalert.css" rel="stylesheet" />
+<script src="~/Scripts/sweetalert.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "ajax": {
+                "url": "/Modems/GetModems",
+                "type": "GET",
+                "data": "json"
+            },
+            "order": [0, "desc"],
+            "columns": [
+                { "data": "ModemId", "autoWidth": true },
+                { "data": "AccountName", "autoWidth": true },
+                { "data": "IMSI", "autoWidth": true },
+                { "data": "IpAddress", "autoWidth": true },
+                { "data": "LocationName", "autoWidth": true },
+                { "data": "ChannelName", "autoWidth": true },
+                { "data": "SectorName", "autoWidth": true },
+                {
+                    "aTargets": [6],
+                    "data": "ModemId",
+                    "mRender": function (data) {
+                        return '<button type="button" id="' + data + '" onclick="Edit(' + data + ')" class="btn btn-primary">Edit<i class = "fa fa-edit"></i></button> <button type="button" id="' + data + '" onclick="Delete(' + data + ')" class="btn btn-danger">Delete<i class = "fa fa-trash"></i></button>';
+
+                    },
+                }
+            ]
+        });
+
+
+    });
+
+    function Delete(id) {
+        swal({
+            title: "Delete Warning",
+            text: "Are you sure you want to delete this modem?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, delete it",
+            closeOnConfirm: true
+        },
+            function () {
+                $.ajax({
+                    url: '/Modems/DeleteModem',
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({
+                        modemId: id,
+                    }),
+                    success: function (result) {
+                        if (result === "Success") {
+                            $('#example').DataTable().ajax.reload();
+                            swal({
+                                title: "Delete Result",
+                                text: "Modem Deleted Successfully",
+                                type: "success"
+                            });
+                        }
+                    },
+                    error: function (result) {
+                        swal({
+                            title: "Error",
+                            text: "client Side Error, please check internet connection",
+                            type: "error"
+                        });
+                    }
+                })
+            });
+    }
+
+    function Edit(id) {
+
+        $.ajax({
+            url: '/Modems/GetModemFromId',
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                modemId: id,
+            }),
+            success: function (result) {
+                $('#UpdateModal').modal('show');
+
+                result.locations.forEach(function (element) {
+                    // alert(element.channelName);
+                    $('#UpdateLocationType').append('<option value="' + element.locationId + '">' + element.locationName + '</option>')
+                });
+
+                document.getElementById("UpdateIpAddress").value = result.IpAddress;
+                document.getElementById("UpdateAccountName").value = result.accountName;
+                document.getElementById("UpdateCustomerId").value = result.customerId;
+                document.getElementById("UpdateAccountId").value = result.accountId;
+                document.getElementById("UpdateIMSI").value = result.IMSI;
+                document.getElementById("UpdateLocationType").value = result.locationId;
+                document.getElementById("ModemId").value = id;
+            },
+            error: function (result) {
+                swal({
+                    title: "Error",
+                    text: "client Side Error, please check internet connection",
+                    type: "error"
+                });
+            }
+        })
+
+    }
+
+    document.getElementById("UpdateModem").onclick = function () {
+
+        if ($('#UpdateIpAddress').val() == null || $('#UpdateIpAddress').val() == "") {
+            swal({
+                title: "Warning",
+                text: "IpAddress is compulsory",
+                type: "warning",
+                confirmButtonText: "DISMISS"
+            });
+            return false;
+        }
+
+        if ($('#UpdateIMSI').val() == null || $('#UpdateIMSI').val() == "") {
+            swal({
+                title: "Warning",
+                text: "IMSI is compulsory",
+                type: "warning",
+                confirmButtonText: "DISMISS"
+            });
+            return false;
+        }
+
+
+        if ($('#UpdateCustomerId').val() == null || $('#UpdateCustomerId').val() == "") {
+            swal({
+                title: "Warning",
+                text: "Customer ID is compulsory",
+                type: "warning",
+                confirmButtonText: "DISMISS"
+            });
+            return false;
+        }
+
+        if ($('#UpdateAccountId').val() == null || $('#UpdateAccountId').val() == "") {
+            swal({
+                title: "Warning",
+                text: "Account ID is compulsory",
+                type: "warning",
+                confirmButtonText: "DISMISS"
+            });
+            return false;
+        }
+
+
+        if ($('#UpdateAccountName').val() == null || $('#UpdateAccountName').val() == "") {
+            swal({
+                title: "Warning",
+                text: "Account name is compulsory",
+                type: "warning",
+                confirmButtonText: "DISMISS"
+            });
+            return false;
+        }
+
+        if ($('#UpdateLocationType').val() == null || $('#UpdateLocationType').val() == "") {
+            swal({
+                title: "Warning",
+                text: "Location Type is compulsory",
+                type: "warning",
+                confirmButtonText: "DISMISS"
+            });
+            return false;
+        }
+
+        document.getElementById("UpdateModem").innerHTML = "Please Wait...";
+
+        document.getElementById("UpdateModem").disabled = true;
+
+        $.ajax({
+            url: '/Modems/UpdateModem',
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                AccountName: $('#UpdateAccountName').val(),
+                CustomerId: $('#UpdateCustomerId').val(),
+                AccountId: $('#UpdateAccountId').val(),
+                LocationId: $('#UpdateLocationType').val(), 
+                IMSI: $('#UpdateIMSI').val(),
+                IpAddres: $('#UpdateIpAddress').val(),
+                modemId: $('#ModemId').val(),
+            }),
+            success: function (result) {
+
+                if (result == "Success") {
+                    document.getElementById("UpdateModem").innerHTML = "Save";
+
+                    document.getElementById("UpdateModem").disabled = false;
+
+                    $('#exampleModal').modal('hide');
+
+                    swal({
+                        title: "Successful",
+                        text: "Previous Modem Updated",
+                        type: "success",
+                        confirmButtonText: "DISMISS"
+                    },
+                        function (isConfirm) {
+                            if (isConfirm) {
+                                //window.location.href = "/Sectors/AddNewSector";
+                                $('#example').DataTable().ajax.reload();
+                            }
+                        });
+                } else {
+                    swal({
+                        title: "Update Failure",
+                        text: "An error occured while updating",
+                        type: "warning",
+                        confirmButtonText: "DISMISS"
+                    });
+                }
+            },
+            error: function (result) {
+                document.getElementById("UpdateModem").innerHTML = "Save";
+
+                document.getElementById("UpdateModem").disabled = false;
+                swal({
+                    title: "Error",
+                    text: "Server Side Error, please check internet connection",
+                    type: "error"
+                });
+            }
+        })
+    }
+
+</script>
+
+

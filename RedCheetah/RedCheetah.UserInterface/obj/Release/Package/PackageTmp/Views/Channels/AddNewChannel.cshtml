@@ -1,0 +1,154 @@
+﻿@model IEnumerable<RedCheetah.Core.Models.Sector>
+
+@{
+    ViewBag.Title = "AddNewSector";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Data table dependency-->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <br />
+            <br />
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" style="font-weight:bold"><i class="fa fa-plus"></i> Add New Channel</button>
+        </div>
+    </div>
+    <br />
+     @Html.Partial("_ListChannels")
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" style="text-align:center">Add Channel</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <select class="form-control" id="SectorType">
+                                                <option value="">--Select Sector--</option>
+
+                                                @foreach (var content in Model)
+                                                {
+                                                    <option value="@content.SectorId">@content.SectorName</option>
+                                                }
+
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Channel Name:</label>
+                                    <input type="text" class="form-control" id="ChannelName" placeholder="Enter Channel Name">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Close</b></button>
+                            <button type="button" class="btn btn-primary" id="AddChannel"><i class="fa fa-plus"> <b>Save</b></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+
+        document.getElementById("AddChannel").onclick = function () {
+
+            if ($('#ChannelName').val() == null || $('#ChannelName').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "Channel name is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+            if ($('#SectorType').val() == null || $('#SectorType').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "Sector Type is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+            document.getElementById("AddChannel").innerHTML = "Please Wait...";
+
+            document.getElementById("AddChannel").disabled = true;
+
+            $.ajax({
+                url: '/Channels/CreateChannel',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    channelName: $('#ChannelName').val(),
+                    sectorId: $('#SectorType').val()
+                }),
+                success: function (result) {
+
+                    if (result == "Success") {
+                        document.getElementById("AddChannel").innerHTML = "Save";
+
+                        document.getElementById("AddChannel").disabled = false;
+
+                        $('#exampleModal').modal('hide');
+
+                        swal({
+                            title: "Successful",
+                            text: "New Channel Created",
+                            type: "success",
+                            confirmButtonText: "DISMISS"
+                        },
+                            function (isConfirm) {
+                                if (isConfirm) {
+                                    window.location.href = "/Channels/AddNewChannel";
+                                    //$('#example').DataTable().ajax.reload();
+                                }
+                            });
+
+                    } else {
+                        swal({
+                            title: "Create Failure",
+                            text: "An error occured while creating",
+                            type: "warning",
+                            confirmButtonText: "DISMISS"
+                        });
+                    }
+                },
+                error: function (result) {
+                    document.getElementById("AddChannel").innerHTML = "Save";
+
+                    document.getElementById("AddChannel").disabled = false;
+                    swal({
+                        title: "Error",
+                        text: "Server Side Error, please check internet connection",
+                        type: "error"
+                    });
+                }
+            })
+        }
+    })
+</script>

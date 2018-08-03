@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "AddNewSector";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Data table dependency-->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+            <br />
+            <br />
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" style="font-weight:bold"><i class="fa fa-plus"></i> Add New Sector</button>
+        </div>
+    </div>
+    <br />
+    @Html.Partial("_ListSectors")
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel" style="text-align:center">Add Sector</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Sector Name:</label>
+                                    <input type="text" class="form-control" id="SectorName" placeholder="Enter Sector Name">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Close</b></button>
+                            <button type="button" class="btn btn-primary" id="AddSector"><i class="fa fa-plus"> <b>Save</b></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+
+        document.getElementById("AddSector").onclick = function () {
+
+            if ($('#SectorName').val() == null || $('#SectorName').val() == "") {
+                swal({
+                    title: "Warning",
+                    text: "Sector name is compulsory",
+                    type: "warning",
+                    confirmButtonText: "DISMISS"
+                });
+                return false;
+            }
+
+            document.getElementById("AddSector").innerHTML = "Please Wait...";
+
+            document.getElementById("AddSector").disabled = true;
+
+            $.ajax({
+                url: '/Sectors/CreateSector',
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    sectorName: $('#SectorName').val(),
+                }),
+                success: function (result) {
+
+                    if (result == "Success") {
+                        document.getElementById("AddSector").innerHTML = "Save";
+
+                        document.getElementById("AddSector").disabled = false;
+
+                        $('#exampleModal').modal('hide');
+
+                        swal({
+                            title: "Successful",
+                            text: "New Sector Created",
+                            type: "success",
+                            confirmButtonText: "DISMISS"
+                        },
+                            function (isConfirm) {
+                                if (isConfirm) {
+                                    window.location.href = "/Sectors/AddNewSector";
+                                    //$('#example').DataTable().ajax.reload();
+                                }
+                            });
+                    }
+                    else {
+                        swal({
+                            title: "Create Failure",
+                            text: "An error occured while creating",
+                            type: "warning",
+                            confirmButtonText: "DISMISS"
+                        });
+                    }
+                },
+                error: function (result) {
+                    document.getElementById("AddSector").innerHTML = "Save";
+
+                    document.getElementById("AddSector").disabled = false;
+                    swal({
+                        title: "Error",
+                        text: "Server Side Error, please check internet connection",
+                        type: "error"
+                    });
+                }
+            })
+        }
+    })
+</script>
+
