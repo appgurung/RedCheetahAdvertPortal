@@ -10,3 +10,15 @@ C:\SwiftBox\RedCheetah\RedCheetah.Core\obj\Release\RedCheetah.Core.csproj.CoreCo
 C:\SwiftBox\RedCheetah\RedCheetah.Core\obj\Release\RedCheetah.Core.csproj.CopyComplete
 C:\SwiftBox\RedCheetah\RedCheetah.Core\obj\Release\RedCheetah.Core.dll
 C:\SwiftBox\RedCheetah\RedCheetah.Core\obj\Release\RedCheetah.Core.pdb
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\bin\Release\RedCheetah.Core.dll.config
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\bin\Release\RedCheetah.Core.dll
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\bin\Release\RedCheetah.Core.pdb
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\bin\Release\EntityFramework.dll
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\bin\Release\EntityFramework.SqlServer.dll
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\bin\Release\EntityFramework.xml
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\bin\Release\EntityFramework.SqlServer.xml
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\obj\Release\RedCheetah.Core.csprojAssemblyReference.cache
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\obj\Release\RedCheetah.Core.csproj.CoreCompileInputs.cache
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\obj\Release\RedCheetah.Core.csproj.CopyComplete
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\obj\Release\RedCheetah.Core.dll
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Core\obj\Release\RedCheetah.Core.pdb

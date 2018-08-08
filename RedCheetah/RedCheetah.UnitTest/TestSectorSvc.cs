@@ -8,7 +8,7 @@ namespace RedCheetah.UnitTest
     [TestClass]
     public class TestSectorSvc
     {
-        RedCheetahStaging _db = new RedCheetahStaging();
+        RedCheetahStaging _db;
 
         [TestMethod]
         public void AddSector()

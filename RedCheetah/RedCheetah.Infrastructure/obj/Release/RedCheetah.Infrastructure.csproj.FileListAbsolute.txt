@@ -10,3 +10,15 @@ C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\obj\Release\RedCheetah.Infrastr
 C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\obj\Release\RedCheetah.Infrastructure.csproj.CopyComplete
 C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\obj\Release\RedCheetah.Infrastructure.dll
 C:\SwiftBox\RedCheetah\RedCheetah.Infrastructure\obj\Release\RedCheetah.Infrastructure.pdb
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\bin\Release\RedCheetah.Infrastructure.dll
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\bin\Release\RedCheetah.Infrastructure.pdb
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\bin\Release\RedCheetah.Core.dll
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\bin\Release\EntityFramework.dll
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\bin\Release\RedCheetah.Core.pdb
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\bin\Release\RedCheetah.Core.dll.config
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\bin\Release\EntityFramework.xml
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\obj\Release\RedCheetah.Infrastructure.csprojAssemblyReference.cache
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\obj\Release\RedCheetah.Infrastructure.csproj.CoreCompileInputs.cache
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\obj\Release\RedCheetah.Infrastructure.csproj.CopyComplete
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\obj\Release\RedCheetah.Infrastructure.dll
+C:\SwiftBox\Git\RedCheetahAdvertPortal\RedCheetah\RedCheetah.Infrastructure\obj\Release\RedCheetah.Infrastructure.pdb
