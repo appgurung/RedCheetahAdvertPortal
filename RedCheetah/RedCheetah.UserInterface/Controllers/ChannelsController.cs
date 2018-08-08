@@ -10,6 +10,7 @@ using RedCheetah.Core.Interface;
 
 namespace RedCheetah.UserInterface.Controllers
 {
+    
     public class ChannelsController : Controller
     {
         private readonly RedCheetahStaging _db = new RedCheetahStaging();
@@ -20,7 +21,7 @@ namespace RedCheetah.UserInterface.Controllers
         {
             _channelSvc = channelSvc;  
         }
-
+        
         // GET: Channels
         public ActionResult AddNewChannel()
         {
